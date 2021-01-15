@@ -1,0 +1,141 @@
+.event
+  .row
+    .col-xs-12
+      h1 Résultats
+  .row
+    .col-xs-12.text-center
+      h2= @edition.event.name
+  .row
+    .col-xs-12
+      = render 'menu'
+
+  .row
+    .col-xs-9
+      table.table.table-striped.table-bordered.table-compacted
+        tr
+          th Date
+          td= @edition.id
+        tr
+          th Email
+          td= @edition.email_sender
+        tr
+          th Email nom
+          td= @edition.email_name
+        tr
+          th Template
+          td= @edition.template
+        tr
+          th Nombre de coureurs
+          td= @edition.runners_count
+        tr
+          th Courses
+          td
+            - @edition.races.each do |race|
+              span.label.label-primary= race.name
+        tr
+          th Message
+          td
+          /td=# @edition.sent_message
+        tr
+          th Coureurs sans diplôme
+          td= @edition.runners_count
+
+
+    .col-xs-3
+      = image_tag @edition.background_image.url(:medium), class:'pull-right'
+
+  .row
+    .col-xs-12
+      = link_to "Editer", edit_event_edition_path(@edition.event, @edition), class: 'btn btn-default margin-left-0'
+      = link_to "Retour à l'évènement", event_path(@edition.event), class: 'btn btn-default'
+      = link_to "Générer les diplômes", generate_diplomas_event_edition_path(@edition.event, @edition), class: "btn btn-primary", "data-method" => :post
+      = link_to "Supprimer les diplômes", delete_diplomas_event_edition_path(@edition.event, @edition), class: "btn btn-warning", "data-method" => :delete
+      .pull-right
+        = link_to "Supprimer les résultats", delete_results_event_edition_path(@edition.event, @edition), class: "btn btn-danger", "data-confirm" => "Etes-vous sûr ?", "data-method" => :delete
+        = link_to "Envoyer", send_results_event_edition_path(@edition.event, @edition), class: "btn btn-warning margin-right-0", "data-confirm" => "Etes-vous sûr ?", "data-method" => :post
+  hr
+  .row
+    .col-xs-12.top-buffer
+      /! Nav tabs
+      ul.nav.nav-tabs role="tablist"
+        li.active role="presentation"
+          a aria-controls="results" data-toggle="tab" href="#results" role="tab"  Résultats
+        li role="presentation"
+          a aria-controls="stats" data-toggle="tab" href="#stats" role="tab"  Statistiques
+        li role="presentation"
+          a aria-controls="widget" data-toggle="tab" href="#widget" role="tab"  Widget
+        li role="presentation"
+          a aria-controls="photos-widget" data-toggle="tab" href="#photos-widget" role="tab"  Widget Photos
+        li role="presentation"
+          a aria-controls="diplomas-widget" data-toggle="tab" href="#diplomas-widget" role="tab"  Widget Diplômes
+      /! Tab panes
+      .tab-content
+        #results.tab-pane.active role="tabpanel"
+          - if @edition.results.empty?
+            p Aucun résultat n'a encore été fourni
+          - else
+            = form_tag event_edition_path(@edition.event, @edition), :method => 'get', :id => 'results_search' do
+              = hidden_field_tag :direction, params[:direction]
+              = hidden_field_tag :sort, params[:sort]
+              p
+                = text_field_tag :search, params[:search], placeholder: 'Rechercher un coureur', class: 'search_results'
+                = submit_tag "Search", :name => nil, class: 'btn btn-warning'
+            #results_table
+              = render 'races/results'
+        #stats.tab-pane role="tabpanel"
+          = render partial: 'races/statistics'
+        #widget.tab-pane role="tabpanel"
+          .col-sm-12.top-buffer.text-center
+            p
+              - if @edition.widget_generated_at.nil?
+                | Le widget n'a pas encore été généré.
+              - else
+                | Widget généré le #{I18n.l @edition.widget_generated_at}.
+            = link_to "Générer le widget", generate_widget_event_edition_path(@edition.event, @edition), class: "btn btn-primary", "data-method" => :post
+            = link_to "Afficher le widget", @edition.widget_url, class: "btn btn-default", target: "_widget" unless @edition.widget_generated_at.nil?
+          - unless @edition.widget_generated_at.nil?
+            .col-sm-12
+              h4 Code pour afficher le widget
+              textarea.form-control rows="5" = @edition.widget_gist
+            .col-sm-12.top-buffer
+              h4 Widget
+              = @edition.widget_gist.html_safe
+        
+        #photos-widget.tab-pane role="tabpanel"
+          .col-sm-12.top-buffer.text-center
+            p
+              - if @edition.photos_widget_generated_at.nil?
+                | Le Widget Photos n'a pas encore été généré.
+              - else
+                | Widget Photos généré le #{I18n.l @edition.photos_widget_generated_at}.
+            = link_to "Générer le Widget Photos", generate_photos_widget_event_edition_path(@edition.event, @edition), class: "btn btn-primary", "data-method" => :post
+            = link_to "Afficher le Widget Photos", @edition.photos_widget_url, class: "btn btn-default", target: "_widget" unless @edition.photos_widget_generated_at.nil?
+          - unless @edition.photos_widget_generated_at.nil?
+            .col-sm-12
+              h4 Code pour afficher le Widget Photos
+              textarea.form-control rows="5" = @edition.photos_widget_gist
+            .col-sm-12.top-buffer
+              h4 Widget Photos
+              = @edition.photos_widget_gist.html_safe
+        
+        #diplomas-widget.tab-pane role="tabpanel"
+          .col-sm-12.top-buffer.text-center
+            p
+              - if @edition.diplomas_widget_generated_at.nil?
+                | Le Widget Diplômes n'a pas encore été généré.
+              - else
+                | Widget Diplômes généré le #{I18n.l @edition.diplomas_widget_generated_at}.
+            = link_to "Générer le Widget Diplômes", generate_diplomas_widget_event_edition_path(@edition.event, @edition), class: "btn btn-primary", "data-method" => :post
+            = link_to "Afficher le Widget Diplômes", @edition.diplomas_widget_url, class: "btn btn-default", target: "_widget" unless @edition.diplomas_widget_generated_at.nil?
+          - unless @edition.diplomas_widget_generated_at.nil?
+            .col-sm-12
+              h4 Code pour afficher le Widget Diplômes
+              textarea.form-control rows="5" = @edition.diplomas_widget_gist
+            .col-sm-12.top-buffer
+              h4 Widget Dipômes
+              = @edition.diplomas_widget_gist.html_safe
+              - @diplomas.each do |d|
+                .col-sm-12
+                  =link_to "#email/#{d[:id]}" do 
+                    =image_tag d[:url], class: "thumbnail"
+        

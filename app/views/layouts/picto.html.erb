@@ -1,0 +1,63 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= if content_for?(:title) then
+          yield(:title) + ' | '
+        end %>
+    PictMe
+  </title>
+
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'picto', media: 'all' , 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <% if current_page?( root_path ) %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-date-range-picker/0.20.0/jquery.daterangepicker.min.js"></script>
+  <% end %>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" ></script>-->
+
+  <%= csrf_meta_tags %>
+</head>
+<body class="picto-page">
+
+<%= render 'layouts/picto_navigation' %>
+
+<% if has_filter_pict_home? %>
+  <%= render 'layouts/picto_filter', locals: {event: @event} %>
+<% end %>
+
+<div class="container mainContainer">
+
+  <% if notice %>
+    <div class="alert alert-success" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <%= notice %>
+    </div>
+  <% end %>
+
+
+  <% if alert %>
+    <div class="alert alert-danger" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <%= alert %>
+    </div>
+  <% end %>
+
+  <%= yield %>
+
+  <hr>
+
+  <footer>
+    <p>&copy; 2020 PictMe, Inc.</p>
+  </footer>
+
+</div> <!-- /container -->
+
+</body>
+</html>

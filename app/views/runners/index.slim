@@ -1,0 +1,12 @@
+h1 Coureurs
+
+#search
+  .row.events
+    .col-xs-12
+      .form-group
+        = form_tag('/runners', method: 'get', remote: true, class: 'form-inline' ) do
+          = text_field_tag :q, params[:q], placeholder: '', class: 'form-control'
+          = submit_tag 'Rechercher', class:'btn btn-warning'
+
+#runners
+  = render 'runners_list', runners: @runners

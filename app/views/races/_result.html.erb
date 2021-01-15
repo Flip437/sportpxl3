@@ -1,0 +1,21 @@
+<tr>
+  <td class='text-center'><%=result.phone%></td>
+  <td><%=result.mail%></td>
+	<td><%=result.bib%></td>
+  <td class='text-center'><%=result.rank%></td>
+  <td>  <%=result.name%></td>
+  <td class='text-center'><%=result.sex%></td>
+  <td class='text-center'><%=result.sex_rank%></td>
+  <td class='text-center'><%=result.categ%></td>
+  <td class='text-center'><%=result.categ_rank%></td>
+  <td class='text-center'><%=result.time%></td>
+  <td class='text-center'><%=result.speed%></td>
+  <td class='text-center'><span class="label label-primary"><%=result.race_detail%></span></td>
+  <td class='text-center'><%=result.message%></td>
+  <td class='text-center'><%=I18n.l result.uploaded_at unless result.uploaded_at.nil? %></td>
+  <td class='text-center'><%=I18n.l result.email_sent_at unless result.email_sent_at.nil? %></td>
+  <td class='text-center'><%=I18n.l result.sms_sent_at unless result.sms_sent_at.nil? %></td>
+  <td><%= link_to "Diplôme généré", result.diploma.url(:freemium), class:'btn btn-default btn-xs', target: '_diploma' if result.diploma?%>
+      <%= link_to "Diplôme ", result_diploma_path(result, format: 'jpg'), class:'btn btn-default btn-xs'%>
+  </td>
+</tr>

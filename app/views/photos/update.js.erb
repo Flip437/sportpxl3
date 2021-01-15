@@ -1,0 +1,6 @@
+<% if @success %>
+  console.log('success', $('#edit_photo_<%=@photo.id%> input[type=submit]'));
+  $('#edit_photo_<%=@photo.id%> input[type=submit]').attr('value', 'Sauvegardé');
+<% else %>
+  $('#<%=@photo.id%>_runner').replaceWith("<%= j @photo.runner_alert%>");
+<% end %>

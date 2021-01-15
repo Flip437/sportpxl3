@@ -1,0 +1,27 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  url: <%= ENV["DATABASE_URL"] %>
+  database: freshstart_production
+  # database: freshstart-dev2
+  pool: 20
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: freshstart_test
+  pool: 20
+
+staging:
+  adapter: postgresql
+  encoding: utf8
+  url: <%= ENV["DATABASE_URL"] %>
+  database: freshstart_production
+  pool: 50
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  url: <%= ENV["DATABASE_URL"] %>
+  database: freshstart_production
+  pool: 50

@@ -1,0 +1,27 @@
+<div class="breadcrumb">
+    <strong><a href="<%= root_path%>"> Retours vers Filtre </a> </strong>
+</div>
+
+<% if @events.blank? && @eventsfreshAdded.blank?  %>
+  <p> Il n'y pas encore d'évènement </p>
+<% else %>
+
+  <div id="freshstartEvent">
+
+    <h3> Evénement Freshstart  </h3>
+    <% if @eventsfreshAdded.present?  %>
+      <% @eventsfreshAdded.each do |event| %>
+        <%= render partial: "event_card", locals: {event: event} %>
+      <% end %>
+    <% end %>
+
+  </div>
+
+  <h3> Evénement personnel  </h3>
+
+
+  <% @events.each do |event| %>
+    <%= render partial: "event_card", locals: {event: event} %>
+  <% end %>
+
+<% end %>

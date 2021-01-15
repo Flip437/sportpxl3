@@ -1,0 +1,159 @@
+<div class='col-sm-12'>
+  <h1><%=@race.name%></h1>
+  <div class='col-md-6'>
+    <table class='table table-striped table-bordered table-compacted' >
+      <tr>
+        <th>id</th>
+        <td><%= @race.id%></td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td><%= I18n.l @race.date unless @race.date.nil?%></td>
+      </tr>
+      <tr>
+        <th>Email Sender</th>
+        <td><%= @race.email_sender%></td>
+      </tr>
+      <tr>
+        <th>Email Name</th>
+        <td><%= @race.email_name%></td>
+      </tr>
+      <tr>
+        <th>Fichier</th>
+        <td class='text-center'>
+          <%= link_to "Télécharger le fichier CSV", @race.raw_results.url, class: 'btn btn-default'%>
+        </td>
+      </tr>
+      <tr>
+        <th>Template</th>
+        <td><%=@race.template%></td>
+      </tr>
+      <tr>
+        <th>Nombre de coureurs</th>
+        <td><%=@race.runners_count%></td>
+      </tr>
+      <tr>
+        <th>Courses</th>
+        <td><%=@race.races_count%> Courses<br>
+        <%@race.races.each do |race|%>
+          <span class="label label-primary"><%=race%></span>
+        <%end%>
+        </td>
+      </tr>
+      <% unless @race.results.empty?
+        runner = @race.results.order("RANDOM()").limit(1).first
+      %>
+      <tr>
+        <th>Message</th>
+        <td>
+          <%= runner.sent_message%>
+        </td>
+      </tr>
+      <% if @race.photos.count >0%>
+      <tr>
+        <th>Photos individuelles</th>
+        <td>
+          <%= @race.photos.count%>
+          <%=image_tag @race.photos.order("random()").limit(1).first.image.url, width: '200px'%>
+          <%= link_to 'Associer les photos', pairing_race_path(@race), class: 'btn btn-default'%> <br>
+					<%= @race.photos.where.not(bib: nil).where.not(bib: '').pluck(:bib).uniq.count %> personne(s) avec photo individuelle
+        </td>
+      </tr>
+      <%end%>
+      <tr>
+        <th>Coureurs sans diplômes</th>
+        <td>
+          <%= @race.results.where(diploma_generated_at: nil).count%>
+        </td>
+      </tr>
+      <tr>
+        <th>Lien externe</th>
+        <td>
+          <%= @race.external_link %>
+        </td>
+      </tr>
+      <tr>
+        <th>Lien externe bouton</th>
+        <td>
+          <%= @race.external_link_button %>
+        </td>
+      <
+      <%end%>
+
+    </table>
+  </div>
+  <div class='col-md-6'>
+    <%=image_tag @race.background_image.url(:medium), class:'pull-right' %>
+  </div>
+</div>
+
+<div class='col-sm-12'>
+  <%= link_to "Editer", edit_race_path(@race), class: 'btn btn-default' %>
+  <%= link_to "Retour à la Liste", races_path, class: 'btn btn-default' %>
+  <%= link_to "Dupliquer la course", duplicate_race_path(@race), class: 'btn btn-info', "data-method" => :post %>
+  <%= link_to "Générer les diplômes", generate_diplomas_race_path(@race), class: "btn btn-primary", "data-method" => :post -%>
+  <%= link_to "Supprimer les diplômes", delete_diplomas_race_path(@race), class: "btn btn-warning", "data-method" => :delete -%>
+  <div class='pull-right'>
+      <%= link_to "Supprimer les résultats", delete_results_race_path(@race), class: "btn btn-danger", "data-confirm" => "Etes-vous sûr ?", "data-method" => :delete -%>
+
+    <%= link_to "Supprimer la course", race_path(@race), class: "btn btn-danger", "data-confirm" => "Etes-vous sûr ?", "data-method" => :delete -%>
+    <%= link_to "Envoyer", send_results_race_path(@race), class: "btn btn-warning", "data-confirm" => "Etes-vous sûr ?", "data-method" => :post -%>
+  </div>
+</div>
+
+<div class='col-sm-12 top-buffer'>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#results" aria-controls="results" role="tab" data-toggle="tab">Résultats</a></li>
+    <li role="presentation"><a href="#stats" aria-controls="stats" role="tab" data-toggle="tab">Statistiques</a></li>
+    <li role="presentation"><a href="#widget" aria-controls="widget" role="tab" data-toggle="tab">Widget</a></li>
+  </ul>
+
+    <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="results">
+			<%if @race.results.empty?%>
+			  <p> Aucun résultat n'a encore été fourni</p>
+			<%else%>
+				<%= form_tag race_path(@race), :method => 'get', :id => 'results_search' do %>
+				  <%= hidden_field_tag :direction, params[:direction] %>
+				  <%= hidden_field_tag :sort, params[:sort] %>
+				  <p>
+				    <%= text_field_tag :search, params[:search], placeholder: 'Rechercher un coureur', class: 'search_results' %>
+				    <%= submit_tag "Search", :name => nil, class: 'btn btn-warning' %>
+				  </p>
+				<% end %>
+				<div id="results_table">
+      		<%= render partial: "results"%>
+				</div>
+			<%end%>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="stats">
+      <%= render partial: 'statistics'%>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="widget">
+      <div class='col-sm-12 top-buffer text-center'>
+       <p>
+        <%if @race.widget_generated_at.nil?%>
+          Le widget n'a pas encore été généré.
+        <%else%>
+          Widget généré le <%= I18n.l @race.widget_generated_at%>.
+        <%end%>
+        </p>
+        <%= link_to "Générer le widget", generate_widget_race_path(@race), class: "btn btn-primary", "data-method" => :post -%>
+        <%= link_to "Afficher le widget", @race.widget_url, class: "btn btn-default", target: "_widget" unless @race.widget_generated_at.nil?-%>
+      </div>
+      <%unless @race.widget_generated_at.nil?%>
+        <div class='col-sm-12'>
+          <h4>Code pour afficher le widget</h4>
+          <textarea class='form-control' rows=5><%=@race.widget_gist%></textarea>
+        </div>
+        <div class='col-sm-12 top-buffer'>
+          <h4>Widget </h4>
+          <%=@race.widget_gist.html_safe%>
+        </div>
+        <%end%>
+    </div>
+
+	</div>
+  </div>
