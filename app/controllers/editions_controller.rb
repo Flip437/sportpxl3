@@ -180,13 +180,11 @@ class EditionsController < ApplicationController
     #session[:pathCsv] = params[:edition][:description].path
   #end
 
-  def upload_csv_picto
-      
+  def upload_csv_picto      
     #process_csv_picto
     readCsv = CSV.parse open( params[:edition][:description].path ).read, :headers=>true, :converters=>:numeric
     #session[:firstRowCsv] = readCsv.first
     pathCsv = params[:edition][:description].path
-
   
     counter = 0
     CSV.foreach(pathCsv,  headers: true) do |row|
@@ -208,7 +206,7 @@ class EditionsController < ApplicationController
       end
 
     end
-    #after import redirect to Contact page throu .js.erb page
+    redirect_to event_contacts_path
   end
 
   def diffuser_photo

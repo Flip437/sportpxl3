@@ -13,7 +13,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.5'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'redis', '~> 3.3.3'
+#gem 'redis', '~> 3.3.3'
 gem 'puma', '~> 3.7.1'#3.7.1
 gem 'imgkit', '~> 1.6.1'
 gem 'wkhtmltoimage-binary', '~> 0.12.2'
@@ -40,7 +40,6 @@ gem 'gon'
 gem 'mailjet'
 #
 gem "shrine", "~> 2.3.1"
-#gem 'aws-sdk', "~> 3"
 gem 'roda', "~> 2.29.0"
 gem 'jquery-fileupload-rails'
 #gem 'bootstrap-sass'
@@ -74,6 +73,7 @@ gem 'active_model_serializers', '~> 0.10.7'
 
 gem 'blueprinter'
 gem 'oj'
+gem 'dotenv-rails', '~> 2.1.1'
 
 
 
@@ -81,7 +81,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'byebug'
   gem 'minitest-rails'
-  gem 'dotenv-rails', '~> 2.1.1' # parsing du fichier ENV en dev important
+  #gem 'dotenv-rails', '~> 2.1.1' # parsing du fichier ENV en dev important
   #gem 'dotenv-rails', require: 'dotenv/rails-now'
   gem 'minitest-rails-capybara'
   gem 'guard'
@@ -95,16 +95,17 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rspec_api_documentation'
   gem 'shoulda-matchers'
+  gem 'table_print', '~> 1.5', '>= 1.5.6'
 end
 
 
 #========================================
 #===Very Important to work on Heroku=====
 #========================================
-group :production do
-  gem 'dotenv-rails', '~> 2.1.1' # parsing du fichier ENV en dev
-  gem 'puma', '~> 3.7.1'#3.7.1
-end
+# group :production do
+#   gem 'dotenv-rails', '~> 2.1.1' # parsing du fichier ENV en dev
+#   gem 'puma', '~> 3.7.1'#3.7.1
+# end
 
 group :development do
   gem 'annotate'

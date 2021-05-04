@@ -122,14 +122,11 @@
 <div class="dropDiv">
   <p>Glissez votre fichier de contacts ici <br> ou </p>
 
-  
-
-  <%= form_for @edition, url: { action: "upload_csv_picto" }, method: :post, :html => { class: "processCsv" }, data: { type: :html }, remote: true do |f| %>
+  <%= form_for @edition,  url: upload_csv_picto_event_edition_path(@edition), method: :post, :html => { class: "processCsv" }, data: { type: :html } do |f| %>
     <label for="process" class="btn btn-import">Choisir Fichier CSV</label>
     <%= f.file_field :description, class: "hidden", id: "process"  %>
     <%= f.submit "Importer le fichier", class: "btn btn-import hidden" %>
   <% end %>
-
 
 </div>
 <br>
@@ -143,6 +140,5 @@
           console.log("selectedFileProcessCsv");
           $("form.processCsv").submit();
       //}, 1000);
-      window.location.replace("<%= event_contacts_path( params[:event_id], params[:id] ) %>");
   });
 </script>
