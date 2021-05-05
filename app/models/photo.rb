@@ -24,9 +24,10 @@ class Photo < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   validates :image_file_name, uniqueness: { scope: :edition_id }
 
-  DIRECT_IMAGE_URL_FORMAT = %r{\Ahttps:\/\/#{ENV['AWS_S3_HOST_NAME_REGION']}\.amazonaws\.com\/#{ENV['S3_BUCKET']}\/(?<path>uploads\/.+\/(?<filename>.+))\z}.freeze
+  DIRECT_IMAGE_URL_FORMAT = %r{\Ahttps:\/\/#{ENV['S3_BUCKET']}\.#{ENV['AWS_S3_HOST_NAME_REGION']}\.amazonaws\.com\/(?<path>uploads\/(?<filename>.+))\z}.freeze
+  #https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_200.jpg
 
-  validates :direct_image_url, format: { with: DIRECT_IMAGE_URL_FORMAT }, allow_blank: true
+  validates :direct_image_url, allow_blank: true, format: { with: DIRECT_IMAGE_URL_FORMAT }
 
   before_create :set_image_attributes
   after_create :queue_processing
@@ -62,13 +63,31 @@ class Photo < ApplicationRecord
     return unless self.direct_image_url.present?
 
     tries ||= 5
+
+
+
     direct_image_url_data = DIRECT_IMAGE_URL_FORMAT.match(direct_image_url)
     direct_upload_head = KAPP10_FINISHLINE_BUCKET.object(direct_image_url_data[:path]).get
 
+
+
+    puts "NAMEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+    puts direct_image_url
+    puts direct_image_url_data
+    puts direct_upload_head
+    puts direct_image_url_data[:filename]
+    puts "NAMEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+
+
+
     self.image_file_name     = direct_image_url_data[:filename]
+    puts "hereeeeeeeeeeeeeeeeee1"
     self.image_file_size     = direct_upload_head.content_length
+    puts "hereeeeeeeeeeeeeeeeee2"
     self.image_content_type  = direct_upload_head.content_type
+    puts "hereeeeeeeeeeeeeeeeee3"
     self.image_updated_at    = direct_upload_head.last_modified
+
   rescue Aws::S3::Errors::NoSuchKey => e
     tries -= 1
     if tries > 0
@@ -83,7 +102,7 @@ class Photo < ApplicationRecord
   def queue_processing
     return unless self.direct_image_url.present?
     
-    PhotoTransferAndCleanupJob.perform_later id
+    #PhotoTransferAndCleanupJob.perform_later id
     DetectBibJob.perform_later id
   end
 end

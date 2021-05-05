@@ -633,6 +633,7 @@ DEPENDENCIES
   rack-cors
   rails (= 5.0.2)
   rebrandly
+  redis (~> 3.3.3)
   remotipart!
   roda (~> 2.29.0)
   rollbar

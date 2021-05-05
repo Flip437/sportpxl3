@@ -129,12 +129,93 @@ if Rails.env.development?
     "http://s3-eu-west-1.amazonaws.com/kapp10finishline/photos/images/fff/b01/c3-/original/DSCN7269.jpg?1539956219",
     "http://s3-eu-west-1.amazonaws.com/kapp10finishline/photos/images/fff/d38/d4-/original/P1010262.jpg?1546182813"]
 
+    bucket_photos = ["https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_200.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_202.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_203.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_204.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_205.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_206.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_207.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_208.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_210.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_212.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_214.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_215.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_216.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_217.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_218.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_219.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_220.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_221.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_222.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_223.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_224.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_225.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_226.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_227.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_228.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_229.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_230.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_231.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_232.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_233.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_234.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_235.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_236.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_237.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_238.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_239.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_240.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_241.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_242.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_243.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_244.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_245.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_246.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_247.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_248.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_249.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_250.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_251.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_252.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_253.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_256.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_257.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_258.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_259.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_260.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_262.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_263.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_264.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_265.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_266.jpg",    
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_267.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_268.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_269.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_270.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_271.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_272.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_273.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_274.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_275.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_276.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_277.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_278.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_279.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_280.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_281.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_282.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_283.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_284.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_285.jpg",
+    "https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_286.jpg"]
+
     Result.all.each_with_index do |result, index|
       random_bib = rand(1..999)
       photo = Photo.new(
         bib:              random_bib,
         edition:          result.edition,
-        direct_image_url: fifty_photos.sample,
+        direct_image_url: bucket_photos.sample,
       )
 
       photo.save(validate: false)
@@ -146,7 +227,7 @@ if Rails.env.development?
       puts "Photo #{index + 1} created"
     end
 
-    ## RESULTS CATEG
+    # RESULTS CATEG
     categ = ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl']
 
     Result.all.each {|r| r.update(categ: categ.sample)}
