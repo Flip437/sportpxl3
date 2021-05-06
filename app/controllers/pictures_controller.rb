@@ -2,7 +2,7 @@ class PicturesController < ApplicationController
   layout "picto_edition_home", only: [:new, :show, :index, :edit]
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
   before_action :set_edition, only: [:new, :index, :create, :update, :destroy]
-  before_filter :disable_filter_pict_home!
+  before_action :disable_filter_pict_home!
 
   # GET /pictures
   # GET /pictures.json

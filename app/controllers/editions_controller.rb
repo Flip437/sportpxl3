@@ -3,12 +3,12 @@ class EditionsController < ApplicationController
   before_action :set_edition, only: [:show, :edit, :update, :destroy, :results, :delete_results, :generate_widget, :generate_photos_widget,
   :generate_diplomas_widget, :generate_diplomas, :delete_diplomas, :send_results, :home_picto_edition, :contacts_picto_edition, :get_campaign_detail, :diffuser_photo]
   helper_method :sort_column, :sort_direction
-  #skip_before_filter :verify_authenticity_token, :only => :upload_csv_picto
+  #skip_before_action :verify_authenticity_token, :only => :upload_csv_picto
   #http_basic_authenticate_with name: ENV['ADMIN_LOGIN'], password: ENV['ADMIN_PASSWORD'], except: :widget
   #respond_to :js, only: :process_csv_picto
 
   # disable the filter for for all actions in this controller
-  before_filter :disable_filter_pict_home!
+  before_action :disable_filter_pict_home!
 
   def new
     @event = Event.find(params[:event_id])

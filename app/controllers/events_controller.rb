@@ -5,9 +5,9 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy, :home_picto, :update_event_picto]
 
   # disable the filter for for all actions in this controller
-  before_filter :disable_filter_pict_home!
+  before_action :disable_filter_pict_home!
   # enable the filter for action list_picto in this controller
-  before_filter :enable_filter_pict_home!, :only => [:list_picto]
+  before_action :enable_filter_pict_home!, :only => [:list_picto]
 
 
 

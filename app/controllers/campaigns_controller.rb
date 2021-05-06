@@ -3,7 +3,7 @@ class CampaignsController < ApplicationController
     #before_action :campaign_params, only: [:update]
 
     #disable search events Freshstart
-    before_filter :disable_filter_pict_home! , only: [:index]
+    before_action :disable_filter_pict_home! , only: [:index]
 
     def index 
         #binding.pry

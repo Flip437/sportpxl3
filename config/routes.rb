@@ -2,9 +2,6 @@ require 'sidekiq/web'
 require 'sidekiq-scheduler/web'
 
 Rails.application.routes.draw do
-
-  #PICTME
-  mount ImageUploader::UploadEndpoint => "/images/upload"
   
   devise_for :users
   get 'widget', to: redirect('/widget3.js')
@@ -233,7 +230,4 @@ Rails.application.routes.draw do
   end
   mount Sidekiq::Web, at: '/jobs'
 
-  if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: '/letter_opener'
-  end
 end

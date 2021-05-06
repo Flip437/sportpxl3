@@ -47,7 +47,7 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
 
-  # Adds additional error checking when serving assets at runtime.
+  # Adds additional error checking when serving assets at runtime.side
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
@@ -57,7 +57,7 @@ Rails.application.configure do
 
   #configuration des loggers
   config.log_level = :debug
-  Sidekiq::Logging.logger.level = Logger::DEBUG
+  # Sidekiq::Logging.logger.level = Logger::DEBUG
 
   # WKHTMLTOIMAGE_PATH = '/Users/IBI/.rvm/gems/ruby-2.3.0/bin/wkhtmltoimage'
   WKHTMLTOIMAGE_PATH = '/usr/local/bin/wkhtmltoimage'
