@@ -13,8 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%#= f.label :image %>
-    <%= f.file_field :image, multiple: true, name: "picture[image]" , id: "selectedPhotos", style: "display:none" %>
+    <%= f.file_field :image, multiple: true, id: "selectedPhotos", style: "display:none" %>
     <a class="btn btn-import" id="process" onclick="document.getElementById('selectedPhotos').click();">Sélectionnez vos photos a importer</a>
   </div>
 

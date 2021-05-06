@@ -71,5 +71,9 @@ Rails.application.configure do
   DOMAIN_URL = "http://localhost:3000"
   HOST = "localhost:3000"
 
-  default_url_options[:host] = HOST 
+  default_url_options[:host] = HOST
+
+  config.active_storage.service = :local
+
+
 end
