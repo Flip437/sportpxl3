@@ -70,7 +70,7 @@ class Edition < ApplicationRecord
   end
 
   TEMPLATES = Dir.glob("#{Rails.root}/app/views/diploma/*.html.erb").map{|template| template.split('/').last}.map{|template| template.gsub('.html.erb','')}
-  # ['template1', 'texte-ombre']
+  # ['template1', 'texte-ombre']Glissez vos photos ici
 
   S3_BASE_URL = "https://#{ENV['AWS_S3_HOST_NAME_REGION']}.amazonaws.com/#{ENV['S3_WIDGET_BUCKET']}"
 

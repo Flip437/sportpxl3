@@ -77,7 +77,8 @@ class EventsController < ApplicationController
 
     #@events = current_user.events.pictme.order( created_at: :desc )
     #@eventsfreshAdded = current_user.events.fresh
-    @events = current_user.events.order( created_at: :desc )
+    #@events = current_user.events.order( created_at: :desc )
+    @events = Event.where(user_id: 1).order( created_at: :desc )
     #binding.pry
 
     #For sorting

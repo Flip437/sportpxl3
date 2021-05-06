@@ -1,8 +1,10 @@
 class Picture < ApplicationRecord
 
-    belongs_to :edition
-    belongs_to :contact
-	include ImageUploader[:image]
+	belongs_to :edition
+	belongs_to :contact
+	has_attached_file :image
+	#include ImageUploader[:image]
+	#include ImageUploader.attachment(:image)
 
 	after_create :queue_processing
 

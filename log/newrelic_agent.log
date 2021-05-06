@@ -910,3 +910,227 @@
 [2021-05-05 15:29:48 +0200 flip-ThinkPad-T440s (49059)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
 [2021-05-05 15:31:55 +0200 flip-ThinkPad-T440s (49059)] INFO : Starting Agent shutdown
 [2021-05-05 15:31:56 +0200 flip-ThinkPad-T440s (49040)] INFO : Starting Agent shutdown
+[2021-05-05 21:27:09 +0200 flip-ThinkPad-T440s (17030)] INFO : Starting the New Relic agent version 6.12.0.367 in "development" environment.
+[2021-05-05 21:27:09 +0200 flip-ThinkPad-T440s (17030)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2021-05-05 21:27:09 +0200 flip-ThinkPad-T440s (17030)] INFO : Reading configuration from config/newrelic.yml (/home/flip/Documents/DEV/SPORTPXL/SportPxl)
+[2021-05-05 21:27:09 +0200 flip-ThinkPad-T440s (17030)] INFO : Environment: development
+[2021-05-05 21:27:09 +0200 flip-ThinkPad-T440s (17030)] INFO : No known dispatcher detected.
+[2021-05-05 21:27:09 +0200 flip-ThinkPad-T440s (17030)] INFO : Application: My Application (Development)
+[2021-05-05 21:27:10 +0200 flip-ThinkPad-T440s (17030)] INFO : Installing Redis Instrumentation
+[2021-05-05 21:27:10 +0200 flip-ThinkPad-T440s (17030)] INFO : Installing notifications based Active Record instrumentation
+[2021-05-05 21:27:10 +0200 flip-ThinkPad-T440s (17030)] INFO : Installing deferred Rack::Builder instrumentation
+[2021-05-05 21:27:10 +0200 flip-ThinkPad-T440s (17030)] INFO : Installing Rack::Builder middleware instrumentation
+[2021-05-05 21:27:10 +0200 flip-ThinkPad-T440s (17030)] INFO : Installing Rails 3+ middleware instrumentation
+[2021-05-05 21:27:10 +0200 flip-ThinkPad-T440s (17030)] INFO : Installing Sidekiq instrumentation
+[2021-05-05 21:27:10 +0200 flip-ThinkPad-T440s (17030)] INFO : Installing Net instrumentation
+[2021-05-05 21:27:10 +0200 flip-ThinkPad-T440s (17030)] INFO : Installing ActiveJob instrumentation
+[2021-05-05 21:27:10 +0200 flip-ThinkPad-T440s (17030)] INFO : Installing notifications based Action Controller instrumentation
+[2021-05-05 21:27:10 +0200 flip-ThinkPad-T440s (17030)] INFO : Installing notification based Action View instrumentation
+[2021-05-05 21:27:10 +0200 flip-ThinkPad-T440s (17030)] INFO : Installing notifications based Action Cable instrumentation
+[2021-05-05 21:27:10 +0200 flip-ThinkPad-T440s (17030)] INFO : Finished instrumentation
+[2021-05-05 21:27:11 +0200 flip-ThinkPad-T440s (17030)] INFO : Doing deferred dependency-detection before Rack startup
+[2021-05-05 21:27:13 +0200 flip-ThinkPad-T440s (17030)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-05 21:27:37 +0200 flip-ThinkPad-T440s (17055)] WARN : Ignoring addition of NewRelic::Agent::Samplers::CpuSampler because it is already registered.
+[2021-05-05 21:27:37 +0200 flip-ThinkPad-T440s (17055)] WARN : Ignoring addition of NewRelic::Agent::Samplers::MemorySampler because it is already registered.
+[2021-05-05 21:27:37 +0200 flip-ThinkPad-T440s (17055)] WARN : Ignoring addition of NewRelic::Agent::Samplers::VMSampler because it is already registered.
+[2021-05-05 21:27:39 +0200 flip-ThinkPad-T440s (17055)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-05 21:32:47 +0200 flip-ThinkPad-T440s (17030)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-05 22:01:53 +0200 flip-ThinkPad-T440s (17055)] INFO : Starting Agent shutdown
+[2021-05-05 22:01:54 +0200 flip-ThinkPad-T440s (17030)] INFO : Starting Agent shutdown
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : Starting the New Relic agent version 6.12.0.367 in "development" environment.
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : Reading configuration from config/newrelic.yml (/home/flip/Documents/DEV/SPORTPXL/SportPxl)
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : Environment: development
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : No known dispatcher detected.
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : Application: My Application (Development)
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : Installing Redis Instrumentation
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : Installing notifications based Active Record instrumentation
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : Installing deferred Rack::Builder instrumentation
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : Installing Rack::Builder middleware instrumentation
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : Installing Rails 3+ middleware instrumentation
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : Installing Sidekiq instrumentation
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : Installing Net instrumentation
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : Installing ActiveJob instrumentation
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : Installing notifications based Action Controller instrumentation
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : Installing notification based Action View instrumentation
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : Installing notifications based Action Cable instrumentation
+[2021-05-05 22:02:03 +0200 flip-ThinkPad-T440s (21139)] INFO : Finished instrumentation
+[2021-05-05 22:02:04 +0200 flip-ThinkPad-T440s (21139)] INFO : Doing deferred dependency-detection before Rack startup
+[2021-05-05 22:02:06 +0200 flip-ThinkPad-T440s (21139)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-05 22:02:08 +0200 flip-ThinkPad-T440s (21154)] WARN : Ignoring addition of NewRelic::Agent::Samplers::CpuSampler because it is already registered.
+[2021-05-05 22:02:08 +0200 flip-ThinkPad-T440s (21154)] WARN : Ignoring addition of NewRelic::Agent::Samplers::MemorySampler because it is already registered.
+[2021-05-05 22:02:08 +0200 flip-ThinkPad-T440s (21154)] WARN : Ignoring addition of NewRelic::Agent::Samplers::VMSampler because it is already registered.
+[2021-05-05 22:02:10 +0200 flip-ThinkPad-T440s (21154)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-05 22:07:44 +0200 flip-ThinkPad-T440s (21154)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-05 22:10:31 +0200 flip-ThinkPad-T440s (21154)] INFO : Starting Agent shutdown
+[2021-05-05 22:10:32 +0200 flip-ThinkPad-T440s (21139)] INFO : Starting Agent shutdown
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : Starting the New Relic agent version 6.12.0.367 in "development" environment.
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : Reading configuration from config/newrelic.yml (/home/flip/Documents/DEV/SPORTPXL/SportPxl)
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : Environment: development
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : No known dispatcher detected.
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : Application: My Application (Development)
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : Installing Redis Instrumentation
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : Installing notifications based Active Record instrumentation
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : Installing deferred Rack::Builder instrumentation
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : Installing Rack::Builder middleware instrumentation
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : Installing Rails 3+ middleware instrumentation
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : Installing Sidekiq instrumentation
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : Installing Net instrumentation
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : Installing ActiveJob instrumentation
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : Installing notifications based Action Controller instrumentation
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : Installing notification based Action View instrumentation
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : Installing notifications based Action Cable instrumentation
+[2021-05-05 22:10:48 +0200 flip-ThinkPad-T440s (22576)] INFO : Finished instrumentation
+[2021-05-05 22:10:49 +0200 flip-ThinkPad-T440s (22576)] INFO : Doing deferred dependency-detection before Rack startup
+[2021-05-05 22:10:52 +0200 flip-ThinkPad-T440s (22576)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-05 22:10:55 +0200 flip-ThinkPad-T440s (22592)] WARN : Ignoring addition of NewRelic::Agent::Samplers::CpuSampler because it is already registered.
+[2021-05-05 22:10:55 +0200 flip-ThinkPad-T440s (22592)] WARN : Ignoring addition of NewRelic::Agent::Samplers::MemorySampler because it is already registered.
+[2021-05-05 22:10:55 +0200 flip-ThinkPad-T440s (22592)] WARN : Ignoring addition of NewRelic::Agent::Samplers::VMSampler because it is already registered.
+[2021-05-05 22:10:58 +0200 flip-ThinkPad-T440s (22592)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-05 22:14:44 +0200 flip-ThinkPad-T440s (22592)] INFO : Starting Agent shutdown
+[2021-05-05 22:14:45 +0200 flip-ThinkPad-T440s (22576)] INFO : Starting Agent shutdown
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : Starting the New Relic agent version 6.12.0.367 in "development" environment.
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : Reading configuration from config/newrelic.yml (/home/flip/Documents/DEV/SPORTPXL/SportPxl)
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : Environment: development
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : No known dispatcher detected.
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : Application: My Application (Development)
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : Installing Redis Instrumentation
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : Installing notifications based Active Record instrumentation
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : Installing deferred Rack::Builder instrumentation
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : Installing Rack::Builder middleware instrumentation
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : Installing Rails 3+ middleware instrumentation
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : Installing Sidekiq instrumentation
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : Installing Net instrumentation
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : Installing ActiveJob instrumentation
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : Installing notifications based Action Controller instrumentation
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : Installing notification based Action View instrumentation
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : Installing notifications based Action Cable instrumentation
+[2021-05-05 22:14:53 +0200 flip-ThinkPad-T440s (23099)] INFO : Finished instrumentation
+[2021-05-05 22:14:54 +0200 flip-ThinkPad-T440s (23099)] INFO : Doing deferred dependency-detection before Rack startup
+[2021-05-05 22:14:56 +0200 flip-ThinkPad-T440s (23099)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-05 22:14:57 +0200 flip-ThinkPad-T440s (23128)] WARN : Ignoring addition of NewRelic::Agent::Samplers::CpuSampler because it is already registered.
+[2021-05-05 22:14:57 +0200 flip-ThinkPad-T440s (23128)] WARN : Ignoring addition of NewRelic::Agent::Samplers::MemorySampler because it is already registered.
+[2021-05-05 22:14:57 +0200 flip-ThinkPad-T440s (23128)] WARN : Ignoring addition of NewRelic::Agent::Samplers::VMSampler because it is already registered.
+[2021-05-05 22:14:59 +0200 flip-ThinkPad-T440s (23128)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-05 22:29:57 +0200 flip-ThinkPad-T440s (23128)] INFO : Starting Agent shutdown
+[2021-05-05 22:29:58 +0200 flip-ThinkPad-T440s (23099)] INFO : Starting Agent shutdown
+[2021-05-05 22:30:07 +0200 flip-ThinkPad-T440s (25355)] INFO : Starting the New Relic agent version 6.12.0.367 in "development" environment.
+[2021-05-05 22:30:07 +0200 flip-ThinkPad-T440s (25355)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2021-05-05 22:30:07 +0200 flip-ThinkPad-T440s (25355)] INFO : Reading configuration from config/newrelic.yml (/home/flip/Documents/DEV/SPORTPXL/SportPxl)
+[2021-05-05 22:30:07 +0200 flip-ThinkPad-T440s (25355)] INFO : Environment: development
+[2021-05-05 22:30:07 +0200 flip-ThinkPad-T440s (25355)] INFO : No known dispatcher detected.
+[2021-05-05 22:30:07 +0200 flip-ThinkPad-T440s (25355)] INFO : Application: My Application (Development)
+[2021-05-05 22:30:08 +0200 flip-ThinkPad-T440s (25355)] INFO : Installing Redis Instrumentation
+[2021-05-05 22:30:08 +0200 flip-ThinkPad-T440s (25355)] INFO : Installing notifications based Active Record instrumentation
+[2021-05-05 22:30:08 +0200 flip-ThinkPad-T440s (25355)] INFO : Installing deferred Rack::Builder instrumentation
+[2021-05-05 22:30:08 +0200 flip-ThinkPad-T440s (25355)] INFO : Installing Rack::Builder middleware instrumentation
+[2021-05-05 22:30:08 +0200 flip-ThinkPad-T440s (25355)] INFO : Installing Rails 3+ middleware instrumentation
+[2021-05-05 22:30:08 +0200 flip-ThinkPad-T440s (25355)] INFO : Installing Sidekiq instrumentation
+[2021-05-05 22:30:08 +0200 flip-ThinkPad-T440s (25355)] INFO : Installing Net instrumentation
+[2021-05-05 22:30:08 +0200 flip-ThinkPad-T440s (25355)] INFO : Installing ActiveJob instrumentation
+[2021-05-05 22:30:08 +0200 flip-ThinkPad-T440s (25355)] INFO : Installing notifications based Action Controller instrumentation
+[2021-05-05 22:30:08 +0200 flip-ThinkPad-T440s (25355)] INFO : Installing notification based Action View instrumentation
+[2021-05-05 22:30:08 +0200 flip-ThinkPad-T440s (25355)] INFO : Installing notifications based Action Cable instrumentation
+[2021-05-05 22:30:08 +0200 flip-ThinkPad-T440s (25355)] INFO : Finished instrumentation
+[2021-05-05 22:30:09 +0200 flip-ThinkPad-T440s (25355)] INFO : Starting Agent shutdown
+[2021-05-05 22:30:11 +0200 flip-ThinkPad-T440s (25355)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-05 22:30:24 +0200 flip-ThinkPad-T440s (25432)] INFO : Starting the New Relic agent version 6.12.0.367 in "development" environment.
+[2021-05-05 22:30:24 +0200 flip-ThinkPad-T440s (25432)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2021-05-05 22:30:24 +0200 flip-ThinkPad-T440s (25432)] INFO : Reading configuration from config/newrelic.yml (/home/flip/Documents/DEV/SPORTPXL/SportPxl)
+[2021-05-05 22:30:24 +0200 flip-ThinkPad-T440s (25432)] INFO : Environment: development
+[2021-05-05 22:30:24 +0200 flip-ThinkPad-T440s (25432)] INFO : No known dispatcher detected.
+[2021-05-05 22:30:24 +0200 flip-ThinkPad-T440s (25432)] INFO : Application: My Application (Development)
+[2021-05-05 22:30:25 +0200 flip-ThinkPad-T440s (25432)] INFO : Installing Redis Instrumentation
+[2021-05-05 22:30:25 +0200 flip-ThinkPad-T440s (25432)] INFO : Installing notifications based Active Record instrumentation
+[2021-05-05 22:30:25 +0200 flip-ThinkPad-T440s (25432)] INFO : Installing deferred Rack::Builder instrumentation
+[2021-05-05 22:30:25 +0200 flip-ThinkPad-T440s (25432)] INFO : Installing Rack::Builder middleware instrumentation
+[2021-05-05 22:30:25 +0200 flip-ThinkPad-T440s (25432)] INFO : Installing Rails 3+ middleware instrumentation
+[2021-05-05 22:30:25 +0200 flip-ThinkPad-T440s (25432)] INFO : Installing Sidekiq instrumentation
+[2021-05-05 22:30:25 +0200 flip-ThinkPad-T440s (25432)] INFO : Installing Net instrumentation
+[2021-05-05 22:30:25 +0200 flip-ThinkPad-T440s (25432)] INFO : Installing ActiveJob instrumentation
+[2021-05-05 22:30:25 +0200 flip-ThinkPad-T440s (25432)] INFO : Installing notifications based Action Controller instrumentation
+[2021-05-05 22:30:25 +0200 flip-ThinkPad-T440s (25432)] INFO : Installing notification based Action View instrumentation
+[2021-05-05 22:30:25 +0200 flip-ThinkPad-T440s (25432)] INFO : Installing notifications based Action Cable instrumentation
+[2021-05-05 22:30:25 +0200 flip-ThinkPad-T440s (25432)] INFO : Finished instrumentation
+[2021-05-05 22:30:25 +0200 flip-ThinkPad-T440s (25432)] INFO : Doing deferred dependency-detection before Rack startup
+[2021-05-05 22:30:27 +0200 flip-ThinkPad-T440s (25432)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-05 22:30:28 +0200 flip-ThinkPad-T440s (25457)] WARN : Ignoring addition of NewRelic::Agent::Samplers::CpuSampler because it is already registered.
+[2021-05-05 22:30:28 +0200 flip-ThinkPad-T440s (25457)] WARN : Ignoring addition of NewRelic::Agent::Samplers::MemorySampler because it is already registered.
+[2021-05-05 22:30:28 +0200 flip-ThinkPad-T440s (25457)] WARN : Ignoring addition of NewRelic::Agent::Samplers::VMSampler because it is already registered.
+[2021-05-05 22:30:30 +0200 flip-ThinkPad-T440s (25457)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-05 22:33:29 +0200 flip-ThinkPad-T440s (25798)] INFO : Starting the New Relic agent version 6.12.0.367 in "development" environment.
+[2021-05-05 22:33:29 +0200 flip-ThinkPad-T440s (25798)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2021-05-05 22:33:29 +0200 flip-ThinkPad-T440s (25798)] INFO : Reading configuration from config/newrelic.yml (/home/flip/Documents/DEV/SPORTPXL/SportPxl)
+[2021-05-05 22:33:29 +0200 flip-ThinkPad-T440s (25798)] INFO : Environment: development
+[2021-05-05 22:33:29 +0200 flip-ThinkPad-T440s (25798)] INFO : No known dispatcher detected.
+[2021-05-05 22:33:29 +0200 flip-ThinkPad-T440s (25798)] INFO : Application: My Application (Development)
+[2021-05-05 22:33:30 +0200 flip-ThinkPad-T440s (25798)] INFO : Installing Redis Instrumentation
+[2021-05-05 22:33:30 +0200 flip-ThinkPad-T440s (25798)] INFO : Installing notifications based Active Record instrumentation
+[2021-05-05 22:33:30 +0200 flip-ThinkPad-T440s (25798)] INFO : Installing deferred Rack::Builder instrumentation
+[2021-05-05 22:33:30 +0200 flip-ThinkPad-T440s (25798)] INFO : Installing Rack::Builder middleware instrumentation
+[2021-05-05 22:33:30 +0200 flip-ThinkPad-T440s (25798)] INFO : Installing Rails 3+ middleware instrumentation
+[2021-05-05 22:33:30 +0200 flip-ThinkPad-T440s (25798)] INFO : Installing Sidekiq instrumentation
+[2021-05-05 22:33:30 +0200 flip-ThinkPad-T440s (25798)] INFO : Installing Net instrumentation
+[2021-05-05 22:33:30 +0200 flip-ThinkPad-T440s (25798)] INFO : Installing ActiveJob instrumentation
+[2021-05-05 22:33:30 +0200 flip-ThinkPad-T440s (25798)] INFO : Installing notifications based Action Controller instrumentation
+[2021-05-05 22:33:30 +0200 flip-ThinkPad-T440s (25798)] INFO : Installing notification based Action View instrumentation
+[2021-05-05 22:33:30 +0200 flip-ThinkPad-T440s (25798)] INFO : Installing notifications based Action Cable instrumentation
+[2021-05-05 22:33:30 +0200 flip-ThinkPad-T440s (25798)] INFO : Finished instrumentation
+[2021-05-05 22:33:31 +0200 flip-ThinkPad-T440s (25798)] INFO : Doing deferred dependency-detection before Rack startup
+[2021-05-05 22:33:31 +0200 flip-ThinkPad-T440s (25798)] INFO : Starting Agent shutdown
+[2021-05-05 22:33:33 +0200 flip-ThinkPad-T440s (25798)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-05 22:34:52 +0200 flip-ThinkPad-T440s (25457)] INFO : Starting Agent shutdown
+[2021-05-05 22:34:54 +0200 flip-ThinkPad-T440s (25432)] INFO : Starting Agent shutdown
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : Starting the New Relic agent version 6.12.0.367 in "development" environment.
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : Reading configuration from config/newrelic.yml (/home/flip/Documents/DEV/SPORTPXL/SportPxl)
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : Environment: development
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : No known dispatcher detected.
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : Application: My Application (Development)
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : Installing Redis Instrumentation
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : Installing notifications based Active Record instrumentation
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : Installing deferred Rack::Builder instrumentation
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : Installing Rack::Builder middleware instrumentation
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : Installing Rails 3+ middleware instrumentation
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : Installing Sidekiq instrumentation
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : Installing Net instrumentation
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : Installing ActiveJob instrumentation
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : Installing notifications based Action Controller instrumentation
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : Installing notification based Action View instrumentation
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : Installing notifications based Action Cable instrumentation
+[2021-05-05 22:35:02 +0200 flip-ThinkPad-T440s (26057)] INFO : Finished instrumentation
+[2021-05-05 22:35:03 +0200 flip-ThinkPad-T440s (26057)] INFO : Doing deferred dependency-detection before Rack startup
+[2021-05-05 22:35:05 +0200 flip-ThinkPad-T440s (26057)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-05 22:35:07 +0200 flip-ThinkPad-T440s (26084)] WARN : Ignoring addition of NewRelic::Agent::Samplers::CpuSampler because it is already registered.
+[2021-05-05 22:35:07 +0200 flip-ThinkPad-T440s (26084)] WARN : Ignoring addition of NewRelic::Agent::Samplers::MemorySampler because it is already registered.
+[2021-05-05 22:35:07 +0200 flip-ThinkPad-T440s (26084)] WARN : Ignoring addition of NewRelic::Agent::Samplers::VMSampler because it is already registered.
+[2021-05-05 22:35:09 +0200 flip-ThinkPad-T440s (26084)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-05 22:51:51 +0200 flip-ThinkPad-T440s (26084)] INFO : Starting Agent shutdown
+[2021-05-05 22:51:52 +0200 flip-ThinkPad-T440s (26057)] INFO : Starting Agent shutdown
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : Starting the New Relic agent version 6.12.0.367 in "development" environment.
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : Reading configuration from config/newrelic.yml (/home/flip/Documents/DEV/SPORTPXL/SportPxl)
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : Environment: development
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : No known dispatcher detected.
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : Application: My Application (Development)
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : Installing Redis Instrumentation
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : Installing notifications based Active Record instrumentation
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : Installing deferred Rack::Builder instrumentation
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : Installing Rack::Builder middleware instrumentation
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : Installing Rails 3+ middleware instrumentation
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : Installing Sidekiq instrumentation
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : Installing Net instrumentation
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : Installing ActiveJob instrumentation
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : Installing notifications based Action Controller instrumentation
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : Installing notification based Action View instrumentation
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : Installing notifications based Action Cable instrumentation
+[2021-05-06 13:01:12 +0200 flip-ThinkPad-T440s (12014)] INFO : Finished instrumentation
+[2021-05-06 13:01:13 +0200 flip-ThinkPad-T440s (12014)] INFO : Doing deferred dependency-detection before Rack startup
+[2021-05-06 13:01:16 +0200 flip-ThinkPad-T440s (12014)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-06 13:04:17 +0200 flip-ThinkPad-T440s (12051)] WARN : Ignoring addition of NewRelic::Agent::Samplers::CpuSampler because it is already registered.
+[2021-05-06 13:04:17 +0200 flip-ThinkPad-T440s (12051)] WARN : Ignoring addition of NewRelic::Agent::Samplers::MemorySampler because it is already registered.
+[2021-05-06 13:04:17 +0200 flip-ThinkPad-T440s (12051)] WARN : Ignoring addition of NewRelic::Agent::Samplers::VMSampler because it is already registered.
+[2021-05-06 13:04:20 +0200 flip-ThinkPad-T440s (12051)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
+[2021-05-06 13:06:49 +0200 flip-ThinkPad-T440s (12014)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
