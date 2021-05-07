@@ -8,7 +8,7 @@
       .pull-right
         = link_to "Retour", event_edition_path(@edition.id, event_id: @event.id), class: 'btn btn-default pull-right'
 
-  = form_tag event_edition_photos_path(@edition.id, event_id: @event.id), method: :get do
+  = form_tag event_edition_path(@edition.id, event_id: @event.id), method: :get do
     .row
       .col-sm-3
         .form-group

@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   post 'events/import', to: 'events#import', as: 'import_events'
 
   resources :events do
-    resources :editions do
+    resources :editions do#, param: :edition_id do
       member do
         get 'results'
         post 'send_results'
@@ -57,13 +57,30 @@ Rails.application.routes.draw do
         get 'diplomas_widget'
         delete 'delete_results'
         get 'pairing', to: 'photos#index'
+        get 'diffuser_photo'
+        get 'home_picto_edition'
+        get 'contacts_picto_edition', as: 'contacts_picto_edition'
+        get 'get_campaign_detail', as: 'get_campaign_detail'
+        post 'send_email_modal'
+        post 'upload_csv_picto'
+        get 'upload_csv_picto'
+        post 'process_csv_picto'
+        post 'change_bib_contact'
+        post 'duplicate_picto'
+        delete 'supprimer_picto'
+        resources :pictures , param: :picture_id #to remove when pictures path and instace will not be called anymore
+        resources :campaigns, only: [:index, :new, :create]
       end
 
-      resources :photos, only: %I[index create destroy] do
-        collection do
-          delete :destroy_apicturesll
+        resources :contacts, only: [:index]
+
+
+
+        resources :photos do
+          collection do
+            delete :destroy_all
+          end
         end
-      end
 
     end
   end
@@ -89,58 +106,58 @@ Rails.application.routes.draw do
   
   
 
-  resources :events do
-    resources :editions do
+  # resources :events do
+  #   resources :editions, param: :edition_id do
 
-      member do
-        get 'diffuser_photo'
-        get 'home_picto_edition'
-        get 'contacts_picto_edition', as: 'contacts_picto_edition'
-        get 'get_campaign_detail', as: 'get_campaign_detail'
-        post 'send_email_modal'
-        post 'upload_csv_picto'
-        get 'upload_csv_picto'
-        post 'process_csv_picto'
-        post 'change_bib_contact'
-        post 'duplicate_picto'
-        delete 'supprimer_picto'
-        resources :contacts, only: [:index]
-        resources :campaigns, only: [:index, :new, :create]
-        resources :pictures , param: :picture_id
-      end
+  #     member do
+  #       get 'diffuser_photo'
+  #       get 'home_picto_edition'
+  #       get 'contacts_picto_edition', as: 'contacts_picto_edition'
+  #       get 'get_campaign_detail', as: 'get_campaign_detail'
+  #       post 'send_email_modal'
+  #       post 'upload_csv_picto'
+  #       get 'upload_csv_picto'
+  #       post 'process_csv_picto'
+  #       post 'change_bib_contact'
+  #       post 'duplicate_picto'
+  #       delete 'supprimer_picto'
+  #       resources :contacts, only: [:index]
+  #       resources :campaigns, only: [:index, :new, :create]
+  #       resources :pictures , param: :picture_id
+  #     end
       
-      #get 'photo_upload_pictme' , to: 'photos#photo_upload_pictme'
+  #     #get 'photo_upload_pictme' , to: 'photos#photo_upload_pictme'
       
       
       
 
-      #get 'events', to: 'events#index'
-      #get 'event/:id', to: 'events#home_picto', as: 'home_picto_event'
-      #get 'event/:id/edition/:id', to: 'editions#home_picto_edition', as: 'home_picto_edition'
-      #get 'event/:id/edition/:id/contacts', to: 'editions#contacts_picto_edition', as: 'contacts_picto_edition'
-      #post 'edition/send_email_modal', to: 'editions#send_email_modal'
+  #     #get 'events', to: 'events#index'
+  #     #get 'event/:id', to: 'events#home_picto', as: 'home_picto_event'
+  #     #get 'event/:id/edition/:id', to: 'editions#home_picto_edition', as: 'home_picto_edition'
+  #     #get 'event/:id/edition/:id/contacts', to: 'editions#contacts_picto_edition', as: 'contacts_picto_edition'
+  #     #post 'edition/send_email_modal', to: 'editions#send_email_modal'
 
-    end
-  end
-
-
+  #   end
+  # end
 
 
 
 
 
 
-  resources :photos, only: %I[show update destroy]
 
-  resources :results, only: :show do
-    resource :payment, only: [:show, :create]
-  end
-  resources :runners, only: [:index, :show, :update]
-  resources :clients do
-    member do
-      get 'generate_widget'
-    end
-  end
+
+  # resources :photos, only: %I[show update destroy]
+
+  # resources :results, only: :show do
+  #   resource :payment, only: [:show, :create]
+  # end
+  # resources :runners, only: [:index, :show, :update]
+  # resources :clients do
+  #   member do
+  #     get 'generate_widget'
+  #   end
+  # end
 
   get 'challenges/update_scores', to: 'challenges#update_scores', as: 'update_scores'
   get 'challenges/generate_global_widget', to: 'challenges#generate_global_widget', as: 'generate_global_widget'
@@ -149,6 +166,22 @@ Rails.application.routes.draw do
       get 'generate_widget'
     end
   end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   #############################
   # Routes pour l'API

@@ -1,15 +1,27 @@
 class PhotosController < ApplicationController
+  layout "picto_edition_home", only: [:new, :show, :index, :edit]
   before_action :set_event, only: %I[index create destroy_all]
-  before_action :set_edition, only: %I[index create destroy_all]
+  before_action :set_edition, only: %I[index new create destroy_all update]
   before_action :set_photo, only: %I[update destroy]
 
   def index
-    photo_ids = PhotoSearchService.new(@edition, params).fetch_ids
-    @photos = @edition.photos.where(id: photo_ids).paginate(page: params[:page], per_page: 30).order(created_at: :desc)
+    #photo_ids = PhotoSearchService.new(@edition, params).fetch_ids
+   # @photos = @edition.photos.where(id: photo_ids).paginate(page: params[:page], per_page: 30).order(created_at: :desc)
+
+    @photos = @edition.photos.paginate(page: params[:page], per_page: 30).order(created_at: :desc)
   end
 
   def create
     @photo = @edition.photos.create! photo_params
+  end
+
+  # GET /photos/new
+  def new
+    @photo = Photo.new
+    @photosCount = @edition.photos.all.count
+
+    #@photosIdentifierCount = @edition.photos.photos_identifier.count
+    #@photosNonIdentifierCount = @edition.photos.photos_no_identifier.count 
   end
 
   def update
@@ -17,10 +29,10 @@ class PhotosController < ApplicationController
     respond_to do |format|
       format.js
       if @success
-        format.html { redirect_to @photo, notice: 'photo was successfully updated.' }
+        format.html { redirect_to event_edition_photos_path, notice: 'photo was successfully updated.' }
         format.json { render :show, status: :ok, location: @photo }
       else
-        format.html { render :edit }
+        format.html { render :index }
         format.json { render json: @photo.errors, status: :unprocessable_entity }
       end
     end
