@@ -72,15 +72,19 @@ Rails.application.routes.draw do
         resources :campaigns, only: [:index, :new, :create]
       end
 
-        resources :contacts, only: [:index]
+      post 'create_photos_from_images'
 
-
-
-        resources :photos do
-          collection do
-            delete :destroy_all
-          end
+      get 'new_edition_photos'
+      post 'create_edition_photos'
+      get 'edit_edition_photos'
+      post 'update_edition_photos'
+      get 'home_picto_edition'
+      resources :contacts, only: [:index]
+      resources :photos do
+        collection do
+          delete :destroy_all
         end
+      end
 
     end
   end

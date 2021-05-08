@@ -5,14 +5,13 @@ class PhotosController < ApplicationController
   before_action :set_photo, only: %I[update destroy]
 
   def index
+
+    #IDS are not INTEGER
+    
     #photo_ids = PhotoSearchService.new(@edition, params).fetch_ids
    # @photos = @edition.photos.where(id: photo_ids).paginate(page: params[:page], per_page: 30).order(created_at: :desc)
 
     @photos = @edition.photos.paginate(page: params[:page], per_page: 30).order(created_at: :desc)
-  end
-
-  def create
-    @photo = @edition.photos.create! photo_params
   end
 
   # GET /photos/new
@@ -24,12 +23,30 @@ class PhotosController < ApplicationController
     #@photosNonIdentifierCount = @edition.photos.photos_no_identifier.count 
   end
 
+
+
+
+  def create
+    #@photo = @edition.photos.create! photo_params crate multiple photos
+
+		@photo = Photo.new(photo_params)
+    #@photo.edition_id = params[:edition_id]
+	  if @photo.save
+      redirect_to event_edition_photos_path, notice: 'Vos photos ont été ajoutées.'
+    else
+      redirect_to event_edition_photos_path, alert: 'Une erreur est survenue'
+    end
+  end
+
+
+
+
   def update
     @success = @photo.update(photo_params)
     respond_to do |format|
       format.js
       if @success
-        format.html { redirect_to event_edition_photos_path, notice: 'photo was successfully updated.' }
+        format.html { redirect_to event_edition_photos_path, notice: 'Vos photos ont été modifiées' }
         format.json { render :show, status: :ok, location: @photo }
       else
         format.html { render :index }
@@ -70,7 +87,9 @@ class PhotosController < ApplicationController
     params.require(:photo).permit(
       :id,
       :bib,
-      :direct_image_url
+      :direct_image_url,
+      :edition_id,
+      image: []
     )
   end
 end

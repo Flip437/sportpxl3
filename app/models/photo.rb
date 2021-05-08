@@ -20,17 +20,24 @@
 class Photo < ApplicationRecord
   belongs_to :edition
   belongs_to :race
-  has_attached_file :image
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-  validates :image_file_name, uniqueness: { scope: :edition_id }
+
+  #PAPERCLIP
+  #has_attached_file :image
+  #validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+  #PAPERCLIP
+
+
+  has_one_attached :image
+
+  #validates :image_file_name, uniqueness: { scope: :edition_id }
 
   DIRECT_IMAGE_URL_FORMAT = %r{\Ahttps:\/\/#{ENV['S3_BUCKET']}\.#{ENV['AWS_S3_HOST_NAME_REGION']}\.amazonaws\.com\/(?<path>uploads\/(?<filename>.+))\z}.freeze
   #https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_200.jpg
 
-  validates :direct_image_url, allow_blank: true, format: { with: DIRECT_IMAGE_URL_FORMAT }
-
-  before_create :set_image_attributes
-  after_create :queue_processing
+  #validates :direct_image_url, allow_blank: true, format: { with: DIRECT_IMAGE_URL_FORMAT }
+  puts "IN SET IMAGE ATTRIBUTESSSSSSSSSSSSSSSSSSSSSS"
+  #before_create :set_image_attributes
+  #after_create :queue_processing
 
   # Override
   # Store an unescaped version of the escaped URL that Amazon returns from direct upload.
@@ -59,7 +66,8 @@ class Photo < ApplicationRecord
   # Set attachment attributes from the direct upload
   # @note Retry logic handles S3 "eventual consistency" lag.
   def set_image_attributes
-    self.direct_image_url ||= ''
+
+    self.direct_image_url ||= 'blabla'
     return unless self.direct_image_url.present?
 
     tries ||= 5

@@ -1,7 +1,12 @@
 class EditionsController < ApplicationController
-  layout "picto_edition_home", only: [:home_picto_edition, :contacts_picto_edition, :upload_csv_picto, :get_campaign_detail, :diffuser_photo]
+  layout "picto_edition_home"#, except: [:edit_edition_photos]
   before_action :set_edition, only: [:show, :edit, :update, :destroy, :results, :delete_results, :generate_widget, :generate_photos_widget,
-  :generate_diplomas_widget, :generate_diplomas, :delete_diplomas, :send_results, :home_picto_edition, :contacts_picto_edition, :get_campaign_detail, :diffuser_photo]
+    :generate_diplomas_widget, :generate_diplomas, :delete_diplomas, :send_results, :home_picto_edition, :contacts_picto_edition, :get_campaign_detail, :diffuser_photo, :new_edition_photos, :edit_edition_photos]
+
+
+
+
+  before_action :set_event
   helper_method :sort_column, :sort_direction
   #skip_before_action :verify_authenticity_token, :only => :upload_csv_picto
   #http_basic_authenticate_with name: ENV['ADMIN_LOGIN'], password: ENV['ADMIN_PASSWORD'], except: :widget
@@ -50,6 +55,63 @@ class EditionsController < ApplicationController
       format.html { redirect_to event_path(@edition.event), notice: "Edition effacée." }
     end
   end
+
+
+
+# event_edition_new_edition_photos GET    /events/:event_id/editions/:edition_id/new_edition_photos(.:format)                      editions#new_edition_photos
+# event_edition_create_edition_photos POST   /events/:event_id/editions/:edition_id/create_edition_photos(.:format)                   editions#create_edition_photos
+# event_edition_edit_edition_photos GET    /events/:event_id/editions/:edition_id/edit_edition_photos(.:format)                     editions#edit_edition_photos
+# event_edition_update_edition_photos POST   /events/:event_id/editions/:edition_id/update_edition_photos(.:format)                   editions#update_edition_photos
+# event_edition_home_picto_edition GET    /events/:event_id/editions/:edition_id/home_picto_edition(.:format)                      editions#home_picto_edition
+
+
+def create_photos_from_images
+  puts params[:images].count
+end
+
+ # This method builds images as per image_files params
+ def build_images
+  (params[:image_files] || []).each do |img|
+    @product.images.build(file: img)
+  end
+end
+
+
+  def new_edition_photos
+    @photo = Photo.new
+    @photosCount = @edition.photos.all.count
+  end
+
+  def create_edition_photos
+    #@photo = @edition.photos.create! photo_params crate multiple photos
+    puts "PHOTO PARMASSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS"
+    puts edition_params[:image]
+    edition_params[:image].each do |img|
+      puts img.class
+      photo = Photo.new
+      photo.image.attach(img)
+      photo.save
+
+    end
+
+		@photo = Photo.new(edition_params)
+    #@photo.edition_id = params[:edition_id]
+	  if @photo.save
+      redirect_to event_edition_edit_edition_photos_path, notice: 'Vos photos ont été ajoutées.'
+    else
+      redirect_to event_edition_new_edition_photos_path, alert: 'Une erreur est survenue'
+    end
+  end
+
+
+  def edit_edition_photos
+    @photos = @edition.photos.paginate(page: params[:page], per_page: 30).order(created_at: :desc)
+  end
+
+  def update_edition_photos
+  end
+
+
 
   def generate_widget
     GenerateWidgetJob.perform_later(@edition.id)
@@ -323,7 +385,11 @@ class EditionsController < ApplicationController
   private 
 
   def set_edition
-    @edition = Edition.find(params[:id])
+    @edition = Edition.find(params[:edition_id])
+  end
+
+  def set_event
+    @event = Event.find params[:event_id]
   end
 
   def edition_params
@@ -342,12 +408,20 @@ class EditionsController < ApplicationController
         :external_link,
         :external_link_button,
         :event_id,
+        :edition_id,
         :sendable_at_home,
         :sendable_at_home_price,
         :download_chargeable,
         :download_chargeable_price,
         :registration_link,
-    )
+        photos_attributes: [
+          :id,
+          :bib,
+          :direct_image_url,
+          :edition_id,
+          image: []
+        ],
+        image: [])
   end
 
   def sort_column

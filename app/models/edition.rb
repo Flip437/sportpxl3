@@ -3,7 +3,12 @@ class Edition < ApplicationRecord
   belongs_to :event
   has_many :races
   has_many :results, dependent: :destroy
-  has_many :photos
+
+  
+  has_many :photos, dependent: :destroy
+  accepts_nested_attributes_for :photos, allow_destroy: true
+
+
   has_many :pictures
   has_many :diplomas
   has_many :runners, through: :results

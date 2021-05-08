@@ -1,0 +1,56 @@
+<!--notice-->
+<div>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+</div>
+
+<div class="breadcrumb">
+  <span> <a href="<%= root_path%>"> Accueil </a> >
+    <%= @edition.event.name %> > <%= @edition.date.strftime('%d/%m/%Y') %> >
+  </span>
+  <b> Contacts </b>
+</div>
+
+<% unless @photosCount.blank? %>
+  <div class="picturesStats">
+    <div class="row">
+      <div class="col-sm-6">Nombre de photo : <%= @photosCount %></div>
+      <div class="col-sm-6"> <a href="#" class="btn-orange pull-right">Voir les photos</a> </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">Photos identifiées : <%#= @picturesIdentifierCount %></div>
+      <div class="col-sm-6"> <a href="#" class="btn-orange pull-right">Diffuser les photos</a> </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">Photos non reconnues : <%#= @picturesNonIdentifierCount %></div>
+      <div class="col-sm-6">  </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="dropDiv">
+
+
+
+
+  <p>Glissez vos photos ici <br> ou </p>
+  <%#= form_tag process_csv_picto_event_edition_path , multipart: true, class: "uploadCsv", remote: true do %>
+    <%#= file_field_tag 'contacts', id: "processCsv", class: "selectedFile" %>
+<!--    <button class="btn btn-import" id="process" >Sélectionnez le fichier a importer</button>-->
+    <%#= button_tag type: :submit, class: "btn btn-primary someClass" do %>
+      <%#= "Process Csv" %>
+    <%# end %>
+  <%# end %>
+
+
+
+
+
+
+
+  <%= render 'photo_form', photo: @photo %>
+  <%#= link_to 'Back', pictures_path %>
+
+
+</div>
