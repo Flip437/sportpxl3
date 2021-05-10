@@ -73,7 +73,7 @@ Rails.application.configure do
 
   default_url_options[:host] = HOST
 
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
 
 
 end

@@ -47,22 +47,7 @@
             </ul>
           <% end %>
         </li>
-        <li>
-        
-          <a href="<%= new_event_picture_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) %>" class="<% active_btn_class( new_event_picture_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %> <%= active_btn_class( event_pictures_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %> ">
-            
-            Pictures
-          </a>
-          <%# if current_page?( new_event_picture_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) || 
-                current_page?( event_pictures_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) ||
-                current_page?( diffuser_photo_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) )  %>
-            <ul class="list-unstyled">
-              <li><%= link_to "Importation", new_event_picture_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( new_event_picture_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
-              <li><%= link_to "Voir photo", event_pictures_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( event_pictures_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
-              <li><%= link_to "Diffuser", diffuser_photo_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( diffuser_photo_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
-            </ul>
-          <% #end %>
-        </li>
+
 
 
 
@@ -70,8 +55,8 @@
         <li>
         <%= link_to "Photos", new_event_edition_photo_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) %>
           <ul class="list-unstyled">
-            <li><%= link_to "Importation", event_edition_new_edition_photos_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( event_edition_new_edition_photos_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
-            <li><%= link_to "Voir photo", event_edition_edit_edition_photos_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( event_edition_edit_edition_photos_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
+            <li><%= link_to "Importation", new_event_edition_photo_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id])%></li>
+            <li><%= link_to "Voir photo", event_edition_photos_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( event_edition_photos_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
   
           </ul>
         </li>

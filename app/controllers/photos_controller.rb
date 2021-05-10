@@ -23,7 +23,21 @@ class PhotosController < ApplicationController
     #@photosNonIdentifierCount = @edition.photos.photos_no_identifier.count 
   end
 
+  def add_edition_photos
+    errors_array = []
+    images_params[:images].each do |img|
+      photo = Photo.new
+      photo.image.attach(img)
+      photo.edition_id = images_params[:edition_id]
 
+      errors_array << photo.errors.full_messages if !photo.save
+    end
+    if errors_array.size == 0
+      redirect_to event_edition_photos_path, notice: 'Vos photos ont été enregistrées'
+    else
+      redirect_to event_edition_photos_path, alert: "Il y a eu #{errors_array.size} erreurs lors de l'enregsitrement"
+    end
+  end
 
 
   def create
@@ -67,7 +81,7 @@ class PhotosController < ApplicationController
     @photos = @edition.photos.where(id: params[:photo_ids])
     @photos.destroy_all
     redirect_to event_edition_photos_path(event_id: @event.id, edition_id: @edition.id), notice: "Les photos ont bien été supprimées."
-  end
+  end#Barkoxe$1As
 
   private
 
@@ -92,4 +106,9 @@ class PhotosController < ApplicationController
       image: []
     )
   end
+
+  def images_params
+    params.permit(:edition_id, images: [])
+  end
+
 end

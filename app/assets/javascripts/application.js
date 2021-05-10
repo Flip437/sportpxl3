@@ -26,6 +26,7 @@
 //= require ui-bootstrap-tpls-2.5.0.min.js
 //= require bootstrap-sprockets
 //= require bootstrap-switch
+//= require activestorage
 //= require_tree .
 
 

@@ -13,37 +13,46 @@
 #  image_file_size    :integer
 #  image_updated_at   :datetime
 #  edition_id         :integer
-#  direct_image_url   :string           not null
+#  direct_image_url   :string           not nullphoto_ids
 #  processed          :boolean          default(FALSE)
 #
 
 class Photo < ApplicationRecord
   belongs_to :edition
   belongs_to :race
-
-  #PAPERCLIP
-  #has_attached_file :image
-  #validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-  #PAPERCLIP
-
-
   has_one_attached :image
-
   #validates :image_file_name, uniqueness: { scope: :edition_id }
 
   DIRECT_IMAGE_URL_FORMAT = %r{\Ahttps:\/\/#{ENV['S3_BUCKET']}\.#{ENV['AWS_S3_HOST_NAME_REGION']}\.amazonaws\.com\/(?<path>uploads\/(?<filename>.+))\z}.freeze
-  #https://kapp10.s3-eu-west-1.amazonaws.com/uploads/Decath-Trail-2018_26-05-2018_200.jpg
-
-  #validates :direct_image_url, allow_blank: true, format: { with: DIRECT_IMAGE_URL_FORMAT }
-  puts "IN SET IMAGE ATTRIBUTESSSSSSSSSSSSSSSSSSSSSS"
-  #before_create :set_image_attributes
+  #DIRECT_IMAGE_URL_FORMAT = %r{\Ahttps:\/\/#{ENV['AWS_S3_HOST_NAME_REGION']}\.amazonaws\.com\/#{ENV['S3_BUCKET']}\/(?<path>uploads\/.+\/(?<filename>.+))\z}.freeze
+  #validates :direct_image_url, allow_blank: true#, format: { with: DIRECT_IMAGE_URL_FORMAT }
+  before_create :set_image_attributes
   #after_create :queue_processing
 
-  # Override
-  # Store an unescaped version of the escaped URL that Amazon returns from direct upload.
-  def direct_image_url=(escaped_url)
-    write_attribute(:direct_image_url, (CGI.unescape(escaped_url) rescue ''))
-  end
+
+
+
+  # # Override
+  # # Store an unescaped version of the escaped URL that Amazon returns from direct upload.
+  # def direct_image_url=(escaped_url)
+  #   puts "SERVICE URLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
+  #   puts self.image.service_url
+
+  #   s3 = Aws::S3::Resource.new
+  #   bucket = s3.bucket('kapp10')
+  #   obj = bucket.object(self.image.key)
+  #   url = obj.presigned_url(:get)
+
+  #   write_attribute(:direct_image_url, (CGI.unescape(url) rescue ''))
+
+  #   puts "PRESIGNED URLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
+  #   puts url
+  #   puts CGI.parse(URI.parse(url).query)
+  # end
+
+
+
+
 
   # Determines if file requires post-processing (image resizing, etc)
   def post_process_required?
@@ -66,35 +75,18 @@ class Photo < ApplicationRecord
   # Set attachment attributes from the direct upload
   # @note Retry logic handles S3 "eventual consistency" lag.
   def set_image_attributes
-
-    self.direct_image_url ||= 'blabla'
-    return unless self.direct_image_url.present?
-
     tries ||= 5
-
-
-
-    direct_image_url_data = DIRECT_IMAGE_URL_FORMAT.match(direct_image_url)
-    direct_upload_head = KAPP10_FINISHLINE_BUCKET.object(direct_image_url_data[:path]).get
-
-
-
-    puts "NAMEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
-    puts direct_image_url
-    puts direct_image_url_data
-    puts direct_upload_head
-    puts direct_image_url_data[:filename]
-    puts "NAMEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
-
-
-
-    self.image_file_name     = direct_image_url_data[:filename]
-    puts "hereeeeeeeeeeeeeeeeee1"
-    self.image_file_size     = direct_upload_head.content_length
-    puts "hereeeeeeeeeeeeeeeeee2"
-    self.image_content_type  = direct_upload_head.content_type
-    puts "hereeeeeeeeeeeeeeeeee3"
-    self.image_updated_at    = direct_upload_head.last_modified
+    s3 = Aws::S3::Resource.new
+    bucket = s3.bucket(ENV['S3_BUCKET'])
+    obj = bucket.object(self.image.key)
+    #set attributes from amazon s3 object
+    self.direct_image_url    = obj.public_url
+    self.image_file_size     = obj.size
+    self.image_content_type  = obj.content_type
+    self.image_updated_at    = obj.last_modified
+    #set attributes from active storage blob table
+    self.image_file_name      = self.image.blob.filename
+    self.image_content_type   = self.image.blob.content_type
 
   rescue Aws::S3::Errors::NoSuchKey => e
     tries -= 1
@@ -105,6 +97,7 @@ class Photo < ApplicationRecord
       false
     end
   end
+
 
   # Queue file processing
   def queue_processing

@@ -1,21 +1,26 @@
 <div class="thumbnail">
   <%= image_tag photo.image, class: 'img-photo', alt: 'photo' %>
+
   <%= form_with(model: photo, url: event_edition_photo_path(@event, @edition, photo.id), method: "put") do |f| %>
+
     <div class="form-group">
       <div class="input-group">
-        <%= f.text_field :bib %>
+        <%= f.text_field :bib, class:'form-control', placeholder: "Indiquez le n° de dossard" %>
+
         <% unless [:not_paired, :invalid_bib].include? photo.runner %>
           <p class="text-success"><%= photo.runner.first_name %></p>
           <p class="text-success"><%= photo.runner.last_name %></p>
         <% else %>
           <p class="text-muted">Dossard introuvable pour cette course</p>
         <% end %>
+
       </div>
     </div>
-    <%= f.submit "Enregistrer", class: 'btn-default btn-group-justified'%>
+
+    <%= f.submit "Enregistrer", class: 'btn btn-primary'%>
+
   <% end %>
-</div>
   
-<%= link_to 'Supprimer', event_edition_photo_path(@event, @edition, photo), method: :delete, data: { confirm: 'Êtes-vous sûr(e)' }%>
+<%= link_to 'Supprimer', event_edition_photo_path(@event, @edition, photo), class: 'btn btn-danger', method: :delete, data: { confirm: 'Êtes-vous sûr(e)' }%>
 
-
+</div>

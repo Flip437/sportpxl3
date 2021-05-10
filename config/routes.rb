@@ -72,18 +72,16 @@ Rails.application.routes.draw do
         resources :campaigns, only: [:index, :new, :create]
       end
 
-      post 'create_photos_from_images'
-
-      get 'new_edition_photos'
-      post 'create_edition_photos'
-      get 'edit_edition_photos'
-      post 'update_edition_photos'
       get 'home_picto_edition'
       resources :contacts, only: [:index]
       resources :photos do
         collection do
           delete :destroy_all
         end
+      end
+
+      scope controller: 'photos', path: '/photos' do
+        post 'add_edition_photos'
       end
 
     end
@@ -97,7 +95,10 @@ Rails.application.routes.draw do
   root :to => 'events#list_picto'
   #get 'events', to: 'events#index'
   get 'event/:id', to: 'events#home_picto', as: 'home_picto_event'
-  post 'event/:id', to: 'evpictures_picto', to: 'events#create_event_picto' , as: 'createEventPicto'
+  post 'event/:id', to: 'events#update_event_picto', as: 'update_event_picto'
+  post 'events/search_events', to: 'events#search_events' , as: 'searchEvents_events'
+  post 'events/filter_events', to: 'events#filter_events' , as: 'filterEvents_events'
+  post 'events/create_event_picto', to: 'events#create_event_picto' , as: 'createEventPicto'
   get 'new_event_picto', to: 'events#new_event_picto'
   post 'events/add_fresh_event', to: 'events#add_fresh_event', as: 'add_fresh_event'
   post 'add_edition_picto', to: 'editions#add_edition_picto', as: 'add_edition_picto'

@@ -106,8 +106,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'sdoc', '~> 0.4.0', group: :doc 
 gem 'imgkit', '~> 1.6.1'  
 gem 'wkhtmltoimage-binary', '~> 0.12.2'
-gem 'aws-sdk', '~> 2.3.0'
-#gem "aws-sdk-s3", require: false
+#gem 'aws-sdk', '~> 2.3.0'
+gem "aws-sdk-s3", require: false
 gem 'httparty'
 gem 'newrelic_rpm'
 gem 'charlock_holmes'
@@ -137,7 +137,7 @@ gem 'htmlcompressor' # permet de compresser le HTML  des widgets
 gem 'will_paginate-bootstrap' # pagination
 gem 'google_url_shortener'
 gem 'google-cloud-vision', '~> 0.31.0'
-gem 's3_direct_upload'
+#gem 's3_direct_upload'
 gem 'slim'
 gem 'font-awesome-sass', '~> 4.7.0'
 gem 'money-rails'

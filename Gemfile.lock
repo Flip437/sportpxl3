@@ -65,12 +65,22 @@ GEM
     ast (2.4.2)
     autoprefixer-rails (10.2.4.0)
       execjs
-    aws-sdk (2.3.23)
-      aws-sdk-resources (= 2.3.23)
-    aws-sdk-core (2.3.23)
+    aws-eventstream (1.1.1)
+    aws-partitions (1.452.0)
+    aws-sdk-core (3.114.0)
+      aws-eventstream (~> 1, >= 1.0.2)
+      aws-partitions (~> 1, >= 1.239.0)
+      aws-sigv4 (~> 1.1)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.3.23)
-      aws-sdk-core (= 2.3.23)
+    aws-sdk-kms (1.43.0)
+      aws-sdk-core (~> 3, >= 3.112.0)
+      aws-sigv4 (~> 1.1)
+    aws-sdk-s3 (1.94.1)
+      aws-sdk-core (~> 3, >= 3.112.0)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.1)
+    aws-sigv4 (1.2.3)
+      aws-eventstream (~> 1, >= 1.0.2)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
@@ -136,7 +146,7 @@ GEM
     crass (1.0.6)
     database_cleaner (2.0.1)
       database_cleaner-active_record (~> 2.0.0)
-    database_cleaner-active_record (2.0.0)
+    database_cleaner-active_record (2.0.1)
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
@@ -171,7 +181,7 @@ GEM
     et-orbi (1.2.4)
       tzinfo
     execjs (2.7.0)
-    factory_bot (6.1.0)
+    factory_bot (6.2.0)
       activesupport (>= 5.0.0)
     faraday (1.4.1)
       faraday-excon (~> 1.1)
@@ -225,9 +235,9 @@ GEM
       googleauth (~> 0.9)
       grpc (~> 1.24)
       rly (~> 0.2.3)
-    google-protobuf (3.15.8)
-    google-protobuf (3.15.8-x64-mingw32)
-    google-protobuf (3.15.8-x86-mingw32)
+    google-protobuf (3.16.0)
+    google-protobuf (3.16.0-x64-mingw32)
+    google-protobuf (3.16.0-x86-mingw32)
     google_url_shortener (1.1.0)
       json (>= 1.4.6)
       rest-client (>= 1.6.7)
@@ -295,10 +305,10 @@ GEM
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
     jmespath (1.4.0)
-    jquery-fileupload-rails (0.4.7)
+    jquery-fileupload-rails (1.0.0)
       actionpack (>= 3.1)
       railties (>= 3.1)
-      sass (>= 3.2)
+      sassc
     jquery-rails (4.4.0)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -461,7 +471,7 @@ GEM
       thor (>= 0.19.0, < 2.0)
     rainbow (3.0.0)
     rake (13.0.3)
-    rb-fsevent (0.10.4)
+    rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rdoc (4.3.0)
@@ -562,11 +572,6 @@ GEM
     rubyzip (2.3.0)
     rufus-scheduler (3.7.0)
       fugit (~> 1.1, >= 1.1.6)
-    s3_direct_upload (0.1.7)
-      coffee-rails (>= 3.1)
-      jquery-fileupload-rails (~> 0.4.1)
-      rails (>= 3.1)
-      sass-rails (>= 3.1)
     sass (3.4.25)
     sass-rails (5.0.8)
       railties (>= 5.2.0)
@@ -697,7 +702,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.10.7)
   annotate
-  aws-sdk (~> 2.3.0)
+  aws-sdk-s3
   bitly (~> 0.10.4)
   blueprinter
   bootstrap-sass
@@ -759,7 +764,6 @@ DEPENDENCIES
   rspec_api_documentation
   rubocop
   rubycritic
-  s3_direct_upload
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   selenium-webdriver
