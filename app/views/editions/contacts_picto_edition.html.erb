@@ -119,26 +119,27 @@
   <b> Contacts </b>
 </div>
 
-<div class="dropDiv">
-  <p>Glissez votre fichier de contacts ici <br> ou </p>
-
-  <%= form_for @edition,  url: upload_csv_picto_event_edition_path(@edition), method: :post, :html => { class: "processCsv" }, data: { type: :html } do |f| %>
-    <label for="process" class="btn btn-import">Choisir Fichier CSV</label>
-    <%= f.file_field :description, class: "hidden", id: "process"  %>
-    <%= f.submit "Importer le fichier", class: "btn btn-import hidden" %>
+  <%= form_with model: @edition, url: upload_csv_picto_event_edition_path(edition_id: @edition.id), local: true, multipart: true, method: :post, class: "form-block processCsv", data: { type: :html } do |f| %>
+  <div class="form-block_container">
+    <div class="form-block_input">
+      <div class="form-block_avatar_file">
+        <div class="file_droparea">
+          <p class="file_msg js-set-number">Glissez vos fichiers ou sélectionnez les en cliquant</p>
+          <%= f.hidden_field :edition_id, value: @edition.id %>
+          <%= f.file_field :description, multiport: false, class: "file_input", id: "file_input", type: :file, multiple: false, required: true %>
+        </div>
+      </div>
+    </div>
+  </div>
   <% end %>
 
-</div>
 <br>
 <p class="contactPara text-center">
   Vous souhaitez que nous traitions le fichier de contacts à votre place, <a href="#sendEmailModal" data-toggle="modal">contactez-nous en cliquant ici !</a>
 </p>
 
 <script type="text/javascript">
-  $("#process").on('change',function () {
-      //setTimeout(function(){
-          console.log("selectedFileProcessCsv");
-          $("form.processCsv").submit();
-      //}, 1000);
+  $("#file_input").on('change',function () {
+    $("form.processCsv").submit();
   });
 </script>

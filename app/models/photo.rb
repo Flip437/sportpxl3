@@ -19,15 +19,17 @@
 
 class Photo < ApplicationRecord
   belongs_to :edition
-  belongs_to :race
+  #belongs_to :race
   has_one_attached :image
-  #validates :image_file_name, uniqueness: { scope: :edition_id }
+  validates :image_file_name, uniqueness: { scope: :edition_id }
+
+
 
   DIRECT_IMAGE_URL_FORMAT = %r{\Ahttps:\/\/#{ENV['S3_BUCKET']}\.#{ENV['AWS_S3_HOST_NAME_REGION']}\.amazonaws\.com\/(?<path>uploads\/(?<filename>.+))\z}.freeze
   #DIRECT_IMAGE_URL_FORMAT = %r{\Ahttps:\/\/#{ENV['AWS_S3_HOST_NAME_REGION']}\.amazonaws\.com\/#{ENV['S3_BUCKET']}\/(?<path>uploads\/.+\/(?<filename>.+))\z}.freeze
-  #validates :direct_image_url, allow_blank: true#, format: { with: DIRECT_IMAGE_URL_FORMAT }
+  validates :direct_image_url, presence: true, allow_blank: true#, format: { with: DIRECT_IMAGE_URL_FORMAT }
   before_create :set_image_attributes
-  #after_create :queue_processing
+  after_create :queue_processing
 
 
 
@@ -61,7 +63,8 @@ class Photo < ApplicationRecord
 
   def runner
     return :not_paired if bib.blank?
-    edition.results.find_by(bib: bib) || :invalid_bib
+    # edition.results.find_by(bib: bib) || :invalid_bib
+    edition.contacts.find_by(dossard: bib)
   end
 
   def runner_alert
@@ -102,8 +105,7 @@ class Photo < ApplicationRecord
   # Queue file processing
   def queue_processing
     return unless self.direct_image_url.present?
-    
-    #PhotoTransferAndCleanupJob.perform_later id
-    DetectBibJob.perform_later id
+    #PhotoTransferAndCleanupJob.perform_later(self.id)
+    DetectBibJob.perform_now(self.id)
   end
 end

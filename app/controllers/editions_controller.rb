@@ -196,7 +196,7 @@ class EditionsController < ApplicationController
       contact.assign_attributes(
           telephone: row["Telephone"],
           email: row["Email"],
-          dossard: row["Doss"],
+          dossard: row["Doss."],
           nom: row["Nom"],
           prenom: row["Prenom"],
           edition_id: params[:id]
@@ -209,7 +209,7 @@ class EditionsController < ApplicationController
       end
 
     end
-    redirect_to event_contacts_path
+    redirect_to event_edition_contacts_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id])
   end
 
   def diffuser_photo

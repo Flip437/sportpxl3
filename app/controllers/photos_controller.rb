@@ -10,7 +10,6 @@ class PhotosController < ApplicationController
     
     #photo_ids = PhotoSearchService.new(@edition, params).fetch_ids
    # @photos = @edition.photos.where(id: photo_ids).paginate(page: params[:page], per_page: 30).order(created_at: :desc)
-
     @photos = @edition.photos.paginate(page: params[:page], per_page: 30).order(created_at: :desc)
   end
 
@@ -24,18 +23,18 @@ class PhotosController < ApplicationController
   end
 
   def add_edition_photos
-    errors_array = []
     images_params[:images].each do |img|
       photo = Photo.new
       photo.image.attach(img)
       photo.edition_id = images_params[:edition_id]
-
-      errors_array << photo.errors.full_messages if !photo.save
+      photo.save
+      flash[:photo_errors] = photo.errors.messages if !photo.save
     end
-    if errors_array.size == 0
+
+    if !flash[:photo_errors]
       redirect_to event_edition_photos_path, notice: 'Vos photos ont été enregistrées'
     else
-      redirect_to event_edition_photos_path, alert: "Il y a eu #{errors_array.size} erreurs lors de l'enregsitrement"
+      redirect_to event_edition_photos_path, alert: "Il y a eu #{flash[:photo_errors].count} erreurs lors de l'enregsitrement"
     end
   end
 

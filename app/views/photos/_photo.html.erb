@@ -8,8 +8,8 @@
         <%= f.text_field :bib, class:'form-control', placeholder: "Indiquez le n° de dossard" %>
 
         <% unless [:not_paired, :invalid_bib].include? photo.runner %>
-          <p class="text-success"><%= photo.runner.first_name %></p>
-          <p class="text-success"><%= photo.runner.last_name %></p>
+          <p class="text-success"><%= photo.runner.prenom %></p>
+          <p class="text-success"><%= photo.runner.nom %></p>
         <% else %>
           <p class="text-muted">Dossard introuvable pour cette course</p>
         <% end %>

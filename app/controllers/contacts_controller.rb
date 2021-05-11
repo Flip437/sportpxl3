@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
     before_action :disable_filter_pict_home!
 
     def index
-        @edition = Edition.find( params[:id] )
+        @edition = Edition.find( params[:edition_id] )
         #here we have to load Contacts belongs to this edition @edition.contacts
         @contacts = Contact.all
     end

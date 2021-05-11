@@ -29,18 +29,37 @@
   </div>
 <% end %>
 
-<div class="dropDiv">
-  <p>Glissez vos photos ici <br> ou </p>
-  <%#= form_tag process_csv_picto_event_edition_path , multipart: true, class: "uploadCsv", remote: true do %>
-    <%#= file_field_tag 'contacts', id: "processCsv", class: "selectedFile" %>
-<!--    <button class="btn btn-import" id="process" >Sélectionnez le fichier a importer</button>-->
-    <%#= button_tag type: :submit, class: "btn btn-primary someClass" do %>
-      <%#= "Process Csv" %>
-    <%# end %>
-  <%# end %>
+<%= form_with url: event_edition_add_edition_photos_path, local: true, multipart: true, method: :post, class: "form-block processPhotos" do |f| %>
 
-  <%= render 'form', photo: @photo %>
-  <%#= link_to 'Back', pictures_path %>
+  <% if @photo.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this @photo from being saved:</h2>
 
+    <ul>
+    <% @photo.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  
+  <div class="form-block_container">
+    <div class="form-block_input">
+      <div class="form-block_avatar_file">
+        <div class="file_droparea">
+          <p class="file_msg js-set-number">Glissez vos fichiers ou sélectionnez les en cliquant</p>
+          <%= f.hidden_field :edition_id, value: @edition.id %>
+          <%= f.file_field :images, multiport: false, class: "file_input", id: "file_input", type: :file, multiple: true, required: true %>
+        </div>
+      </div>
+    </div>
+  </div>
 
-</div>
+<% end %>
+
+<script type="text/javascript">
+  $("#file_input").on('change',function () {
+  
+    $("form.processPhotos").submit();
+  });
+</script>

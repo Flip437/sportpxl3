@@ -27,6 +27,7 @@
 //= require bootstrap-sprockets
 //= require bootstrap-switch
 //= require activestorage
+//= require dropzone 
 //= require_tree .
 
 

@@ -1,9 +1,18 @@
 <div>
-  <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% flash.to_hash.except!("photo_errors").each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <%= value %> 
+    </div>
   <% end %>
 </div>
 
+<% if flash[:photo_errors] %>
+<div>
+  <% flash[:photo_errors].each do |key, value| %>
+    <div class="alert alert-alert"> Le <%= t("activerecord.attributes.photo.#{key}") %> <%= value.to_s.gsub(/\"/, '').gsub(/[\[\]]/, '') %> </div>
+  <% end %>
+</div>
+<% end %>
 
 <div class="container photos">
   <div class="row">

@@ -60,11 +60,6 @@ fr:
       payment: Paiement
 
   activerecord:
-    attributes:
-      doorkeeper/application:
-        name: "Nom"
-        redirect_uri: "L'URL de redirection"
-        scopes: "Portées"
     errors:
       models:
         doorkeeper/application:
@@ -74,6 +69,16 @@ fr:
               invalid_uri: "doit être une URL valide."
               relative_uri: "doit être une URL absolue."
               secured_uri: "doit être une URL HTTP/SSL."
+    model:
+      photo: "Photo"
+      key: "blabla"
+    attributes:
+      photo:
+        image_file_name: "nom de l'image"
+      doorkeeper/application:
+        name: "Nom"
+        redirect_uri: "L'URL de redirection"
+        scopes: "Portées"
 
   doorkeeper:
     applications:
