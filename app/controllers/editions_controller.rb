@@ -54,17 +54,28 @@ class EditionsController < ApplicationController
   end
 
 
+
+
+
+
+
+
+
   def generate_widget
-    GenerateWidgetJob.perform_later(@edition.id)
+    GenerateWidgetJob.perform_now(@edition.id)
     #redirect_to event_edition_path(@edition.event, @edition), notice: "Le widget est en cours de génération."
-    redirect_to diffuser_photo_event_edition_path(@edition.event, @edition), notice: "Le widget est en cours de génération."
+    redirect_to event_edition_diffuser_photo_path(@edition.event, @edition), notice: "Le widget est en cours de génération."
   end
+
 
   def generate_photos_widget
     p 'launching photos widget generation'
-    GeneratePhotosWidgetJob.perform_later(@edition.id)
-    redirect_to results_event_edition_path(@edition.event, @edition), notice: "Le Widget Photos est en cours de génération."
+
+    #CAREFULL, set back to perform_later
+    GeneratePhotosWidgetJob.perform_now(@edition.id)
+    redirect_to event_edition_photos_path(@edition.event, @edition), notice: "Le Widget Photos est en cours de génération."
   end
+
 
   def generate_diplomas_widget
     # p params
@@ -326,7 +337,7 @@ class EditionsController < ApplicationController
   private 
 
   def set_edition
-    @edition = Edition.find(params[:edition_id])
+    !params[:edition_id].nil? ? @edition = Edition.find(params[:edition_id]) : @edition = Edition.find(params[:id]) 
   end
 
   def set_event

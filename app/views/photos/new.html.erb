@@ -20,7 +20,9 @@
     </div>
     <div class="row">
       <div class="col-sm-6">Photos identifiées : <%#= @picturesIdentifierCount %></div>
-      <div class="col-sm-6"> <a href="#" class="btn-orange pull-right">Diffuser les photos</a> </div>
+      <div class="col-sm-6">
+        <%= link_to 'Diffuser les photos', event_edition_diffuser_photo_path(id: @edition.id, edition_id: @edition.id), class: "btn-orange pull-right" %>
+      </div>
     </div>
     <div class="row">
       <div class="col-sm-6">Photos non reconnues : <%#= @picturesNonIdentifierCount %></div>

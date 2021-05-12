@@ -5,7 +5,7 @@
     <p>Widget généré le #{I18n.l @edition.widget_generated_at}.</p>
 <% end %>
 
-<%= link_to "Générer le widget", generate_widget_event_edition_path(@edition.event, @edition), class: "btn btn-primary", "data-method" => :post %>
+<%= link_to "Générer le widget", event_edition_generate_photos_widget_path(event_id: @edition.event, edition_id: @edition.id), class: "btn btn-primary", "data-method" => :post %>
 <%= link_to "Afficher le widget", @edition.widget_url, class: "btn btn-default", target: "_widget" unless @edition.widget_generated_at.nil? %>
 
 <% unless @edition.widget_generated_at.nil? %>

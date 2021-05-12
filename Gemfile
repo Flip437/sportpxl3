@@ -107,7 +107,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'imgkit', '~> 1.6.1'  
 gem 'wkhtmltoimage-binary', '~> 0.12.2'
 #gem 'aws-sdk', '~> 2.3.0'
-gem "aws-sdk-s3", require: false
+#gem "aws-sdk-s3", require: false
+gem 'aws-sdk', '~> 3'
+
 gem 'httparty'
 gem 'newrelic_rpm'
 gem 'charlock_holmes'

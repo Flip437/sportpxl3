@@ -45,8 +45,8 @@ Rails.application.routes.draw do
         get 'results'
         post 'send_results'
         post 'duplicate'
-        post 'generate_widget'
-        post 'generate_photos_widget'
+
+
         post 'generate_diplomas_widget'
         post 'generate_diplomas'
         get 'regenerate_all_widgets'
@@ -57,7 +57,6 @@ Rails.application.routes.draw do
         get 'diplomas_widget'
         delete 'delete_results'
         get 'pairing', to: 'photos#index'
-        get 'diffuser_photo'
         get 'home_picto_edition'
         get 'contacts_picto_edition', as: 'contacts_picto_edition'
         get 'get_campaign_detail', as: 'get_campaign_detail'
@@ -71,7 +70,9 @@ Rails.application.routes.draw do
         resources :pictures , param: :picture_id #to remove when pictures path and instace will not be called anymore
         resources :campaigns, only: [:index, :new, :create]
       end
-
+      post 'generate_photos_widget'
+      get 'diffuser_photo'
+      post 'generate_widget'
       get 'home_picto_edition'
       resources :contacts, only: [:index]
       resources :photos do

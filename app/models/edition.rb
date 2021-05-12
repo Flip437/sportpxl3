@@ -126,6 +126,8 @@ class Edition < ApplicationRecord
     diplomas.to_json
   end
 
+
+
   def get_widget_photos_json
     results     = self.results
     photos      = self.photos.map do |photo|
@@ -156,6 +158,12 @@ class Edition < ApplicationRecord
 
     photos.to_json
   end
+
+
+
+
+
+  
 
   def widget_storage_name
     "results/#{self.date.year}/#{self.date.month}/#{self.id}"
