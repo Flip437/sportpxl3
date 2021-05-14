@@ -26,100 +26,86 @@
 <!-- <link rel="stylesheet" href="/photos_widget/photos_widget.css"> -->
 
 <body>
-  <div class="container">
-    <div class="generalInfoBox margin-top-24">
-      <div class="container p-0">
-        <div class="row">
-          <div class="col-sm-12 col-md-6 leftCol">
-            <h2><%= @edition.event.name %></h2>
-            <div id="courseInfoList" class="container">
-              <div class="row">
-                <div class="col-xs-4 d-flex justify-content-start align-items-center">
-                  <span class="image imageRoute">
-                    <img src="<%= Edition::S3_BASE_URL %>/images/imageRoute.jpg" alt="imageRoute" />
-                  </span>
-                  <div class="content">
-                    <h3>Trail</h3>
-                  </div>
-                </div>
-                <div class="col-xs-4 d-flex justify-content-start align-items-center">
-                  <span class="image imageLocalite">
-                    <img src="<%= Edition::S3_BASE_URL %>/images/icoLocality.png" alt="Creyesse" />
-                  </span>
-                  <div class="content">
-                    <h3>
+	<div class="container">
+		<div class="generalInfoBox margin-top-24">
+			<div class="container p-0">
+				<div class="row">
+					<div class="col-sm-12 col-md-6 leftCol">
+						<h2><%= @edition.event.name %></h2>
+						<div id="courseInfoList" class="container">
+							<div class="row">
+								<div class="col-xs-4 d-flex justify-content-start align-items-center">
+									<span class="image imageRoute">
+										<img src="<%= Edition::S3_BASE_URL %>/images/imageRoute.jpg" alt="imageRoute" />
+									</span>
+									<div class="content"><h3>Trail</h3></div>
+								</div>
+								<div class="col-xs-4 d-flex justify-content-start align-items-center">
+									<span class="image imageLocalite">
+										<img src="<%= Edition::S3_BASE_URL %>/images/icoLocality.png" alt="Creyesse" />
+									</span>
+									<div class="content">
+										<h3>
                       <%= @edition.event.place %>
                       <% if @edition.event.department.present? %>
                       (<%= @edition.event.department %>)
                       <% end %>
                     </h3>
-                  </div>
-                </div>
-                <div class="col-xs-4 d-flex justify-content-start align-items-center">
-                  <span class="image imageDistance">
-                    <img src="<%= Edition::S3_BASE_URL %>/images/icoDistance.png" alt="Facebook Icon" />
-                  </span>
-                  <div class="content">
-                    <h3><%= @edition.results.pluck(:race_detail).uniq.join(', ')%></h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-6 rightCol d-flex justify-content-center align-items-center">
-            <div class="container">
-              <div class="row">
-                <div class="col-xs-6 date text-center">
-                  <%= I18n.localize(@edition.date, format: '%a. %d %b %Y') %>
-                </div>
-                <div class="col-xs-6 participant text-center style='padding-left: 15px;'">
-                  <strong><%= @edition.results.count %></strong><span> finisseurs</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+									</div>
+								</div>
+								<div class="col-xs-4 d-flex justify-content-start align-items-center">
+									<span class="image imageDistance"> <img src="<%= Edition::S3_BASE_URL %>/images/icoDistance.png" alt="Facebook Icon" /> </span>
+									<div class="content"><h3><%= @edition.results.pluck(:race_detail).uniq.join(', ')%></h3></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-6 rightCol d-flex justify-content-center align-items-center">
+						<div class="container">
+							<div class="row">
+								<div class="col-xs-6 date text-center">
+									<%= I18n.localize(@edition.date, format: '%a. %d %b %Y') %>
+								</div>
+								<div class="col-xs-6 participant text-center style='padding-left: 15px;'">
+									<strong><%= @edition.results.count %></strong><span> finisseurs</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <div class="tableContainer margin-top-24">
-      <div class="container p-0">
-        <div id="races-tabs-container" class="row margin-bottom-24">
-          <% if @edition.races_count > 0 %>
-            <div class="col-xs-12">
-              <% if @edition.races_count > 1 %>
-                <input id="tab_all" data-value="all" class='tab race_detail_tab' type="radio" name="tabs" checked="checked">
-                <label for="tab_all" class="tabRacesCount">Toutes les courses</label> 
-              <% end %>
-              <% @edition.results.order([:race_detail, :rank]).group_by(&:race_detail).each_with_index do |(race_detail, results), index| %>
-                <% if @edition.races_count == 1
-                  race_name = 'all'
-                else
-                  race_name = race_detail.parameterize
-                end %>
 
-                <input id="tab_<%= race_name %>" data-value="<%= race_name %>" class='tab race_detail_tab' type="radio" name="tabs" <%= 'checked="checked"' if @edition.races_count == 1 %>>
-                <label for="tab_<%= race_name %>" class="tabRacesCount"><%= race_detail %></label>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-        <div class="row p-0 d-flex justify-content-between filtersConteners">
-          <div class="kapp10Filter col-sm-12 col-md-4">
-            <select name="filterRecognition" id="filterRecognition" class="search-input filtersSearch filterSexeBg">
-              <option value="all">Reconnaissance du coureur</option>
-              <option value="with_recognition">Photos avec coureurs reconnus</option>
-              <option value="without_recognition">Photos sans coureurs reconnus</option>
-            </select>
-          </div>
-          <div id="filter-sex-container" class="kapp10Filter col-sm-12 col-md-4">
-            <select name="filterSexe" id="filterSexe" class="search-input filtersSearch filterSexeBg">
-              <option value="all">Sexe</option>
-              <option value="m">Hommes</option>
-              <option value="f">Femmes</option>
-            </select>
-          </div>
-          <div id="filter-category-container" class="kapp10Filter col-sm-12 col-md-4">
+		<div class="tableContainer margin-top-24">
+			<div class="container p-0">
+
+
+				<div id="races-tabs-container" class="row margin-bottom-24">
+					<div class="col-xs-12">
+						<input id="tab_all" data-value="all" class="tab race_detail_tab" type="radio" name="tabs" checked="checked" /> <label for="tab_all" class="tabRacesCount">Toutes les courses</label>
+						<input id="tab_relais" data-value="relais" class="tab race_detail_tab" type="radio" name="tabs" /> <label for="tab_relais" class="tabRacesCount">Relais</label>
+						<input id="tab_solo" data-value="solo" class="tab race_detail_tab" type="radio" name="tabs" /> <label for="tab_solo" class="tabRacesCount">Solo</label>
+					</div>
+				</div>
+
+				<div class="row p-0 d-flex justify-content-between filtersConteners">
+					<div class="kapp10Filter col-sm-12 col-md-4">
+						<select name="filterRecognition" id="filterRecognition" class="search-input filtersSearch filterSexeBg">
+							<option value="all">Reconnaissance du coureur</option>
+							<option value="with_recognition">Photos avec coureurs reconnus</option>
+							<option value="without_recognition">Photos sans coureurs reconnus</option>
+						</select>
+					</div>
+					<div id="filter-sex-container" class="kapp10Filter col-sm-12 col-md-4">
+						<select name="filterSexe" id="filterSexe" class="search-input filtersSearch filterSexeBg">
+							<option value="all">Sexe</option>
+							<option value="m">Hommes</option>
+							<option value="f">Femmes</option>
+						</select>
+					</div>
+
+					<div id="filter-category-container" class="kapp10Filter col-sm-12 col-md-4">
             <% if @categories %>
               <select name="filterCategory" id="filterCategory" class="search-input filtersSearch filtersCategory filterCategoryBg">
                 <option value="all">Toutes les cat&eacute;gories</option>
@@ -129,28 +115,30 @@
               </select>
             <% end %>
           </div>
-          <div id="search-input-container" class="kapp10Research col-sm-12 col-md-12">
-            <input type="text" id="kapp10-filter" class="search-input filterSearchBg" placeholder="Rechercher un coureur par nom ou par n° de dossard">
-            <div id="closingCircleResearch">
-                <span id="closingCrossResearch">x</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="margin-top-24">
-        <div class="container photos-container margin-top-24">
-          <div id="photos-data" class="d-none" data-photos-data='<%= @photos_json %>'></div>
-          <div class="row"></div>
-        </div>
-        <div class="pagination-container margin-top-24 d-none">
-          <ul class="pagination">
-            <li id="page-previous" class="page-item" data-page-number=""><i class="fas fa-angle-double-left"></i></li>
-            <div class="page-numbers d-flex justify-content-center align-items-center"></div>
-            <li id="page-next" class="page-item" data-page-number=""><i class="fas fa-angle-double-right"></i></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+
+					<div id="search-input-container" class="kapp10Research col-sm-12 col-md-12">
+						<input type="text" id="kapp10-filter" class="search-input filterSearchBg" placeholder="Rechercher un coureur par nom ou par n° de dossard" />
+						<div id="closingCircleResearch"><span id="closingCrossResearch">x</span></div>
+					</div>
+				</div>
+			</div>
+			<div class="margin-top-24">
+				<div class="container photos-container margin-top-24">
+					<div
+						id="photos-data"
+						class="d-none"
+						data-photos-data='<%= @photos_json %>'></div>
+					<div class="row"></div>
+				</div>
+				<div class="pagination-container margin-top-24 d-none">
+					<ul class="pagination">
+						<li id="page-previous" class="page-item" data-page-number=""><i class="fas fa-angle-double-left"></i></li>
+						<div class="page-numbers d-flex justify-content-center align-items-center"></div>
+						<li id="page-next" class="page-item" data-page-number=""><i class="fas fa-angle-double-right"></i></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 
     <p class="generated-results">
       <em>Résultats générés le <%= I18n.l @generated_at %>.</em>
@@ -161,5 +149,5 @@
         Pour toute réclamation, demande de modification ou de suppression d'information personnelle, merci de nous écrire à contact@kapp10.com
       </a>
     </p>
-  </div>
+	</div>
 </body>

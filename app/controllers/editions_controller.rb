@@ -205,13 +205,22 @@ class EditionsController < ApplicationController
       #binding.pry
       contact = Contact.where( email: row["Email"], edition_id: params[:id] ).first_or_initialize
       contact.assign_attributes(
-          telephone: row["Telephone"],
-          email: row["Email"],
-          dossard: row["Doss."],
-          nom: row["Nom"],
-          prenom: row["Prenom"],
-          edition_id: params[:id]
-      )
+        telephone: row["Telephone"],
+        email: row["Email"],
+        dossard: row["Doss."],
+        nom: row["Nom"],
+        prenom: row["Prenom"],
+        clas: row['Clas.'],
+        birthday: row['D.d.N.'],
+        country: row['Pays'],
+        category_class: row['Clas. Cat.'],
+        category: row['Cat.'],
+        sex_clas: row['Clas. Sexe'],
+        sex: row['Sexe'],
+        time: row['Temps'],
+        average: row['Moy'],
+        distance: row['Distance'],
+        edition_id: params[:id])
       if contact.save
         counter += 1
       else

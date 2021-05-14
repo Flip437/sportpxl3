@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_06_160731) do
+ActiveRecord::Schema.define(version: 2021_05_14_101012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -70,6 +70,16 @@ ActiveRecord::Schema.define(version: 2021_05_06_160731) do
     t.string "nom"
     t.string "prenom"
     t.integer "edition_id"
+    t.string "clas"
+    t.string "birthday"
+    t.string "country"
+    t.string "category_class"
+    t.string "category"
+    t.string "sex_clas"
+    t.string "sex"
+    t.string "time"
+    t.string "average"
+    t.string "distance"
     t.index ["edition_id"], name: "index_contacts_on_edition_id"
   end
 

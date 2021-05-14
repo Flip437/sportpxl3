@@ -1,8 +1,8 @@
 <h1>Diffuser</h1>
-<% if @edition.widget_generated_at.nil? %>
+<% if @edition.photos_widget_generated_at.nil? %>
     <p>Le widget na pas encore été généré.</p>
 <% else %>
-    <p>Widget généré le #{I18n.l @edition.widget_generated_at}.</p>
+    <p>Widget généré le <%= I18n.l @edition.photos_widget_generated_at %>.</p>
 <% end %>
 
 <%= link_to "Générer le widget", event_edition_generate_photos_widget_path(event_id: @edition.event, edition_id: @edition.id), class: "btn btn-primary", "data-method" => :post %>
