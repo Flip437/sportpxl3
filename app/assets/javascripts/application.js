@@ -27,7 +27,16 @@
 //= require bootstrap-sprockets
 //= require bootstrap-switch
 //= require activestorage
-//= require dropzone 
+//= require dropzone
+
+
+
+//= require template/bootstrap.min
+//= require template/jarallax
+//= require template/script
+//= require template/SmoothScroll
+
+
 //= require_tree .
 
 
