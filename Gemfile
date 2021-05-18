@@ -129,7 +129,7 @@ gem 'gon'
 gem 'mailjet'
 gem 'roda', "~> 2.29.0"
 gem 'jquery-fileupload-rails'
-gem 'bootstrap-sass'
+#gem 'bootstrap-sass'
 gem 'hirb'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'rollbar' # reporting des erreurs

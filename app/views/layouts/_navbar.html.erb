@@ -1,28 +1,16 @@
-<section class="mbr-navbar mbr-navbar--freeze mbr-navbar--absolute mbr-navbar--primary mbr-navbar--sticky mbr-navbar--auto-collapse" id="menu-93">
-
-    <div class="mbr-navbar__section mbr-section">
-        <div class="mbr-section__container">
-            <div class="mbr-navbar__container">
-                <div class="mbr-navbar__column mbr-navbar__column--s mbr-navbar__brand">
-                    <span class="mbr-navbar__brand-link mbr-brand mbr-brand--inline">
-                        <span class="mbr-brand__logo">
-                        <a href="<%= root_path%>">
-                          <%= image_tag("Groupe 57.svg", class: "") %>
-                        </a>
-                        </span>
-                    </span>
-                </div>
-                <div class="mbr-navbar__hamburger mbr-hamburger text-white"><span class="mbr-hamburger__line"></span></div>
-                <div class="mbr-navbar__column mbr-navbar__menu">
-                    <nav class="mbr-navbar__menu-box mbr-navbar__menu-box--inline-right">
-                        <div class="mbr-navbar__column">
-                          <ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-decorator mbr-buttons--active">
-                            <a >BLABLA</a>
-                          </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	<div class="container">
+		<a class="navbar-brand" href="<%= root_path %>">
+			<%= image_tag("logo.svg") %>
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="fa fa-bars"></span> Menu
+		</button>
+		<div class="collapse navbar-collapse" id="ftco-nav">
+		<ul class="navbar-nav ml-auto">
+			<li>        <a class="btn btn-primary" data-method="delete" href="<%= destroy_user_session_path%>"><span>deconnexion</span></a> </li>
+		</ul>
+		</div>
+	</div>
+</nav>
+<!-- END nav -->

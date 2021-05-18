@@ -8,6 +8,10 @@
     </title>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
@@ -15,26 +19,10 @@
 
   <body>
 
-
     <%= render 'layouts/navbar' %>
     <%= render 'layouts/banner' %>
 
-
-
-
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <nav class="navbar">
-            <div class="logo">
-              <a href="<%= root_path%>"><span>Kapp10 FreshStart</span></a>
-            </div>
-          </nav>
-        </div>
-      </div>
-      <p>
-        <a class="btn btn-primary" data-method="delete" href="<%= destroy_user_session_path%>"><span>deconnexion</span></a>
-      </p>
       <!-- cadre du contenu sous le média -->
       <div>
         <% flash.each do |key, value| %>
@@ -51,4 +39,5 @@
   </body>
 
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 </html>

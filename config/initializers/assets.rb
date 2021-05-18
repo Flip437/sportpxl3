@@ -8,6 +8,14 @@ Rails.application.config.assets.version = '1.1'
 Rails.application.config.assets.precompile += %w( diploma.css )
 Rails.application.config.assets.precompile += %w( login.css )
 Rails.application.config.assets.precompile += %w( picto.css )
+
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images")
+
+
+Rails.application.config.assets.paths << Rails.root.join('app', 'assets', 'fonts')  
+Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
+
+
 #Rails.application.config.assets.precompile += %w( diploma_form.sass )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.

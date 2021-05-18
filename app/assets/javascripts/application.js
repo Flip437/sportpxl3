@@ -11,30 +11,33 @@
 // about supported directives.
 //
 //= require jquery2
-//= require moment.min.js
 //= require jquery_ujs
-//= require jquery.remotipart
-//= require retina.js
 //= require angular
 //= require app.js
-//= require underscore.js
-//= require jquery-fileupload/vendor/jquery.ui.widget
-//= require jquery-fileupload/jquery.iframe-transport
-//= require jquery-fileupload/jquery.fileupload
-//= require simplegallery.min.js
-//= require percentageChart.js
-//= require ui-bootstrap-tpls-2.5.0.min.js
-//= require bootstrap-sprockets
-//= require bootstrap-switch
+
+
+
+
 //= require activestorage
 //= require dropzone
 
 
-
+//= require template/jquery.min
+//= require template/jquery-migrate-3.0.1.min
+//= require template/popper.min
 //= require template/bootstrap.min
-//= require template/jarallax
-//= require template/script
-//= require template/SmoothScroll
+//= require template/jquery.easing.1.3
+//= require template/jquery.waypoints.min
+//= require template/jquery.stellar.min
+//= require template/jquery.animateNumber.min
+//= require template/bootstrap-datepicker
+//= require template/jquery.timepicker.min
+//= require template/owl.carousel.min
+//= require template/jquery.magnific-popup.min
+//= require template/scrollax.min
+//= require template/google-map
+//= require template/main
+
 
 
 //= require_tree .

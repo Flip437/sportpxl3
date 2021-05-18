@@ -1,0 +1,59 @@
+@import url(template/animate.css);
+@import url(template/owl.carousel.min.css);
+@import url(template/owl.theme.default.min.css);
+@import url(template/magnific-popup.css);
+@import url(template/bootstrap-datepicker.css);
+@import url(template/jquery.timepicker.css);
+@import url(template/flaticon.css);
+@import url(template/style.css);
+/* line 1, /home/flip/Documents/DEV/SPORTPXL/SportPxl/app/assets/stylesheets/dropzone.css */
+.file_droparea {
+  border: 5px dashed #66b0ff;
+  border-radius: 4px;
+  background-color: #909090;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: max-content;
+  margin: 0 auto;
+  padding: 26px 20px 30px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* line 17, /home/flip/Documents/DEV/SPORTPXL/SportPxl/app/assets/stylesheets/dropzone.css */
+.file_droparea.is-active,
+.file_droparea:focus,
+.file_droparea:hover {
+  border-color: #7979ac;
+}
+
+/* line 23, /home/flip/Documents/DEV/SPORTPXL/SportPxl/app/assets/stylesheets/dropzone.css */
+.file_msg {
+  color: white;
+  font-size: x-large;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: calc(100% - 130px);
+  vertical-align: middle;
+}
+
+/* line 35, /home/flip/Documents/DEV/SPORTPXL/SportPxl/app/assets/stylesheets/dropzone.css */
+.file_input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+/* line 43, /home/flip/Documents/DEV/SPORTPXL/SportPxl/app/assets/stylesheets/dropzone.css */
+.file_input:focus {
+  outline: none;
+}
