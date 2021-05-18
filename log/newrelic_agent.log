@@ -3879,3 +3879,26 @@
 [2021-05-14 16:12:31 +0200 flip-ThinkPad-T440s (42931)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
 [2021-05-14 16:35:09 +0200 flip-ThinkPad-T440s (42931)] INFO : Starting Agent shutdown
 [2021-05-14 16:35:09 +0200 flip-ThinkPad-T440s (42898)] INFO : Starting Agent shutdown
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Starting the New Relic agent version 7.0.0 in "development" environment.
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Reading configuration from config/newrelic.yml (/home/flip/Documents/DEV/SPORTPXL/SportPxl)
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Environment: development
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : No known dispatcher detected.
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Application: My Application (Development)
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Installing Redis Instrumentation
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Installing New Relic supported Redis instrumentation using Prepend
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Installing notifications based Active Record instrumentation
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Installing New Relic supported Rack instrumentation using Prepend
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Installing New Relic supported URLMap instrumentation using Prepend
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Installing Rails 3+ middleware instrumentation
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Installing Sidekiq instrumentation
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Installing Net:HTTP Wrappers
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Installing New Relic supported NetHTTP instrumentation using Prepend
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Installing ActiveJob instrumentation
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Installing ActiveStorage 5 instrumentation
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Installing notifications based Action Controller instrumentation
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Installing notification based Action View instrumentation
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Installing notifications based Action Cable instrumentation
+[2021-05-18 14:17:59 +0200 flip-ThinkPad-T440s (32155)] INFO : Finished instrumentation
+[2021-05-18 14:18:00 +0200 flip-ThinkPad-T440s (32155)] INFO : Doing deferred dependency-detection before Rack startup
+[2021-05-18 14:18:03 +0200 flip-ThinkPad-T440s (32155)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1315015/applications/37027491
