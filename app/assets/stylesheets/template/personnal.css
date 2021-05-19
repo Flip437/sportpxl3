@@ -1,0 +1,20 @@
+.first-card-img{
+  padding-right: 0px;
+}
+
+.second-card-img{
+  width: 100%;
+  height: 50%;
+  background-size: 100% 100%;
+
+}
+
+.third-card-img{
+  width: 100%;
+  height: 50%;
+  background-size: 100% 100%;
+}
+
+.card-img-fit{
+  max-height: 78px;
+}

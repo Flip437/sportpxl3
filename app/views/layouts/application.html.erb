@@ -12,17 +12,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
     <%= csrf_meta_tags %>
   </head>
 
 
   <body>
-
     <%= render 'layouts/navbar' %>
-    <%= render 'layouts/banner' %>
 
-    <div class="container">
       <!-- cadre du contenu sous le média -->
       <div>
         <% flash.each do |key, value| %>
@@ -35,9 +32,8 @@
       <div class="content_frame">
         <%= yield %>
       </div>
-    </div>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </body>
 
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 </html>

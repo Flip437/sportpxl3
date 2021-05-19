@@ -1,53 +1,47 @@
-<div class="row event_card eventRow">
-
-  <div class="row eventControl">
-    <div class="col-md-4">
-      <h3 class="titleEvent">
-        <%= link_to event.name, home_picto_event_path(event) %> <br> <span> <%= event.place %>  </span>
-      </h3>
+<div class="col-md-4 d-flex ftco-animate">
+  <div class="blog-entry align-self-stretch bg-primary">
+  
+    <div class="row">
+      <div class="col-8" style="padding-right: 0px;">
+        <%= image_tag(Photo.first.image, class:"card-img") %>
+      </div>
+      <div class="col-4" style="padding-left: 0px;">
+        <div class="second-card-img">
+          <%= image_tag(Photo.last.image, class:"card-img") %>
+        </div>
+        <div class="third-card-img">
+          <%= image_tag(Photo.last.image, class:"card-img") %>
+        </div>
+      </div>
     </div>
-    <div class="col-md-8">
-      <%#= link_to 'Visualiser', event_path(event), class: 'btn btn-default' %>
-      <%#= link_to 'Editer', home_picto_event_path(event), class: 'btn btn-default' %>
-      <%#= link_to 'Dupliquer', home_picto_event_path(event, event: event.attributes, duplicate: "duplicate"), class: 'btn btn-default' %>
+
+
+    <div class="media-body p-4">
+      <h3 class="heading"><%= link_to event.name, home_picto_event_path(event), class:"text-white" %></h3>
+      <p class="text-secondary"><%= event.place %></p>
+    </div>
+    <div class="text p-4">
+
+
+
+      <% if event.editions.blank? %>
+        <p>Il n'y pas encore d'édition créée pour cet évènement</p>
+      <% else %>
+
+      <div class="row">
+        <% event.editions.each do |edition| %>
+        <div class="col-6">
+          <a href="<%= home_picto_edition_event_edition_path(event_id: edition.event.id, edition_id: edition.id, id: edition.id) %>" class="btn btn-secondary text-white text-left">
+            <%= edition.date.strftime('%e %b %Y') %><br> <!-- To clear when routes will be cleaned" -->
+            <%= edition.races.pluck(:race_type).join(', ') %> <!-- edition.races.pluck(:name).join(', ') -->
+            <span class="ion-ios-arrow-forward"></span>
+          </a>
+        </div>
+        <% end %>
+      </div>
+
+      <% end %>
+
     </div>
   </div>
-
-  <% if event.editions.blank? %>
-    <p>Il n'y pas encore d'édition créée pour cet évènement</p>
-  <% else %>
-    <% event.editions.each do |edition| %>
-      <div class="col-md-4 editionBox">
-        <h2 class="courseDate">
-          <%= link_to edition.date.strftime('%e %b %Y'), home_picto_edition_event_edition_path(event_id: edition.event.id, edition_id: edition.id, id: edition.id)  %> <!-- To clear when routes will be cleaned" -->
-          <!--<a href="#">
-            <%#= link_to(image_tag("editIcon.png", width: 15, height: 15), edit_event_edition_path(edition.event.id, edition.id) ) %>
-          </a>--> <br>
-          <span class="courseType"><%= edition.races.pluck(:race_type).join(', ') %> </span> <br>
-          <span class="courseName"> <%= edition.races.pluck(:name).join(', ') %> </span>
-
-        </h2>
-        <%# if edition.date >= Date.current %>
-          <!--<div class="courseStatus inProgress">EN COURS DE TRAITEMENT</div>-->
-        <%# else %>
-          <!--<div class="courseStatus finishProgress">TRAITER</div>-->
-        <%# end %>
-        <!--<ul class="list-inline statisticsCourse">
-          <li>
-            <span class="coursePhotos">1245</span> <br>
-            PHOTOS
-          </li>
-          <li>
-            <span class="courseContacts">780</span> <br>
-            CONTACTS
-          </li>
-          <li>
-            <span class="courseCampagnes">3</span> <br>
-            CAMPAGNES
-          </li>
-        </ul>-->
-      </div>
-    <% end %>
-  <% end %>
-
 </div>

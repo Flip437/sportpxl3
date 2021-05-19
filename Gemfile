@@ -14,12 +14,12 @@ gem 'puma', '~> 3.7.1'
 gem 'sass-rails', '~> 5.0'
 gem 'compass-rails', '~> 4.0'
 
-gem 'jquery-rails'
+#gem 'jquery-rails'
 # gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'sprockets-rails', '3.2.1'
 # gem 'font-awesome-sass'
 # gem "font-awesome-rails"
-gem 'popper_js', '~> 1.16.0'
+#gem 'popper_js', '~> 1.16.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -100,9 +100,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-
-
-
 gem 'sdoc', '~> 0.4.0', group: :doc 
 gem 'imgkit', '~> 1.6.1'  
 gem 'wkhtmltoimage-binary', '~> 0.12.2'
@@ -111,7 +108,7 @@ gem 'wkhtmltoimage-binary', '~> 0.12.2'
 gem 'aws-sdk', '~> 3'
 
 gem 'httparty'
-gem 'newrelic_rpm'
+#gem 'newrelic_rpm'
 gem 'charlock_holmes'
 gem 'bitly', '~> 0.10.4'
 #sidekiq use redis as a job management store to process thousands of jobs per second. 
@@ -122,7 +119,7 @@ gem 'simple_form'
 gem 'stripe'
 gem "paperclip", "~> 5.0.0"
 gem 'devise'
-gem 'devise-bootstrap-views', '~> 1.0'
+#gem 'devise-bootstrap-views', '~> 1.0'
 git_source(:github){ |repo_name| "https://github.com/#{repo_name}.git" }
 gem 'remotipart', github: 'jbox-web/remotipart', tag: '1.6.0'
 gem 'gon'
@@ -133,7 +130,7 @@ gem 'jquery-fileupload-rails'
 gem 'hirb'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'rollbar' # reporting des erreurs
-gem "bootstrap-switch-rails", '3.3.3'
+#gem "bootstrap-switch-rails", '3.3.3'
 gem 'htmlentities' # permet de transformer les accents en entités HTML ex: &eacute;
 gem 'htmlcompressor' # permet de compresser le HTML  des widgets
 gem 'will_paginate-bootstrap' # pagination
@@ -141,7 +138,7 @@ gem 'google_url_shortener'
 gem 'google-cloud-vision', '~> 0.31.0'
 #gem 's3_direct_upload'
 gem 'slim'
-gem 'font-awesome-sass', '~> 4.7.0'
+#gem 'font-awesome-sass', '~> 4.7.0'
 gem 'money-rails'
 gem 'open_uri_redirections'
 gem 'kaminari'
@@ -152,7 +149,3 @@ gem 'doorkeeper', '~> 4.2.6'
 gem 'active_model_serializers', '~> 0.10.7'
 gem 'blueprinter'
 gem 'oj'
-
-
-
-

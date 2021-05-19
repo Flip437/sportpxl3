@@ -26,6 +26,8 @@
   --danger: #dc3545;
   --light: #f8f9fa;
   --dark: #343a40;
+  --primary: #072B3A;
+  --secondary: #FEB62C;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -34,14 +36,6 @@
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
-
-@font-face {
-  font-family: 'FuturaLT-Bold';
-  src:font-url('FuturaLT-Bold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  }
-  
 *,
 *::before,
 *::after {
@@ -49,7 +43,7 @@
   box-sizing: border-box; }
 
 html {
-  font-family: "FuturaLT-Bold";
+  font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
@@ -59,7 +53,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "FuturaLT-Bold";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -3859,7 +3853,7 @@ input[type="button"].btn-block {
 
 .card-img {
   width: 100%;
-  border-radius: calc(0.25rem - 1px); }
+  /*border-radius: calc(0.25rem - 1px);*/ }
 
 .card-img-top {
   width: 100%;
@@ -5357,7 +5351,7 @@ a.close.disabled {
   vertical-align: text-top !important; }
 
 .bg-primary {
-  background-color: #007bff !important; }
+  background-color: var(--primary) !important; }
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
@@ -7999,13 +7993,13 @@ button.bg-dark:focus {
   color: #fff !important; }
 
 .text-primary {
-  color: #007bff !important; }
+  color: var(--primary) !important; }
 
 a.text-primary:hover, a.text-primary:focus {
   color: #0056b3 !important; }
 
 .text-secondary {
-  color: #6c757d !important; }
+  color: var(--secondary) !important; }
 
 a.text-secondary:hover, a.text-secondary:focus {
   color: #494f54 !important; }
@@ -8141,7 +8135,7 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 
 body {
-  font-family: "FuturaLT-Bold";
+  font-family: "Montserrat", Arial, sans-serif;
   background: #fff;
   font-size: 15px;
   line-height: 1.8;
@@ -8197,7 +8191,7 @@ h1, h2, h3, h4, h5,
         color: #fff; }
 
 .ftco-navbar-light {
-  background: #072B3A !important;
+  background: #fff !important;
   z-index: 3;
   padding: 0;
   -webkit-box-shadow: 0px 5px 20px -17px rgba(0, 0, 0, 0.34);
@@ -8377,23 +8371,22 @@ h1, h2, h3, h4, h5,
   background-position: top center;
   position: relative;
   overflow: hidden;
-  height: 297px;  
+  height: 700px;
+  background-image: url('../banner.jpg');
 }
   @media (max-width: 1199.98px) {
     .hero-wrap {
-      background-position: center center !important;
-    } }
+      background-position: center center !important; } }
   .hero-wrap .overlay {
-    height: 297px;
-    background: #072B3A 0% 0% no-repeat padding-box;
-
     position: absolute;
     width: 100%;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    content: ''; }
+    content: '';
+    opacity: .3;
+    background: #000000; }
   .hero-wrap.hero-wrap-2 {
     height: 400px; }
     .hero-wrap.hero-wrap-2 .overlay {
@@ -8405,7 +8398,7 @@ h1, h2, h3, h4, h5,
         font-weight: 400;
         font-size: 40px; }
   .hero-wrap .slider-text {
-    height: 297px; }
+    height: 700px; }
     .hero-wrap .slider-text h1 {
       color: #fff;
       line-height: 1.4;
@@ -8545,7 +8538,7 @@ h1, h2, h3, h4, h5,
   background: #ffd31d !important; }
 
 .bg-primary {
-  background: #207dff !important; }
+  background: var(--primary) !important; }
 
 .btn {
   padding: 12px 16px;
@@ -8576,8 +8569,8 @@ h1, h2, h3, h4, h5,
         background: #207dff;
         color: #fff; }
   .btn.btn-secondary {
-    background: #ffd31d;
-    border: 1px solid #ffd31d;
+    background: var(--secondary);
+    border: 1px solid var(--secondary);
     color: #000000; }
     .btn.btn-secondary:hover {
       border: 1px solid #ffd31d;
