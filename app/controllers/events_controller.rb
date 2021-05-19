@@ -79,7 +79,12 @@ class EventsController < ApplicationController
     #@eventsfreshAdded = current_user.events.fresh
     #@events = current_user.events.order( created_at: :desc )
     @events = Event.where(user_id: current_user.id).order( created_at: :desc )
-    #binding.pry
+    
+    @photos_array = []
+    
+    Event.find(20).editions.find(39).photos.all.each do |photo|
+      @photos_array << photo.image
+    end
 
     #For sorting
     order = params[:option]

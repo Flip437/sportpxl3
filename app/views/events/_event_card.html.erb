@@ -5,20 +5,24 @@
     <% if event.editions.first.photos.size > 3 %>
 
       <div class="col-8" style="padding-right: 0px;">
-        <%= image_tag(event.editions.first.photos.first.image, class:"card-img") %>
+        <div class="container_first_card_img">
+          <%= image_tag(event.homepage_photos[rand(event.homepage_photos.size)], class:"first_card_img") %>
+        </div>
       </div>
 
       <div class="col-4" style="padding-left: 0px;">
-        <div class="second-card-img">
-          <%= image_tag(event.editions.first.photos.last.image, class:"card-img") %>
+        <div class="container_second_card_img">
+          <%= image_tag(event.homepage_photos[rand(event.homepage_photos.size)], class:"second_card_img") %>
         </div>
-        <div class="third-card-img">
-          <%= image_tag(event.editions.first.photos.last.image, class:"card-img") %>
+        <div class="container_second_card_img">
+          <%= image_tag(event.homepage_photos[rand(event.homepage_photos.size)], class:"second_card_img") %>
         </div>
       </div>
 
       <% else %>
-        <img class="card-img-top" src="<%= asset_path('card_img_top.png') %>" alt="Card image cap">
+        <div class="col-12">
+          <img class="card-img-top" src="<%= asset_path('card_img_top.png') %>" alt="Card image cap">
+        </div>
       <% end %>
 
     </div>
