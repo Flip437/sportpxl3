@@ -114,6 +114,20 @@ class Event < ApplicationRecord
     end
   end
 
+  def homepage_photos
+    home_photos=[]
+    self.editions.each do |edition|
+      puts "ARRAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"
+      puts home_photos
+      return home_photos if home_photos.size >=3
+      if edition.photos.size > 0
+        edition.photos.each do |photo|
+          home_photos << photo.image
+        end
+      end
+    end
+  end
+
   def self.filterEvents( parameters )
     #editions = e.races.where(["distance = :distance and race_type = :race_type", { distance: 15.0 , race_type: "trail" }])
 

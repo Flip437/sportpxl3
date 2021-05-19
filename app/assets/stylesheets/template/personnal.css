@@ -18,3 +18,7 @@
 .card-img-fit{
   max-height: 78px;
 }
+
+.card-img-top {
+  max-width: 100%;
+}

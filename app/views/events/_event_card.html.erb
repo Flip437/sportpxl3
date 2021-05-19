@@ -2,17 +2,25 @@
   <div class="blog-entry align-self-stretch bg-primary">
   
     <div class="row">
+    <% if event.editions.first.photos.size > 3 %>
+
       <div class="col-8" style="padding-right: 0px;">
-        <%= image_tag(Photo.first.image, class:"card-img") %>
+        <%= image_tag(event.editions.first.photos.first.image, class:"card-img") %>
       </div>
+
       <div class="col-4" style="padding-left: 0px;">
         <div class="second-card-img">
-          <%= image_tag(Photo.last.image, class:"card-img") %>
+          <%= image_tag(event.editions.first.photos.last.image, class:"card-img") %>
         </div>
         <div class="third-card-img">
-          <%= image_tag(Photo.last.image, class:"card-img") %>
+          <%= image_tag(event.editions.first.photos.last.image, class:"card-img") %>
         </div>
       </div>
+
+      <% else %>
+        <img class="card-img-top" src="<%= asset_path('card_img_top.png') %>" alt="Card image cap">
+      <% end %>
+
     </div>
 
 
