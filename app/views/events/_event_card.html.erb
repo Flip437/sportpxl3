@@ -21,7 +21,9 @@
 
       <% else %>
         <div class="col-12">
-          <img class="card-img-top" src="<%= asset_path('card_img_top.png') %>" alt="Card image cap">
+          <div class="container_card_img_top">
+            <img class="card-img-top" src="<%= asset_path('card_img_top.png') %>" alt="Card image cap">
+          </div>
         </div>
       <% end %>
 
@@ -30,7 +32,7 @@
 
     <div class="media-body p-4">
       <h3 class="heading"><%= link_to event.name, home_picto_event_path(event), class:"text-white" %></h3>
-      <p class="text-secondary"><%= event.place %></p>
+      <p class="text-secondary font-weight-light"><%= event.place %></p>
     </div>
     <div class="text p-4">
 

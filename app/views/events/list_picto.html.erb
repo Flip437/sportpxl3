@@ -1,10 +1,13 @@
 <%= render 'layouts/banner' %>
 
+<%= render 'layouts/searchbar' %>
+
 <section class="ftco-section bg-light">
   <div class="container">
     <div class="row justify-content-center pb-5 mb-3">
       <div class="col-md-7 heading-section text-center ftco-animate">
-          <h2> Evénement personnel</h2>
+          <h2 class="text-primary font-bold">Mes événements</h2>
+          <%= image_tag("3colors.svg") %>
           <% if @events.blank? %>
             <p> Il n'y pas encore d'évènement</p>
           <% end %>

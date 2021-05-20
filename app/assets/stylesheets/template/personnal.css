@@ -21,24 +21,96 @@
 }
 
 
-
-.second-card-img{
-  width: 100%;
-  height: 50%;
-  /*background-size: 100% 100%;*/
-  object-fit: cover;
-}
-
-.third-card-img{
-  width: 100%;
-  height: 50%;
-  background-size: 100% 100%;
-}
-
 .card-img-fit{
   max-height: 78px;
 }
 
-.card-img-top {
-  max-width: 100%;
+.container_card_img_top {
+  height: 200px;
 }
+
+.card-img-top {
+  object-fit: cover;
+}
+
+
+@font-face {
+  font-family: "FuturaLT-Bold";
+  src: url("FuturaLT-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "FuturaLT-Book";
+  src: url("FuturaLT-Book.ttf") format("truetype");
+}
+@font-face {
+  font-family: "FuturaLT-Light";
+  src: url("FuturaLT-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "FuturaLT-Condensed";
+  src: url("FuturaLT-Condensed.ttf") format("truetype");
+}
+@font-face {
+  font-family: "FuturaLT";
+  src: url("FuturaLT.ttf") format("truetype");
+}
+
+
+.font-bold {
+  font-family: "FuturaLT-Bold";
+}
+.font-book {
+  font-family: "FuturaLT-Book";
+}
+.font-light {
+  font-family: "FuturaLT-Light";
+}
+.font-condensed {
+  font-family: "FuturaLT-Condensed";
+}
+.font-futura {
+  font-family: "FuturaLT";
+  font-size: 20px;
+}
+
+.font-20px {
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+.searchbar {
+  overflow-x: hidden;
+  position: relative;
+  background: #2C9FBB; }
+  @media (max-width: 1199.98px) {
+    .searchbar {
+      background-position: center center !important; } }
+  .searchbar .block-18 {
+    display: block;
+    width: 100%; }
+    @media (max-width: 991.98px) {
+      .searchbar .block-18 {
+        margin-bottom: 2em; } }
+  .searchbar .text {
+    position: relative; }
+    @media (max-width: 767.98px) {
+      .searchbar .text {
+        width: 100%; } }
+    .searchbar .text .number {
+      line-height: 1;
+      font-weight: 700;
+      font-size: 40px;
+      color: #ffd31d;
+      display: block;
+      margin-bottom: 10px; }
+    .searchbar .text span {
+      font-size: 17px;
+      color: #fff; }
+  @media (max-width: 767.98px) {
+    .searchbar .counter-wrap {
+      margin-bottom: 20px; } }

@@ -53,7 +53,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";*/
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -8135,7 +8135,7 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 
 body {
-  font-family: "Montserrat", Arial, sans-serif;
+  /* font-family: "Montserrat", Arial, sans-serif; */
   background: #fff;
   font-size: 15px;
   line-height: 1.8;
@@ -8362,7 +8362,9 @@ h1, h2, h3, h4, h5,
     .searchform .search span {
       font-size: 20px; }
 
-.hero-wrap {
+
+
+/* .hero-wrap {
   width: 100%;
   height: 100%;
   position: inherit;
@@ -8371,9 +8373,24 @@ h1, h2, h3, h4, h5,
   background-position: top center;
   position: relative;
   overflow: hidden;
-  height: 700px;
-  background-image: url('../banner.jpg');
+  height: 700px; } */
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
 }
+
+.hero-wrap {
+  background-image: linear-gradient(rgba(7, 43, 58, 0.76), rgba(7, 43, 58, 0.76)), url("../banner.jpg");
+  height: 296px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;}
   @media (max-width: 1199.98px) {
     .hero-wrap {
       background-position: center center !important; } }
@@ -8402,7 +8419,7 @@ h1, h2, h3, h4, h5,
     .hero-wrap .slider-text h1 {
       color: #fff;
       line-height: 1.4;
-      font-family: "Montserrat", Arial, sans-serif;
+      /*font-family: "Montserrat", Arial, sans-serif;*/
       font-size: 45px;
       font-weight: 800;
       text-transform: uppercase; }
@@ -8417,7 +8434,7 @@ h1, h2, h3, h4, h5,
       font-size: 15px;
       color: #207dff;
       text-transform: uppercase;
-      font-family: "Montserrat", Arial, sans-serif;
+      /*font-family: "Montserrat", Arial, sans-serif;*/
       font-weight: 700;
       letter-spacing: 2px; }
     .hero-wrap .slider-text p {
@@ -9112,7 +9129,7 @@ textarea.form-control {
   letter-spacing: 2px; }
 
 .heading-section h2 {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 800; }
   @media (max-width: 767.98px) {
     .heading-section h2 {

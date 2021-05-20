@@ -1,9 +1,15 @@
-<div class="hero-wrap" data-stellar-background-ratio="0.5">
-  <div class="container text-center h-100">
-    <div class="row h-100 align-items-center">
-      <div class="col-md-12">
-        <h1 class="mb-4 vertical-center">Liste des évènements</h1>
-        <a href="#" class="btn btn-secondary mr-md-4 py-3 px-4"><i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter une événement<span class="ion-ios-arrow-forward"></span></a>
+<div class="hero-wrap">
+  <div class="hero-text">
+    <div class="container text-center h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-md-12">
+          <h1 class="mb-4 vertical-center text-white font-bold">Liste des évènements</h1>
+            <%= link_to(root_path, class:"btn btn-secondary mr-md-4 py-3 px-4 font-futura text-white text-capitalize") do %>
+              <%= image_tag("plus.svg") %>
+              Ajouter un événement
+              <span class="ion-ios-arrow-forward"></span>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
