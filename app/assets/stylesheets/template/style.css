@@ -8912,8 +8912,8 @@ h1, h2, h3, h4, h5,
 
 .form-control {
   height: 52px !important;
-  background: #fff !important;
-  color: #000000 !important;
+  background: #fff;
+  color: #000000;
   font-size: 14px;
   border-radius: 5px;
   -webkit-box-shadow: none !important;
@@ -8973,7 +8973,7 @@ textarea.form-control {
   .appointment .form-group .icon {
     position: absolute;
     top: 50% !important;
-    right: 15px;
+    /*right: 2px;*/
     font-size: 16px;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -8993,8 +8993,8 @@ textarea.form-control {
 
 .appointment .form-control {
   border: transparent;
-  background: white !important;
-  color: rgba(0, 0, 0, 0.9) !important;
+  background: white;
+  color: rgba(0, 0, 0, 0.9);
   font-size: 14px;
   font-weight: 600;
   border-radius: 5px;
