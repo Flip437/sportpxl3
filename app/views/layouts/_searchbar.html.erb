@@ -1,11 +1,11 @@
 <section class="searchbar" id="section-counter">
   <div class="container-fluid">
-    <div class="row">
+    <div class="row h-100">
 
-      <div class="col-md-6 mb-5 mb-md-0 text-center text-md-left">
+      <div class="col-md-5 text-center text-md-left h-100">
         <div class="row h-100">
           <div class="col-md-1 my-auto">
-            <div><%= image_tag('right_arrow.svg') %></div>
+            <div class=""><%= image_tag('right_arrow.svg') %></div>
           </div>
           <div class="col-md-11 my-auto">
             <div class="text-white font-condensed text-uppercase font-20px">Accueil > liste des événements</div>
@@ -13,65 +13,49 @@
         </div>
       </div>
 
-      <div class="col-md-6">
-
-
-
-                <form action="#" class="appointment">
-                  <div class="row h-100">
-                    <div class="col-md-4 my-auto">
-                      <div class="form-group mb-0 mb-0">
-                        <div class="input-wrap">
-                          <div class="icon"><%= image_tag('search.svg') %></span></div>
-                          
-                          <input type="text" class="form-control rounded-0" placeholder="Rechercher un événement">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-3 my-auto">
-                      <div class="form-group mb-0">
-                        <div class="form-field">
-                          <div class="select-wrap">
-                            <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                            <select name="" id="" class="rounded-0 form-control bg-primary text-white">
-                              <option value="">Ordre A-Z</option>
-                              <option value="">House Washing</option>
-                              <option value="">Roof Cleaning</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-3 my-auto">
-                      <div class="form-group mb-0">
-                        <div class="form-field">
-                          <div class="select-wrap">
-                            <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                            <select name="" id="" class="form-control rounded-0 text-white bg-primary">
-                              <option value="">Select services</option>
-                              <option value="">House Washing</option>
-                              <option value="">Roof Cleaning</option>
-                              <option value="">Driveway Cleaning</option>
-                              <option value="">Gutter Cleaning</option>
-                              <option value="">Patio Cleaning</option>
-                              <option value="">Building Cleaning</option>
-                              <option value="">Concrete Cleaning</option>
-                              <option value="">Sidewal Cleaning</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-2 my-auto">
-                      <div class="form-group mb-0">
-                        <input type="submit" value="Send message" class="btn btn-primary py-3 px-4">
-                      </div>
-                    </div>
+      <div class="col-md-7 h-100">
+        <form action="#" class="appointment">
+          <div class="row h-100">
+            <div class="col-md-5 my-auto">
+              <div class="form-group mb-0 mb-0">
+                <div class="input-wrap">
+                  <div class="icon"><%= image_tag('search.svg') %></div>
+                  <input type="text" class="text-right form-control rounded-0" placeholder="Rechercher un événement">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 my-auto">
+              <div class="form-group mb-0">
+                <div class="form-field">
+                  <div class="select-wrap">
+                    <div class="icon"><span class="fa fa-chevron-down"></span></div>
+                    <select name="" id="" class="rounded-0 form-control bg-primary text-white text-right">
+                      <option value="">Ordre A-Z</option>
+                      <option value="">House Washing</option>
+                      <option value="">Roof Cleaning</option>
+                    </select>
                   </div>
-                </form>
-
-
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 my-auto">
+              <div class="form-group mb-0">
+                <div class="form-field">
+                  <div class="select-wrap">
+                    <div class="icon"><span class="fa fa-chevron-down"></span></div>
+                    <select name="" id="" class="form-control rounded-0 text-white bg-primary text-right">
+                      <option value="">Du plus récent au plus ancien</option>
+                      <option value="">House Washing</option>
+                      <option value="">Roof Cleaning</option>
+                      <option value="">Driveway Cleaning</option>
+                      <option value="">Gutter Cleaning</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
 
     </div>
