@@ -75,18 +75,16 @@
     <div class="row justify-content-center mt-5 mb-5">
        <div class="col-md-7 text-center">
         <h2 class="text-primary font-bold"> <%= @edition.event.name %> - <%= @edition.date.strftime('%d/%m/%Y') %>  </h2>
-        <%= image_tag("3colors.svg") %>
+        <%= image_tag("svg/3colors.svg") %>
       </div>
     </div>
 
     <div class="row">
-
       <div class="col-md-6">
 
-      
         <div class="row bg-blue mb-3 mx-1">
           <div class="col-1 col-md-1 pt-4">
-            <%= image_tag('descriptif.svg') %>
+            <%= image_tag('svg/descriptif.svg') %>
           </div>
 
           <div class="col-10 col-md-10 padtop">
@@ -107,36 +105,41 @@
           </div>
 
           <div class="col-1 col-md-1 pl-1 pr-3 pt-4">
-            <%= link_to(image_tag("edit.svg"), edit_event_edition_path(@edition.event.id, @edition.id) ) %>
+            <%= link_to(image_tag("svg/edit.svg"), edit_event_edition_path(@edition.event.id, @edition.id) ) %>
           </div>
         </div>
 
+        <div class="row bg-primary mb-3 mx-1">
+          <div class="col-1 col-md-1 pt-4">
+            <%= image_tag('svg/focus.svg') %>
+          </div>
 
+          <div class="col-10 col-md-10 padtop">
+            <h2 class="font-condensed text-white">PHOTOS</h2>
 
+            <table class="table table-bordered mb-5">
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="text-white font-futura"> <%= @edition.pictures.all.count %> </span><br>
+                    <span class="text-white font-light">PHOTOS</span>
+                  </td>
+                  <td>
+                    <span class="text-white font-futura"> <%= @edition.contacts.all.count %> </span><br>
+                    <span class="text-white font-light">CONTACTS</span>                      
+                  </td>
+                  <td>
+                    <span class="text-white font-futura"> <%= @edition.campaigns.all.count %> </span><br>
+                    <span class="text-white font-light">CAMPAGNES</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-
-
-
-        <div class="row bg-primary mx-1">
-          <h2 class="courseDate">
-            PHOTOS
-              <%= link_to(image_tag("editIcon.png", width: 15, height: 15), new_event_picture_path( params[:event_id], params[:id] ) ) %>
-          </h2>
-          <br>
-          <ul class="list-inline statisticsCourse">
-            <li>
-              <span class="coursePhotos"> <%= @edition.pictures.all.count %> </span> <br>
-              PHOTOS
-            </li>
-            <li class="middleList">
-              <span class="courseContacts"> <%= @edition.contacts.all.count %> </span> <br>
-              CONTACTS
-            </li>
-            <li>
-              <span class="courseCampagnes"> <%= @edition.campaigns.all.count %> </span> <br>
-              CAMPAGNES
-            </li>
-          </ul>
+          <div class="col-1 col-md-1 pl-1 pr-3 pt-4">
+            <%= link_to(image_tag("svg/white_edit.svg"), edit_event_edition_path(@edition.event.id, @edition.id)) %>
+          </div>
         </div>
 
       </div>
@@ -144,31 +147,110 @@
 
       <div class="col-md-6 pl-0">
 
-        <div class="col-md-12 bg-yellow">
-          <h2 class="">
-            CONTACTS
-            <%= link_to(image_tag("editIcon.png", width: 15, height: 15), contacts_picto_edition_event_edition_path( params[:event_id], params[:id] ) ) %>
-          </h2>
-          <br>
-          <ul class="list-inline statisticsCourse">
-            <li  class="rightList">
-              <span class="coursePhotos"><%= @totalContacts %></span> <br>
-              CONTACTS <br> IMPORTES
-            </li>
-            <li class="rightList">
-              <span class="courseContacts"><%= @totalContactsWithEmail %></span> <br>
-              CONTACTS <br> AVEC EMAIL
-            </li>
-            <li class="rightList">
-              <span class="courseCampagnes"><%= @totalContactsWithSMS %></span> <br>
-              CONTACTS <br> AVEC SMS
-            </li>
-            <li>
-              <span class="courseCampagnes">1090</span> <br>
-              RESULTATS <br> OFFICIELS
-            </li>
-          </ul>
+
+        <div class="row bg-yellow mb-3 mx-1">
+          <div class="col-1 col-md-1 pt-4">
+            <%= image_tag('svg/contact.svg') %>
+          </div>
+
+          <div class="col-10 col-md-10 padtop">
+            <h2 class="font-condensed text-primary">CONTACTS</h2>
+
+            <table class="table table-bordered mb-5">
+              <tbody>
+                <tr>
+                  <td class="border-primary">
+                    <span class="text-primary font-futura"> <%= @totalContacts %> </span><br>
+                    <span class="text-primary font-light">CONTACTS IMPORTÉS</span>
+                  </td>
+                  <td class="border-primary">
+                    <span class="text-primary font-futura"> <%= @totalContactsWithEmail %> </span><br>
+                    <span class="text-primary font-light">CONTACTS AVEC EMAIL</span>                      
+                  </td>
+                  <td class="border-primary">
+                    <span class="text-primary font-futura"> <%= @totalContactsWithSMS %> </span><br>
+                    <span class="text-primary font-light">CAMPAGNES AVEC SMS</span>
+                  </td>
+                  <td class="border-primary">
+                    <span class="text-primary font-futura"> 1090 </span><br>
+                    <span class="text-primary font-light">RÉSULTATS OFFICIELS</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-1 col-md-1 pl-1 pr-3 pt-4">
+            <%= link_to(image_tag("svg/edit.svg"), edit_event_edition_path(@edition.event.id, @edition.id)) %>
+          </div>
         </div>
+
+        <div class="row bg-lightblue mb-3 mx-1">
+          <div class="col-1 col-md-1 pt-4">
+            <%= image_tag('svg/email.svg') %>
+          </div>
+
+          <div class="col-10 col-md-10 padtop">
+            <h2 class="font-condensed text-primary">CAMPAGNES</h2>
+
+            <table class="table table-striped mb-5 table-borderless">
+
+              <thead>
+                <tr class="bg-blue text-white font-light">
+                  <th colspan="1">Nom des campagnes</th>
+                  <th colspan="1">Dates</th>
+                  <th colspan="1">Status</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-primary font-condensed">
+                <tr>
+                  <td class="border-primary">Camp-21</td>
+                  <td class="border-primary">14/11/2020</td>
+                  <td class="border-primary">Traité</td>
+                </tr>
+                <tr>
+                  <td class="border-primary">Campaign12345</td>
+                  <td class="border-primary">19/06/2020</td>
+                  <td class="border-primary">Traité</td>
+                </tr>
+                <tr>
+                  <td class="border-primary">Campaign1234</td>
+                  <td class="border-primary">19/06/2020</td>
+                  <td class="border-primary">Traité</td>
+                </tr>
+              </tbody>
+
+              <tfoot class="bg-white text-primary font-futura">
+                <tr>
+                  <td>
+                    <select name="" id="" class="">
+                      <option value="">5</option>
+                      <option value="">10</option>
+                      <option value="">15</option>
+                      <option value="">20</option>
+                      <option value="">30</option>
+                      <option value="">50</option>
+                      <option value="">100</option>
+                    </select>
+                    Campagnes par pages
+                  </td>
+                  <td colspan="2"><1/1></td>
+                </tr>
+              </tfoot>
+
+            </table>
+          </div>
+
+          <div class="col-1 col-md-1 pl-1 pr-3 pt-4">
+            <%= link_to(image_tag("svg/edit.svg"), edit_event_edition_path(@edition.event.id, @edition.id)) %>
+          </div>
+        </div>
+
+
+
+
+
 
         <div class="col-md-12 bg-lightblue">
           <h2 class="courseDate">
