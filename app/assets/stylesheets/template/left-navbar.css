@@ -1,0 +1,11 @@
+
+.leftNavBar{
+  min-height: 500px;
+  padding: 0;
+  width: 85px;
+  position: relative;
+  background: #222222;
+  color: white;
+  text-align: center;
+}
+

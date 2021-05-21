@@ -1,0 +1,80 @@
+
+<div class="container-fluid mainContainer">
+
+
+  <div class="row">
+    <div class="col-xs-1 leftNavBar">
+      <ul class="list-unstyled">
+        <li>
+          <a href="<%= home_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) %>" class="<%= active_btn_class( home_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %> <%= active_btn_class( home_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %>" >
+            
+            Descriptif
+          </a>
+          <% if current_page?( home_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %>
+            <ul class="list-unstyled">
+              <li><%= link_to "Dashboard", home_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( home_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
+            </ul>
+          <% end %>
+        </li>
+
+
+
+
+
+        <li>
+        <%= link_to "Photos", new_event_edition_photo_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) %>
+          <ul class="list-unstyled">
+            <li><%= link_to "Importation", new_event_edition_photo_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id])%></li>
+            <li><%= link_to "Voir photo", event_edition_photos_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( event_edition_photos_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
+  
+          </ul>
+        </li>
+
+
+
+
+        <li>
+          <a href="<%= contacts_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) %>" class="<%= active_btn_class( contacts_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %> <%= active_btn_class( event_edition_contacts_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %>" >
+            
+            Contacts
+          </a>
+          <% if current_page?( contacts_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) ||
+                current_page?( event_edition_contacts_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %>
+            <ul class="list-unstyled">
+              <li><%= link_to "Contacts", contacts_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( contacts_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
+              <li><%= link_to "Listes", event_edition_contacts_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( event_edition_contacts_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
+            </ul>
+          <% end %>
+        </li>
+
+        <li>
+          <a href="<%= new_event_campaign_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) %>" class="<%= active_btn_class( new_event_campaign_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %> <%= active_btn_class( event_campaigns_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %>" >
+            
+            Campagnes
+          </a>
+          <% if current_page?( new_event_campaign_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) ||
+                current_page?( event_campaigns_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %>
+            <ul class="list-unstyled">
+              <li><%= link_to "Campagnes", new_event_campaign_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( new_event_campaign_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
+              <li><%= link_to "Listes", event_campaigns_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( event_campaigns_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
+            </ul>
+          <% end %>
+        </li>
+
+        <li>
+          <a href="#">
+            
+            Paraméters
+          </a>
+        </li>
+
+      </ul>
+    </div>
+    <div class="col-xs-11 editionContent">
+      <%= yield %>
+    </div>
+  </div>
+
+
+
+</div> <!-- /container -->

@@ -1,5 +1,5 @@
 class EditionsController < ApplicationController
-  layout "picto_edition_home"#, except: [:edit_edition_photos]
+  #layout "picto_edition_home"#, except: [:edit_edition_photos]
   before_action :set_edition#, only: [:show, :edit, :update, :destroy, :results, :delete_results, :generate_widget, :generate_photos_widget,
     #:generate_diplomas_widget, :generate_diplomas, :delete_diplomas, :send_results, :home_picto_edition, :contacts_picto_edition, :get_campaign_detail, :diffuser_photo, :new_edition_photos, :edit_edition_photos]
 

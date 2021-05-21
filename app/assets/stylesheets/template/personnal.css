@@ -77,7 +77,13 @@
   font-size: 20px;
 }
 
+.font-15px {
+  font-size: 15px;
+}
 
+.padtop {
+  padding-top: 13px;
+}
 
 
 
@@ -86,7 +92,6 @@
 .searchbar {
   /* overflow-x: hidden;
   position: relative; */
-  background: #2C9FBB;
   height: 106px; }
   /* @media (max-width: 1199.98px) {
     .searchbar {

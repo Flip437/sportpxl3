@@ -20,5 +20,6 @@
  *= require 'template/flaticon'
  *= require 'template/style'
  *= require 'template/personnal'
+ *= require 'template/left-navbar'
 
  */
