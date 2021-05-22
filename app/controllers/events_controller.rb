@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
-  layout "picto", only: [:home_picto, :new_event_picto, :filter_events]
+  layout "picto", only: [:new_event_picto, :filter_events]#:home_picto, 
   require 'csv'
   before_action :set_event, only: [:show, :edit, :update, :destroy, :home_picto, :update_event_picto]
 

@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-    layout "picto_edition_home", only: [:index]
+    #layout "picto_edition_home", only: [:index]
 
     # disable the filter for for all actions in this controller
     before_action :disable_filter_pict_home!

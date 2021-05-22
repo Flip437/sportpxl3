@@ -1,85 +1,185 @@
-<div class="breadcrumb">
+<div class="breadcrumb mb-0 mx-0">
   <span> <a href="<%= root_path%>"> Accueil </a> >
   <%= @edition.event.name %> >
   <%= @edition.date.strftime('%d/%m/%Y') %> >
   Contact > 
   Résultats
   </span>
-  
 </div>
 
-<div class="row contactsRow">
-    <header>
-        <div class="row">
-            <div class="col-md-9">
-                <!-- <h1> {{ vm.name }} </h1> -->
-                <h2>Contact(s) Enregistré(s)</h2> 
-            </div>
-            <div class="col-md-3 pull-right">
-                <input type="text" class="searchContact" ng-model="vm.searchContact" placeholder="Rechrcher un contact">
-            </div>
+<div class="row">
+  <div class="col-md-2 bg-primary p-5">
+	<%= render 'layouts/sidebar' %>
+  </div>
+
+	<div class="col-md-10 px-10">
+
+		<div class="row justify-content-center mt-5 mb-5">
+			<div class="col-md-7 text-center">
+			<h2 class="text-primary font-bold">Contacts Enregistrés</h2>
+			<%= image_tag("svg/3colors.svg") %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 pl-0">
+
+				<div class="row bg-primary py-3">
+
+					<div class="left-inner-addon">
+						<input type="text" class="font-futura font-15px text-primary" ng-model="vm.searchContact" placeholder="Rechercher un contact">
+						<%= image_tag 'svg/search.svg' %>
+					</div>
+				</div>
+
+
+        <div class="row bg-lightblue mb-3">
+
+          <div class="col-10 col-md-10 padtop">
+            <h2 class="font-condensed text-primary">CAMPAGNES</h2>
+
+            <table class="table table-striped mb-5 table-borderless">
+
+              <thead>
+                <tr class="bg-blue text-white font-light">
+                  <th colspan="1">Nom des campagnes</th>
+                  <th colspan="1">Dates</th>
+                  <th colspan="1">Status</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-primary font-condensed">
+                <tr>
+                  <td class="border-primary">Camp-21</td>
+                  <td class="border-primary">14/11/2020</td>
+                  <td class="border-primary">Traité</td>
+                </tr>
+                <tr>
+                  <td class="border-primary">Campaign12345</td>
+                  <td class="border-primary">19/06/2020</td>
+                  <td class="border-primary">Traité</td>
+                </tr>
+                <tr>
+                  <td class="border-primary">Campaign1234</td>
+                  <td class="border-primary">19/06/2020</td>
+                  <td class="border-primary">Traité</td>
+                </tr>
+              </tbody>
+
+              <tfoot class="bg-white text-primary font-futura">
+                <tr>
+                  <td>
+                    <select name="" id="" class="">
+                      <option value="">5</option>
+                      <option value="">10</option>
+                      <option value="">15</option>
+                      <option value="">20</option>
+                      <option value="">30</option>
+                      <option value="">50</option>
+                      <option value="">100</option>
+                    </select>
+                    Campagnes par pages
+                  </td>
+                  <td colspan="2"><1/1></td>
+                </tr>
+              </tfoot>
+
+            </table>
+          </div>
+
         </div>
 
-        <div class="row">
-            <div class="col-md-4">
-                <%= link_to 'Nouvel Campagne', new_event_campaign_path( params[:event_id], params[:edition_id] ), class: 'btn-orange-small',  id: 'newCamp' %>
-                <!--<a href="#" class="btn-white-small">Supprimer</a>-->
-            </div>
-            <div class="col-md-8 pull-right">
-                <ul class="list-inline">
-                    <li>
-                        <a href="#" class="btn-white-small">Importation CSV</a>
-                        <a href="#" class="btn-white-small">Exporter la Liste</a>
-                    </li>
-                    <li> <a href="#"> <%= image_tag("btn-email-envoyer.png", size: "22x16", alt: "Email envoyer") %> </a> </li>
-                    <li> <a href="#"> <%= image_tag("btn-deja-vu.png", size: "29x17", alt: "Deja vu") %> </a>  </li>
-                    <li> <a href="#"> <%= image_tag("btn-sms-email-fail.png", size: "26x22", alt: "erreur survenue") %> </a> </li>
-                    <li> <a href="#"> <%= image_tag("btn-sms-envoyer.png", size: "26x22", alt: "SMS envoyer") %> </a> </li>
+      </div>
+		</div>
+	
+	
+	
+	
+	
+	<header>
+		<div class="row">
+			<div class="col-md-9">
+				<!-- <h1> {{ vm.name }} </h1> -->
+				<h2>Contact(s) Enregistré(s)</h2> 
+			</div>
+			<div class="col-md-3 pull-right">
+				<input type="text" class="searchContact" ng-model="vm.searchContact" placeholder="Rechrcher un contact">
+			</div>
+		</div>
 
-                </ul>
-                
-                
-            </div>
-        </div>
+		<div class="row">
+			<div class="col-md-4">
+				<%= link_to 'Nouvel Campagne', new_event_campaign_path( params[:event_id], params[:edition_id] ), class: 'btn-orange-small',  id: 'newCamp' %>
+				<!--<a href="#" class="btn-white-small">Supprimer</a>-->
+			</div>
+			<div class="col-md-8 pull-right">
+				<ul class="list-inline">
+					<li>
+						<a href="#" class="btn-white-small">Importation CSV</a>
+						<a href="#" class="btn-white-small">Exporter la Liste</a>
+					</li>
+					<li> <a href="#"> <%= image_tag("btn-email-envoyer.png", size: "22x16", alt: "Email envoyer") %> </a> </li>
+					<li> <a href="#"> <%= image_tag("btn-deja-vu.png", size: "29x17", alt: "Deja vu") %> </a>  </li>
+					<li> <a href="#"> <%= image_tag("btn-sms-email-fail.png", size: "26x22", alt: "erreur survenue") %> </a> </li>
+					<li> <a href="#"> <%= image_tag("btn-sms-envoyer.png", size: "26x22", alt: "SMS envoyer") %> </a> </li>
 
-    </header>
-    <!-- Table -->
-    <br/>
-    <table class="table">
-        <thead>
-            <tr>
-                <th> Nom & Prenom </th>
-                <th> Photo </th>
-                <th> Email </th>
-                <th> Numéro de Téléphone </th>
-                <th> Numéro de Dossrad </th>
-            </tr>
-        </thead>
-        <tbody ng-model="vm.id">
-            <tr ng-repeat="c in vm.allContacts | limitTo: vm.perPage : (vm.curentPage -1) * vm.perPage | filter:vm.searchContact">
-                <td> {{ c.nom }} {{ c.prenom }} </td>
-                <td> Photo <span class="photoCount">18</span> </td>
-                <td> {{ c.email }} <span class="EmailStatus"></span> </td>
-                <td> {{ c.telephone }} <span class="smsStatus"></span> </td>
-                <td> {{ c.dossard }} </td>
-            </tr>
+				</ul>
+				
+				
+			</div>
+		</div>
 
-        </tbody>
-    </table>
+	</header>
+	<!-- Table -->
+	<br/>
+	<table class="table">
+		<thead>
+			<tr>
+				<th> Nom & Prenom </th>
+				<th> Photo </th>
+				<th> Email </th>
+				<th> Numéro de Téléphone </th>
+				<th> Numéro de Dossrad </th>
+			</tr>
+		</thead>
+		<tbody ng-model="vm.id">
+			<tr ng-repeat="c in vm.allContacts | limitTo: vm.perPage : (vm.curentPage -1) * vm.perPage | filter:vm.searchContact">
+				<td> {{ c.nom }} {{ c.prenom }} </td>
+				<td> Photo <span class="photoCount">18</span> </td>
+				<td> {{ c.email }} <span class="EmailStatus"></span> </td>
+				<td> {{ c.telephone }} <span class="smsStatus"></span> </td>
+				<td> {{ c.dossard }} </td>
+			</tr>
 
-    <ul class="list-inline">
-        <li>
-            <a href="#" class="btn btn-previous-pag" ng-click="vm.previousContacts()"> < </a> 
-                {{vm.curentPage}}/{{vm.numberPagination}}
-            <a href="#" class="btn btn-next-pag"  ng-click="vm.nextContacts()"> > </a> 
-        </li>
-        <li>
-            <select ng-model="vm.perPage"
-                ng-options="p for p in vm.perPageArr">
-            </select> 
-            <span>Contact par page</span>
-        </li>
+		</tbody>
+	</table>
 
-    </ul>
+	<ul class="list-inline">
+		<li>
+			<a href="#" class="btn btn-previous-pag" ng-click="vm.previousContacts()"> < </a> 
+				{{vm.curentPage}}/{{vm.numberPagination}}
+			<a href="#" class="btn btn-next-pag"  ng-click="vm.nextContacts()"> > </a> 
+		</li>
+		<li>
+			<select ng-model="vm.perPage"
+				ng-options="p for p in vm.perPageArr">
+			</select> 
+			<span>Contact par page</span>
+		</li>
+
+	</ul>
 
 </div>
+
+
+
+
+
+<%= javascript_include_tag 'template/jquery-3.2.1.min', 'data-turbolinks-track' => true %>
+<script>
+  function showMenuItems() {
+    $("li[data-target='#contact']").removeClass("collapsed")
+    $("#contact").addClass("show")
+  }
+  showMenuItems();
+</script>
