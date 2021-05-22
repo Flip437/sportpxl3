@@ -14,7 +14,7 @@ Rails.application.config.assets.paths << Rails.root.join("app", "assets", "image
 
 Rails.application.config.assets.paths << Rails.root.join('app', 'assets', 'fonts')  
 Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
-
+Rails.application.config.assets.precompile += %w( template/jquery-3.2.1.min.js )
 
 #Rails.application.config.assets.precompile += %w( diploma_form.sass )
 # Precompile additional assets.
