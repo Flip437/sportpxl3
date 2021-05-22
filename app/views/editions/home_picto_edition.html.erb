@@ -1,4 +1,4 @@
-<div class="breadcrumb mb-0">
+<div class="breadcrumb mb-0 mx-0">
   <span> <a href="<%= root_path%>"> Accueil </a> >
   <%= @edition.event.name %> >
   </span>
@@ -8,12 +8,45 @@
 
 
 <div class="row">
-  <div class="col-md-2 bg-primary p-0">
+  <div class="col-md-2 bg-primary p-5">
+
+
+
+
+    <div class="nav-side-menu">
+      <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+      
+      <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse out">
+          <li  data-toggle="collapse" data-target="#descriptif" class="collapsed active" data-level="first-level-item">
+            <a href="#" class="font-condensed font-25px">Descriptif</a>
+          </li>
+          <ul class="sub-menu collapse" id="descriptif">
+            <li class="font-light font-15px"><%= image_tag('svg/right_arrow.svg',  width: "10%") %>  <%= link_to "Dashboard", home_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) %></li>
+            <li class="font-light font-15px"><%= image_tag('svg/right_arrow.svg',  width: "10%") %>  <%= link_to "Autre catégorie", home_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) %></li>
+
+          </ul>
+        </ul>
+      </div>
+
+    </div>
+        
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
     <ul class="list-unstyled">
       <li>
-        <a href="<%= home_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) %>" class="<%= active_btn_class( home_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %> <%= active_btn_class( home_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %>" >
-          Descriptif
-        </a>
+        <%= link_to "Descriptif", home_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class:"font-condensed font-25px text-white" %>
         <% if current_page?( home_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %>
           <ul class="">
             <li><%= link_to "Dashboard", home_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( home_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
@@ -22,35 +55,26 @@
       </li>
 
       <li>
-      <%= link_to "Photos", new_event_edition_photo_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) %>
-        <ul class="list-unstyled">
-          <li><%= link_to "Importation", new_event_edition_photo_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id])%></li>
-          <li><%= link_to "Voir photo", event_edition_photos_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( event_edition_photos_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
-        </ul>
-      </li>
-
-
-
-
-      <li>
-        <a href="<%= contacts_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) %>" class="<%= active_btn_class( contacts_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %> <%= active_btn_class( event_edition_contacts_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %>" >
-          
-          Contacts
-        </a>
-        <% if current_page?( contacts_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) ||
-              current_page?( event_edition_contacts_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %>
-          <ul class="list-unstyled">
-            <li><%= link_to "Contacts", contacts_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( contacts_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
-            <li><%= link_to "Listes", event_edition_contacts_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( event_edition_contacts_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
+        <%= link_to "Photos", new_event_edition_photo_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class:"font-condensed font-25px text-white" %>
+          <ul class="">
+            <li><%= link_to "Importation", new_event_edition_photo_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id])%></li>
+            <li><%= link_to "Voir photo", event_edition_photos_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( event_edition_photos_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
           </ul>
-        <% end %>
       </li>
 
       <li>
-        <a href="<%= new_event_campaign_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) %>" class="<%= active_btn_class( new_event_campaign_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %> <%= active_btn_class( event_campaigns_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %>" >
-          
-          Campagnes
-        </a>
+        <%= link_to "Contacts", contacts_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class:"font-condensed font-25px text-white" %>
+          <% if current_page?( contacts_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) ||
+                current_page?( event_edition_contacts_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %>
+            <ul class="list-unstyled">
+              <li><%= link_to "Contacts", contacts_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( contacts_picto_edition_event_edition_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
+              <li><%= link_to "Listes", event_edition_contacts_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class: active_btn_class( event_edition_contacts_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %></li>
+            </ul>
+          <% end %>
+      </li>
+
+      <li>
+        <%= link_to "Campagnes", new_event_campaign_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]), class:"font-condensed font-25px text-white" %>
         <% if current_page?( new_event_campaign_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) ||
               current_page?( event_campaigns_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) ) %>
           <ul class="list-unstyled">
@@ -61,10 +85,7 @@
       </li>
 
       <li>
-        <a href="#">
-          
-          Paraméters
-        </a>
+        <%= link_to "Paramètres", root_path, class:"font-condensed font-25px text-white" %>
       </li>
 
     </ul>
@@ -301,3 +322,11 @@
   </div>
 
 </div>
+
+<script>
+  function showMenuItems() {
+    $("li[data-target='#descriptif']").removeClass("collapsed")
+    $("#descriptif").addClass("show")
+  }
+  showMenuItems();
+</script>

@@ -21,5 +21,6 @@
  *= require 'template/style'
  *= require 'template/personnal'
  *= require 'template/left-navbar'
+ *= require 'template/sidenav'
 
  */
