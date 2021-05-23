@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  layout "picto_edition_home", only: [:new, :show, :index, :edit]
+  #layout "picto_edition_home", only: [:new, :show, :index, :edit]
   before_action :set_event, only: %I[index create destroy_all]
   before_action :set_edition, only: %I[index new create destroy_all update]
   before_action :set_photo, only: %I[update destroy]

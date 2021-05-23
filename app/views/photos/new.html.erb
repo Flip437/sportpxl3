@@ -5,63 +5,79 @@
   <% end %>
 </div>
 
-<div class="breadcrumb">
+<div class="breadcrumb mb-0 mx-0">
   <span> <a href="<%= root_path%>"> Accueil </a> >
     <%= @edition.event.name %> > <%= @edition.date.strftime('%d/%m/%Y') %> >
   </span>
   <b> Contacts </b>
 </div>
 
-<% unless @photosCount.blank? %>
-  <div class="picturesStats">
-    <div class="row">
-      <div class="col-sm-6">Nombre de photo : <%= @photosCount %></div>
-      <div class="col-sm-6"> <a href="#" class="btn-orange pull-right">Voir les photos</a> </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">Photos identifiées : <%#= @picturesIdentifierCount %></div>
-      <div class="col-sm-6">
-        <%= link_to 'Diffuser les photos', event_edition_diffuser_photo_path(id: @edition.id, edition_id: @edition.id), class: "btn-orange pull-right" %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">Photos non reconnues : <%#= @picturesNonIdentifierCount %></div>
-      <div class="col-sm-6">  </div>
-    </div>
+<div class="row h-100">
+  <div class="col-md-2 bg-primary p-5">
+    <%= render 'layouts/sidebar' %>
   </div>
-<% end %>
 
-<%= form_with url: event_edition_add_edition_photos_path, local: true, multipart: true, method: :post, class: "form-block processPhotos" do |f| %>
-
-  <% if @photo.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this @photo from being saved:</h2>
-
-    <ul>
-    <% @photo.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
-  </div>
-  <% end %>
-  
-  <div class="form-block_container">
-    <div class="form-block_input">
-      <div class="form-block_avatar_file">
-        <div class="file_droparea">
-          <p class="file_msg js-set-number">Glissez vos fichiers ou sélectionnez les en cliquant</p>
-          <%= f.hidden_field :edition_id, value: @edition.id %>
-          <%= f.file_field :images, multiport: false, class: "file_input", id: "file_input", type: :file, multiple: true, required: true %>
+  <div class="col-md-10 px-5 bg-lightblue">
+    <% unless @photosCount.blank? %>
+      <div class="">
+        <div class="row py-2">
+          <div class="col-sm-6 font-futura font-25px">Nombre de photo : <%= @photosCount %></div>
+          <div class="col-sm-6"> <a href="#" class="btn btn-secondary text-white pull-right">Voir les photos</a> </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 font-futura font-25px">Photos identifiées : <%#= @picturesIdentifierCount %></div>
+          <div class="col-sm-6">
+            <%= link_to 'Diffuser les photos', event_edition_diffuser_photo_path(id: @edition.id, edition_id: @edition.id), class: "btn btn-primary pull-right" %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 font-futura font-25px">Photos non reconnues : <%#= @picturesNonIdentifierCount %></div>
+          <div class="col-sm-6">  </div>
         </div>
       </div>
-    </div>
-  </div>
+    <% end %>
 
-<% end %>
+    <%= form_with url: event_edition_add_edition_photos_path, local: true, multipart: true, method: :post, class: "form-block processPhotos" do |f| %>
+
+      <% if @photo.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this @photo from being saved:</h2>
+
+        <ul>
+        <% @photo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+      <% end %>
+      
+      <div class="form-block_container">
+        <div class="form-block_input">
+          <div class="form-block_avatar_file">
+            <div class="file_droparea">
+              <p class="file_msg js-set-number">Glissez vos fichiers ou sélectionnez les en cliquant</p>
+              <%= f.hidden_field :edition_id, value: @edition.id %>
+              <%= f.file_field :images, multiport: false, class: "file_input", id: "file_input", type: :file, multiple: true, required: true %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
+<%= javascript_include_tag 'template/jquery-3.5.1.js', 'data-turbolinks-track' => true %>
 
 <script type="text/javascript">
   $("#file_input").on('change',function () {
-  
     $("form.processPhotos").submit();
   });
+
+  function showMenuItems() {
+    $("li[data-target='#photo']").removeClass("collapsed")
+    $("#photo").addClass("show")
+    $('#importation').addClass('active')
+  }
+  showMenuItems();
 </script>

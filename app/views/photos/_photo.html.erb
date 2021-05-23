@@ -1,26 +1,37 @@
-<div class="thumbnail">
-  <%= image_tag photo.image, class: 'img-photo', alt: 'photo' %>
-
-  <%= form_with(model: photo, url: event_edition_photo_path(@event, @edition, photo.id), method: "put") do |f| %>
-
-    <div class="form-group">
-      <div class="input-group">
-        <%= f.text_field :bib, class:'form-control', placeholder: "Indiquez le n° de dossard" %>
+<div class="col-md-4 ftco-animate fadeInUp ftco-animated p-5">
+  <div class="row">
+    <div class="work img d-flex align-items-end" style="background-image: url('<%= photo.direct_image_url %>');">
+      <a href="<%= photo.direct_image_url %>" class="icon image-popup d-flex justify-content-center align-items-center">
+        <span class="fa fa-expand"></span>
+      </a>
+    </div>
+  </div>
+  <div class="row bg-dark">
+    <div class="desc w-100 px-4">
+      <div class="text w-100 mb-3">
 
         <% unless [:not_paired, :invalid_bib].include? photo.runner %>
-          <p class="text-success"><%= photo.runner.prenom %></p>
-          <p class="text-success"><%= photo.runner.nom %></p>
+        <h5 class="card-title">
+          <p class="font-condensed text-white"><%= photo.runner.prenom %></p>
+          <p class="font-condensed text-white"><%= photo.runner.nom %></p>
+        </h5>
         <% else %>
-          <p class="text-muted">Dossard introuvable pour cette course</p>
+          <p class="card-text">Dossard introuvable pour cette course</p>
         <% end %>
 
+        <%= form_with(model: photo, url: event_edition_photo_path(@event, @edition, photo.id), method: "put") do |f| %>
+          <div class="form-group">
+            <div class="input-group">
+              <%= f.text_field :bib, class:'form-control', placeholder: "Indiquez le n° de dossard" %>
+            </div>
+          </div>
+        <%= f.submit "Enregistrer", class: 'btn btn-primary'%>
+        <% end %>
+        <%= link_to 'Supprimer', event_edition_photo_path(@event, @edition, photo), class: 'btn btn-danger', method: :delete, data: { confirm: 'Êtes-vous sûr(e)' }%>
       </div>
     </div>
-
-    <%= f.submit "Enregistrer", class: 'btn btn-primary'%>
-
-  <% end %>
+  </div>
   
-<%= link_to 'Supprimer', event_edition_photo_path(@event, @edition, photo), class: 'btn btn-danger', method: :delete, data: { confirm: 'Êtes-vous sûr(e)' }%>
-
 </div>
+
+

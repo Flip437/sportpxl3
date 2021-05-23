@@ -1,0 +1,93 @@
+<script>
+  $(document).ready(function() {
+    i = 0;
+    $('<%= table_id %> tfoot th').each( function () {
+        i += 1;
+        if ($(this).hasClass("no_search")) {
+          $(this).html( '<input class="form-control input-sm" type="text" style="font-weight:normal; width: 100%; display: none;" placeholder="'+$(this).text()+'" />' );
+        }
+        else {
+          $(this).html( '<input id="column_search_' + i + '" class="form-control input-sm" type="text" style="font-weight:normal; width: 100%;" placeholder="'+$(this).text()+'" />' );
+        }
+    } );
+
+    var tableD = $('<%= table_id %>').DataTable( {
+      destroy: true,
+      "order": [],
+      "lengthMenu": [ 10, 50, 100, 200, 500, 1000 ],
+      "pageLength": 100,
+      fixedHeader: true,
+      stateSave: true,
+      stateDuration: 3600,
+      "stateLoadParams": function (settings, data) {
+        $.each(data.columns, function (key, val) {
+          $("#column_search_"+(key+1)).val(val.search.search);
+        });
+      },
+      dom: "<'row'<'col-sm-4 left no-print'f><'col-sm-8 right no-print'B>><'row'<'col-sm-12'tr>><'row'<'col-sm-5 no-print'i><'col-sm-7 no-print'p>>",
+      buttons: [
+          { extend: 'copyHtml5', titleAttr: 'Copier dans le presse-papier', text: '<i class="fas fa-clipboard"></i>', customize: function(doc) {
+                return "DIFFUSION RESTREINTE\n\n" + doc.replace(/#!#[0-9]*#!#/g, '' );
+            } },
+          { extend: 'csvHtml5', bom: true, fieldSeparator: ";", titleAttr: 'Exporter vers tableur', text: '<i class="fas fa-file-excel"></i>', customize: function(doc) {
+                return "DIFFUSION RESTREINTE\n\n" + doc.replace(/#!#[0-9]*#!#/g, '' );
+            } },
+          { extend: 'print', titleAttr: 'Imprimer', text: '<i class="fas fa-print"></i>', customize: function(win) {
+              $(win.document.body).html($(win.document.body).prepend('<div style="text-align: center; color: red; text-weight: bold; font-size:1.5em; padding-top:1em; padding-bottom:1em;"><span style="border-style: solid; padding-top: 0.3em; padding-bottom: 0.3em; padding-left: 2em; padding-right: 2em;">DIFFUSION RESTREINTE</span></div>').html().replace(/#!#[0-9]*#!#/g, '' ));
+                } },
+      ],
+      <% if not options_for_datatable.blank? %>
+        <%= options_for_datatable.html_safe %>
+      <% end %>
+      "language":
+                  {
+                    buttons: {
+                      copyTitle: 'Dans le presse-papier',
+                      copySuccess: {
+                        _: '%d lignes copiées',
+                        1: '1 ligne copiée'
+                      }
+                    },
+                    "sProcessing":     "Traitement en cours...",
+                    "sSearch":         "Filtrer&nbsp;:&nbsp;",
+                    "sLengthMenu":     "Afficher _MENU_ &eacute;l&eacute;ments",
+                    "sInfo":           "Affichage de l'&eacute;l&eacute;ment _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+                    "sInfoEmpty":      "Affichage de l'&eacute;l&eacute;ment 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
+                    "sInfoFiltered":   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                    "sInfoPostFix":    "",
+                    "sLoadingRecords": "Chargement en cours...",
+                    "sZeroRecords":    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+                    "sEmptyTable":     "Aucune donn&eacute;e disponible dans le tableau",
+                    "oPaginate": {
+                        "sFirst":      "Premier",
+                        "sPrevious":   "Pr&eacute;c&eacute;dent",
+                        "sNext":       "Suivant",
+                        "sLast":       "Dernier"
+                    },
+                    "oAria": {
+                        "sSortAscending":  ": activer pour trier la colonne par ordre croissant",
+                        "sSortDescending": ": activer pour trier la colonne par ordre d&eacute;croissant"
+    }}});
+
+    tableD.columns().every( function () {
+      var that = this;
+      $( 'input', this.footer() ).on( 'keyup change', function () {
+        if ( that.search() !== this.value ) {
+          that
+            .search( this.value, true, true )
+            .draw();
+        }});
+    });
+
+    document.addEventListener("turbolinks:before-cache", function() {
+      if (tableD !== null) {
+       tableD.destroy();
+       tableD = null;
+      }
+    });
+
+    $('<%= table_id %>').show();
+    
+  });
+
+</script>

@@ -6,90 +6,130 @@
   <% end %>
 </div>
 
-<% if flash[:photo_errors] %>
-<div>
-  <% flash[:photo_errors].each do |key, value| %>
-    <div class="alert alert-alert"> Le <%= t("activerecord.attributes.photo.#{key}") %> <%= value.to_s.gsub(/\"/, '').gsub(/[\[\]]/, '') %> </div>
-  <% end %>
+<div class="breadcrumb mb-0 mx-0">
+  <span> <a href="<%= root_path%>"> Accueil </a> >
+    <%= @edition.event.name %> > <%= @edition.date.strftime('%d/%m/%Y') %> >
+  </span>
+  <b> Photos </b>
 </div>
-<% end %>
 
-<div class="container photos">
-  <div class="row">
-    <div class="col-sm-4">
-      <h1> Photos </h1>
-    </div>
-    <div class="col-sm-4">
-      <%= will_paginate @photos, renderer: BootstrapPagination::Rails %>
-    </div>
-    <div class="col-sm-4">
-      <div class="pull-right">
-        <%= link_to "Retour", event_edition_path(@edition.id, event_id: @event.id), class: 'btn btn-default pull-right' %>
-      </div>
-    </div>
+
+
+<div class="row h-100">
+  <div class="col-md-2 bg-primary p-5">
+    <%= render 'layouts/sidebar' %>
   </div>
 
-  <%= form_tag event_edition_path(@edition.id, event_id: @event.id), method: :get do %>
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="form-group">
-          <%= label_tag 'Photos non reconnues ?' %>
-          <%= check_box_tag :without_bib, true, params[:without_bib], class: 'bootstrap-switch' %>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="form-group">
-          <%= label_tag 'Courses' %>
-          <%= select_tag :race_ids, options_from_collection_for_select(@edition.races, :id, :name, params[:race_ids]), multiple: true, class: 'form-control' %>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="form-group">
-          <%= label_tag 'Sexe' %>
-          <%= select_tag :sex, options_for_select([['Masculin', 'M'], ['Féminin', 'F']], params[:sex]), multiple: true, class: 'form-control' %>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="form-group">
-          <%= label_tag 'Catégorie' %>
-          <%= select_tag :categ, options_for_select(@edition.results.order(:categ).pluck(:categ).uniq, params[:categ]), multiple: true, class: 'form-control' %>
-        </div>
-      </div>
+  <div class="col-md-10 px-5">
+    <div class="">
 
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="form-group">
-          <%= submit_tag 'Filtrer', class: 'btn-primary btn-group-justified' %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-
-  <% if @photos.any? %>
-    <div class="row">
-      <div class="col-sm-12">
-        <%= link_to 'Supprimer toutes les photos', destroy_all_event_edition_photos_path(event_id: @event.id, edition_id: @edition.id, photo_ids: @photos.pluck(:id)), method: :delete, class: 'btn btn-danger', data: { confirm: 'Êtes vous SÛR(E) de vouloir supprimer TOUTES les photos de cette recherche ?' } %>
-      </div>
-    </div>
-
-    <hr>
-
-    <% @photos.each_slice(4) do |photos| %>
-      <div class="row">
-        <% photos.each do |photo| %>
-          <div class="col-sm-3">
-            <%= render 'photo', photo: photo %>
-          </div>
+      <% if flash[:photo_errors] %>
+      <div>
+        <% flash[:photo_errors].each do |key, value| %>
+          <div class="alert alert-alert"> Le <%= t("activerecord.attributes.photo.#{key}") %> <%= value.to_s.gsub(/\"/, '').gsub(/[\[\]]/, '') %> </div>
         <% end %>
       </div>
-    <% end %>
+      <% end %>
 
-  <% else %>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="alert alert-info">
-          <p class="text-center"> Aucun résultat </p>
+      <div class="row justify-content-center mt-5 mb-5">
+        <div class="col-md-7 text-center">
+          <h2 class="text-primary font-bold">Photos</h2>
+          <%= image_tag("svg/3colors.svg") %>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <%= will_paginate @photos, renderer: BootstrapPagination::Rails %>
+        </div>
+        <div class="col-sm-6">
+          <div class="pull-right">
+            <%= link_to "Retour", event_edition_path(@edition.id, event_id: @event.id), class: 'btn btn-primary pull-right' %>
+          </div>
+        </div>
+      </div>
+
+      <%= form_tag event_edition_path(@edition.id, event_id: @event.id), method: :get do %>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="form-group">
+              <%= label_tag 'Photos non reconnues ?' %>
+              <%= check_box_tag :without_bib, true, params[:without_bib], class: 'bootstrap-switch' %>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group">
+              <%= label_tag 'Courses' %>
+              <%= select_tag :race_ids, options_from_collection_for_select(@edition.races, :id, :name, params[:race_ids]), multiple: true, class: 'form-control' %>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group">
+              <%= label_tag 'Sexe' %>
+              <%= select_tag :sex, options_for_select([['Masculin', 'M'], ['Féminin', 'F']], params[:sex]), multiple: true, class: 'form-control' %>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group">
+              <%= label_tag 'Catégorie' %>
+              <%= select_tag :categ, options_for_select(@edition.results.order(:categ).pluck(:categ).uniq, params[:categ]), multiple: true, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <%= submit_tag 'Filtrer', class: 'btn-primary btn-group-justified' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <% if @photos.any? %>
+        <div class="row">
+          <div class="col-sm-12">
+            <%= link_to 'Supprimer toutes les photos', destroy_all_event_edition_photos_path(event_id: @event.id, edition_id: @edition.id, photo_ids: @photos.pluck(:id)), method: :delete, class: 'btn btn-danger', data: { confirm: 'Êtes vous SÛR(E) de vouloir supprimer TOUTES les photos de cette recherche ?' } %>
+          </div>
+        </div>
+
+        <hr>
+
+        <section class="ftco-section">
+          <div class="container-fluid">
+            <div class="row">
+
+              <% @photos.each_slice(4) do |photos| %>
+                <% photos.each do |photo| %>  
+                  <%= render 'photo', photo: photo %>
+                <% end %>
+              <% end %>
+
+            </div>
+          </div>
+        </section>
+
+      <% else %>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="alert alert-info">
+              <p class="text-center"> Aucun résultat </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
     </div>
-  <% end %>
+  </div>
+</div>
+
+<%= javascript_include_tag 'template/jquery-3.5.1.js', 'data-turbolinks-track' => true %>
+
+<script>
+  function showMenuItems() {
+    $("li[data-target='#photo']").removeClass("collapsed")
+    $("#photo").addClass("show")
+    $('#voir_photo').addClass('active')
+  }
+  showMenuItems();
+</script>
