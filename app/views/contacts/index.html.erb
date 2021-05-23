@@ -25,48 +25,88 @@
 			<div class="col-md-12 pl-0">
 
 				<div class="row bg-primary py-3">
-
-					<div class="left-inner-addon">
-						<input type="text" class="font-futura font-15px text-primary" ng-model="vm.searchContact" placeholder="Rechercher un contact">
-						<%= image_tag 'svg/search.svg' %>
+					<div class="col-md-3 w-100">
+						<div class="row h-100 py-3 pl-3">
+							<input type="text" class="font-futura font-15px text-primary w-100" ng-model="vm.searchContact" placeholder="Rechercher un contact">
+						</div>
 					</div>
+					<div class="col-md-3 w-100">
+						<div class="row h-100 py-3">
+							<table class="h-100">
+								<tbody class="">
+									<tr>
+										<td class=""><%= link_to(root_path, class:"mx-2") do %><%= image_tag("svg/letter_white.svg", class:"align-middle", alt: "Email envoyer") %><% end %></td>
+										<td class=""><%= link_to(root_path, class:"mx-2") do %><%= image_tag("svg/eye_white.svg", class:"align-middle", alt: "Deja vu") %><% end %></td>
+										<td class=""><%= link_to(root_path, class:"mx-2") do %><%= image_tag("svg/alert_white.svg", class:"align-middle", alt: "erreur survenue") %><% end %></td>
+										<td class=""><%= link_to(root_path, class:"mx-2") do %><%= image_tag("svg/focus_white.svg", class:"align-middle", alt: "SMS envoyer") %><% end %></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="row h-100 py-2 pl-3">
+
+								<%= link_to(new_event_campaign_path( params[:event_id], params[:edition_id] ), class: 'btn bg-blue text-white font-light font-10px mx-1',  id: 'newCamp') do %>
+									<%= image_tag 'svg/opened_letter_white' %>
+									Nouvelle Campagne
+								<% end %>
+
+								<%= link_to(new_event_campaign_path( params[:event_id], params[:edition_id] ), class: 'btn bg-yellow text-white font-light font-10px mx-1',  id: 'newCamp') do %>
+									<%= image_tag('svg/contact', height: '19px') %>
+									Importer des contacts
+								<% end %>
+								
+						</div>
+					</div>
+
+
+
+
 				</div>
 
 
         <div class="row bg-lightblue mb-3">
 
-          <div class="col-10 col-md-10 padtop">
-            <h2 class="font-condensed text-primary">CAMPAGNES</h2>
+          <div class="col-md-12 padtop">
 
             <table class="table table-striped mb-5 table-borderless">
 
               <thead>
                 <tr class="bg-blue text-white font-light">
-                  <th colspan="1">Nom des campagnes</th>
-                  <th colspan="1">Dates</th>
-                  <th colspan="1">Status</th>
+                  <th class=" align-middle" colspan="1">Nom & Prénom</th>
+                  <th class=" align-middle" colspan="1">Photo</th>
+                  <th class=" align-middle" colspan="1">Email</th>
+									<th class=" align-middle" colspan="1">Numéro de Téléphone</th>
+									<th class=" align-middle" colspan="1">Numéro de Dossard</th>
                 </tr>
               </thead>
 
               <tbody class="text-primary font-condensed">
                 <tr>
-                  <td class="border-primary">Camp-21</td>
-                  <td class="border-primary">14/11/2020</td>
-                  <td class="border-primary">Traité</td>
+                  <td class="border-primary">Brone Ophélia</td>
+                  <td class="border-primary">Photo 15</td>
+                  <td class="border-primary">xxx@gmail.com</td>
+									<td class="border-primary">00 00 00 00 00</td>
+									<td class="border-primary">5000</td>
                 </tr>
                 <tr>
-                  <td class="border-primary">Campaign12345</td>
-                  <td class="border-primary">19/06/2020</td>
-                  <td class="border-primary">Traité</td>
+                  <td class="border-primary">Brone Ophélia</td>
+                  <td class="border-primary">Photo 15</td>
+                  <td class="border-primary">xxx@gmail.com</td>
+									<td class="border-primary">00 00 00 00 00</td>
+									<td class="border-primary">5000</td>
                 </tr>
                 <tr>
-                  <td class="border-primary">Campaign1234</td>
-                  <td class="border-primary">19/06/2020</td>
-                  <td class="border-primary">Traité</td>
+                  <td class="border-primary">Brone Ophélia</td>
+                  <td class="border-primary">Photo 15</td>
+                  <td class="border-primary">xxx@gmail.com</td>
+									<td class="border-primary">00 00 00 00 00</td>
+									<td class="border-primary">5000</td>
                 </tr>
               </tbody>
 
-              <tfoot class="bg-white text-primary font-futura">
+              <tfoot class="bg-white text-primary font-light font-15px">
                 <tr>
                   <td>
                     <select name="" id="" class="">
@@ -80,7 +120,7 @@
                     </select>
                     Campagnes par pages
                   </td>
-                  <td colspan="2"><1/1></td>
+                  <td colspan="4"><1/1></td>
                 </tr>
               </tfoot>
 
@@ -180,6 +220,7 @@
   function showMenuItems() {
     $("li[data-target='#contact']").removeClass("collapsed")
     $("#contact").addClass("show")
+		$('#liste').addClass('active')
   }
   showMenuItems();
 </script>
