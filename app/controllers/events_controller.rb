@@ -82,9 +82,14 @@ class EventsController < ApplicationController
     
     @photos_array = []
     
-    Event.find(20).editions.find(39).photos.all.each do |photo|
+    # Event.find(20).editions.find(39).photos.all.each do |photo|
+    #   @photos_array << photo.image
+    # end
+
+    Photo.all.each do |photo|
       @photos_array << photo.image
     end
+
 
     #For sorting
     order = params[:option]
