@@ -35,18 +35,18 @@
   </div>
   <div class="menu-list">
     <ul id="menu-content" class="menu-content collapse out">
-      <li  data-toggle="collapse" data-target="#paramètre" class="collapsed active" data-level="first-level-item">
+      <li  data-toggle="collapse" data-target="#campagnes" class="collapsed active" data-level="first-level-item">
         <a href="#" class="font-condensed font-25px">Campagnes</a>
       </li>
-      <ul class="sub-menu collapse" id="paramètre">
-        <li class="font-light font-15px" id="campagnes"><%= image_tag('svg/right_arrow.svg',  width: "10px") %>  <%= link_to "Campagnes", new_event_campaign_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) %></li>
+      <ul class="sub-menu collapse" id="campagnes_sub-menu">
+        <li class="font-light font-15px" id="campagnes_list-item"><%= image_tag('svg/right_arrow.svg',  width: "10px") %>  <%= link_to "Campagnes", new_event_campaign_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) %></li>
         <li class="font-light font-15px" id="listes"><%= image_tag('svg/right_arrow.svg',  width: "10px") %>  <%= link_to "Listes", event_campaigns_path(event_id: params[:event_id], edition_id: params[:edition_id], id: params[:edition_id]) %></li>
       </ul>
     </ul>
   </div>
   <div class="menu-list">
     <ul id="menu-content" class="menu-content collapse out">
-      <li  data-toggle="collapse" data-target="" class="collapsed active" data-level="first-level-item">
+      <li  data-toggle="collapse" data-target="#paramètres" class="collapsed active" data-level="first-level-item">
         <a href="#" class="font-condensed font-25px">Paramètres</a>
       </li>
     </ul>

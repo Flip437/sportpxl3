@@ -1,0 +1,145 @@
+<!--Modal Send Email-->
+<div id="sendEmailModal" class="modal fade sendEmailModal">
+  <div class="modal-dialog modal-small">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Besoin d'aide?</h4>
+        <p>
+          Nous avez des difficultés à traiter votre fichier de contacts ? <br>
+          Envoyez-le-nous ! Nous nous chargeons de l’importer pour vous.
+        </p>
+      </div>
+      <div class="modal-body">
+        <%= form_tag({action: "send_email_modal"} , multipart: true, html: {class: "sendEmail"}) do %>
+          <%= text_area_tag 'body', nil, placeholder: "Précusez vitre demande..." %>
+          <%= file_field_tag 'contacts', id: "selectedFile", class: "selectedFile" %>
+          <%= hidden_field_tag "sender_email", current_user.email %>
+          <input type="button" value="Sélectionnez le fichier" class="selectedFileShown" onclick="document.getElementById('selectedFile').click();" />
+          <!--Sélectionnez le fichier-->
+          <%= submit_tag "Envoyer" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--notice-->
+<div>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+</div>
+
+
+<!--Modal Import Csv-->
+<div id="importCsvModal" class="modal fade importCsvModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <%= form_tag({action: "upload_csv_picto"} , remote: true , html: {class: "uploadCsv"}) do |f| %>
+        <%#= file_field_tag 'contacts', id: "selectedFileCsv", class: "selectedFile" %>
+        <!-- <input type="button" value="Sélectionnez le fichier a importer" class="btn btn-import selectedFileShown" onclick="document.getElementById('selectedFileCsv').click();" />-->
+
+        <div class="modal-body">
+
+          <table class="table table-borderless">
+            <thead>
+            <tr>
+              <th>SELECTIONNEZ LES CHAMPS</th>
+              <th></th>
+              <th class="text-center">APERCU</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+              <td>Numéro de télephone :</td>
+              <td>
+                <%= select_tag(:telephone, raw('<option value="1" selected>Telephone</option>
+                <option value="2">Email</option> <option value="3">Prenom</option> <option value="4">Nom</option> <option value="5">Doss</option>'), class: "form-control") %>
+              </td>
+              <td id="telFirst" class="text-center grey">332211445566</td>
+            </tr>
+            <tr>
+              <td>Email :</td>
+              <td>
+                <%= select_tag(:email, raw('<option value="1">Telephone</option> <option value="2"
+                selected>Email</option> <option value="3">Prenom</option> <option value="4">Nom</option> <option value="5">Doss</option>'), class: "form-control") %>
+              </td>
+              <td id="emailFirst" class="text-center grey">johncarter@mail.com</td>
+            </tr>
+            <tr>
+              <td>Numero de dossard :</td>
+              <td>
+                <%= select_tag(:dossard, raw('<option value="1">Telephone</option> <option value="2">Email</option>
+                <option value="3">Prenom</option> <option value="4">Nom</option> <option value="5" selected>Dossard</option>'), class: "form-control") %>
+              </td>
+              <td id="dossardFirst" class="text-center grey">1234</td>
+            </tr>
+            <tr>
+              <td>Nom :</td>
+              <td>
+
+                <%= select_tag(:nom, raw('<option value="1">Telephone</option> <option value="2">Email</option>
+                <option value="3">Prenom</option> <option value="4" selected>Nom</option> <option value="5">Dossard</option>'), class: "form-control") %>
+
+              </td>
+              <td id="nomFirst" class="text-center grey">Bordes</td>
+            </tr>
+            <tr>
+              <td>Prenom :</td>
+              <td>
+
+                <%= select_tag(:prenom, raw('<option value="1">Telephone</option> <option value="2">Email</option>
+                <option value="3" selected>Prenom</option> <option value="4">Nom</option> <option value="5">Dossard</option>'), class: "form-control") %>
+
+              </td>
+              <td id="prenomFirst" class="text-center grey">Pierre</td>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <%= submit_tag "Importer le fichier", class: "btn btnUploadCsv" %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<div class="breadcrumb">
+  <span> <a href="<%= root_path%>"> Accueil </a> >
+    <%= @edition.event.name %> > <%= @edition.date.strftime('%d/%m/%Y') %> >
+  </span>
+  <b> Contacts </b>
+</div>
+
+  <%= form_with model: @edition, url: upload_csv_picto_event_edition_path(edition_id: @edition.id), local: true, multipart: true, method: :post, class: "form-block processCsv", data: { type: :html } do |f| %>
+  <div class="form-block_container">
+    <div class="form-block_input">
+      <div class="form-block_avatar_file">
+        <div class="file_droparea">
+          <p class="file_msg js-set-number">Glissez vos fichiers ou sélectionnez les en cliquant</p>
+          <%= f.hidden_field :edition_id, value: @edition.id %>
+          <%= f.file_field :description, multiport: false, class: "file_input", id: "file_input", type: :file, multiple: false, required: true %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+<br>
+<p class="contactPara text-center">
+  Vous souhaitez que nous traitions le fichier de contacts à votre place, <a href="#sendEmailModal" data-toggle="modal">contactez-nous en cliquant ici !</a>
+</p>
+
+<script type="text/javascript">
+  $("#file_input").on('change',function () {
+    $("form.processCsv").submit();
+  });
+</script>

@@ -1,75 +1,101 @@
-<div class="breadcrumb">
+<div class="breadcrumb mb-0 mx-0">
   <span> <a href="<%= root_path%>"> Accueil </a> >
-  Campagnes > 
-  Listes
+    Campagnes > 
+    Listes
   </span>  
 </div>
 
-<% if @campaigns.empty?  %>
-    <p>Pas de campagnes</p>
-<% else  %>
-    <%#= @campaigns %>
-    
-    <div class="row contactsRow">
+
+<div class="row h-100 mx-0">
+  <div class="col-md-2 bg-primary p-5">
+    <%= render 'layouts/sidebar' %>
+  </div>
+
+  <div class="col-md-10 px-5">
+
+    <% if @campaigns.empty?  %>
+
+      <div class="row justify-content-center mt-5 mb-5">
+        <div class="col-md-7 text-center">
+          <h2 class="text-primary font-bold">Pas de campagne</h2>
+          <%= image_tag("svg/3colors.svg") %>
+        </div>
+      </div>
+
+    <% else  %>
+      <%#= @campaigns %>
+          
+      <div class="contactsRow">
+        <div class="row justify-content-center mt-5 mb-5">
+          <div class="col-md-7 text-center">
+            <h2 class="text-primary font-bold">Campagnes</h2>
+            <%= image_tag("svg/3colors.svg") %>
+          </div>
+        </div>
+
         <header>
-            <div class="row">
-                <div class="col-md-9">
-                    <!-- <h1> {{ vm.name }} </h1> -->
-                    <h2>Campagne</h2> 
-                </div>
-                <div class="col-md-3 pull-right">
-                    <input type="text" class="searchContact" ng-model="vm.searchCampaign" placeholder="Rechrcher une Campagne">
-                </div>
+          <div class="row">
+            <div class="col-md-3 pull-right">
+                <input type="text" class="searchContact" ng-model="vm.searchCampaign" placeholder="Rechrcher une Campagne">
             </div>
+              </div>
 
-            <div class="row">
-                <div class="col-md-4">
-                    <%= link_to 'Nouvel Campagne', new_event_campaign_path( params[:event_id], params[:id] ), class: 'btn-orange-small',  id: 'newCamp' %>
-                </div>
-                <div class="col-md-8 pull-right">  
-                </div>
+              <div class="row">
+            <div class="col-md-4">
+                <%= link_to 'Nouvel Campagne', new_event_campaign_path( params[:event_id], params[:id] ), class: 'btn-orange-small',  id: 'newCamp' %>
             </div>
-
+            <div class="col-md-8 pull-right">  
+            </div>
+          </div> 
         </header>
         <!-- Table -->
         <br/>
         <table class="table">
             <thead>
-                <tr>
-                    <th> Nom de la campagne </th>
-                    <th> Statue </th>
-                    <th> Date </th>
-                </tr>
+          <tr>
+              <th> Nom de la campagne </th>
+              <th> Statue </th>
+              <th> Date </th>
+          </tr>
             </thead>
             <tbody ng-model="vm.id">
-                <tr ng-repeat="c in vm.allCampaigns | orderBy:'attributes.created_at':true | limitTo: vm.perPage : (vm.curentPage -1) * vm.perPage | filter:vm.searchCampaign">
-                    <td> <%= link_to "{{c.attributes.custom_value}}", "/events/"+params[:event_id]+"/editions/"+params[:id]+"/get_campaign_detail?campaign_id={{c.attributes.id}}" %> </td>
-                    <td> traité  </td>
-                    <td>  {{ c.attributes.created_at  | date:"dd/MM/yyyy"  }}  </td>
-                </tr>
+          <tr ng-repeat="c in vm.allCampaigns | orderBy:'attributes.created_at':true | limitTo: vm.perPage : (vm.curentPage -1) * vm.perPage | filter:vm.searchCampaign">
+              <td> <%= link_to "{{c.attributes.custom_value}}", "/events/"+params[:event_id]+"/editions/"+params[:id]+"/get_campaign_detail?campaign_id={{c.attributes.id}}" %> </td>
+              <td> traité  </td>
+              <td>  {{ c.attributes.created_at  | date:"dd/MM/yyyy"  }}  </td>
+          </tr>
 
             </tbody>
         </table>
 
         <ul class="list-inline">
-            <li>
-                <a href="#" class="btn btn-previous-pag" ng-click="vm.previousCampaign()"> < </a> 
-                    {{vm.curentPage}}/{{vm.numberCampaignPagination}}
-                <a href="#" class="btn btn-next-pag"  ng-click="vm.nextCampaign()"> > </a> 
-            </li>
-            <li>
-                <select ng-model="vm.perPage"
-                    ng-options="p for p in vm.perPageArr">
-                </select> 
-                <span> Campagne par page </span>
-            </li>
-
+          <li>
+            <a href="#" class="btn btn-previous-pag" ng-click="vm.previousCampaign()"> < </a> 
+                {{vm.curentPage}}/{{vm.numberCampaignPagination}}
+            <a href="#" class="btn btn-next-pag"  ng-click="vm.nextCampaign()"> > </a> 
+              </li>
+              <li>
+            <select ng-model="vm.perPage"
+                ng-options="p for p in vm.perPageArr">
+            </select> 
+            <span> Campagne par page </span>
+          </li>
         </ul>
+      </div>
+      {{ vm.allCampaigns | json }}
+      <%#= debug @contacts %>
+    <% end %>
 
-    </div>
+  </div>
+</div>
 
-    {{ vm.allCampaigns | json }}
+<%= javascript_include_tag 'template/jquery-3.5.1.js', 'data-turbolinks-track' => true %>
 
-    <%#= debug @contacts %>
-    
-<% end %>
+<script>
+  function showMenuItems() {
+    $("li[data-target='#campagnes']").removeClass("collapsed")
+    $("#campagnes_sub-menu").addClass("show")
+    $('#listes').addClass('active')
+  }
+  showMenuItems();
+</script>
