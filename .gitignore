@@ -1,0 +1,6 @@
+.env
+
+/config/credentials.yml.enc
+/config/secrets.yml
+/config/master.key
+
