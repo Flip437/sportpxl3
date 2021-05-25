@@ -16,7 +16,9 @@
 
     <div class="row d-flex">
         <% @events.each do |event| %>
-          <%= render partial: "event_card", locals: {event: event} %>
+          <% if event.editions.exists? %>
+            <%= render partial: "event_card", locals: {event: event} %>
+          <% end %>
         <% end %>
     </div>
   </div>

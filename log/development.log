@@ -12812,3 +12812,645 @@ Started GET "/assets/template/FuturaLT-Bold.ttf" for 127.0.0.1 at 2021-05-24 12:
 Started GET "/assets/template/FuturaLT.ttf" for 127.0.0.1 at 2021-05-24 12:21:33 +0200
 Started GET "/assets/banner4.jpg" for 127.0.0.1 at 2021-05-24 12:21:33 +0200
 Started GET "/assets/template/FuturaLT-Condensed.ttf" for 127.0.0.1 at 2021-05-24 12:21:33 +0200
+Started GET "/" for 127.0.0.1 at 2021-05-25 20:48:06 +0200
+Processing by EventsController#list_picto as HTML
+Completed 401 Unauthorized in 11ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-05-25 20:48:06 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/login
+  Rendered devise/shared/_links.html.erb (3.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/login (19.4ms)
+Completed 200 OK in 1284ms (Views: 1170.1ms | ActiveRecord: 67.0ms)
+
+
+Started GET "/assets/template/animate.self-87fa5eaf17e38a29068699d38490cd943674b26d5052cebb27c5e45a0ef800f8.css?body=1" for 127.0.0.1 at 2021-05-25 20:48:08 +0200
+Started GET "/assets/template/magnific-popup.self-88ca22f427eb036ac1bf328a84a297e15c0c43e0e7ee9f922b7b5da09bb69583.css?body=1" for 127.0.0.1 at 2021-05-25 20:48:08 +0200
+Started GET "/assets/login.self-6158e74be30b4675e2aa204edb0f2355371b64ccce2c749335797f120623d0a1.css?body=1" for 127.0.0.1 at 2021-05-25 20:48:08 +0200
+Started GET "/assets/template/jquery-migrate-3.0.1.min.self-265ff0e2c4ec324dfb614419b3fd7b8b94b4be25faac9253dc40bf4fb737bde3.js?body=1" for 127.0.0.1 at 2021-05-25 20:48:08 +0200
+Started GET "/assets/template/popper.min.self-8d1918a859166f6ebb1e0c26471e4eee7598e6e682b8f4e64aa33aa4d63b7c4e.js?body=1" for 127.0.0.1 at 2021-05-25 20:48:08 +0200
+Started GET "/assets/template/bootstrap.min.self-f1f6b310b944ddfc36fd861c226f0939313e5ae1b5711043d038df1eff45abeb.js?body=1" for 127.0.0.1 at 2021-05-25 20:48:08 +0200
+Started GET "/assets/template/jquery.easing.1.3.self-281ceaee8e344ca3f1baf85fe90d7cde6bccddd40c5651e089584abee2ac2254.js?body=1" for 127.0.0.1 at 2021-05-25 20:48:08 +0200
+Started GET "/assets/template/jquery.waypoints.min.self-1c41818d321d041a5d76df119c78084ae3ab5669a4f3d7bffc15a9da0514ab85.js?body=1" for 127.0.0.1 at 2021-05-25 20:48:08 +0200
+Started GET "/assets/template/jquery.stellar.min.self-09018b56f1e6f7fcd053a5f6ade35f97ed1996c9a4bf7a50d6911fa2398e94a7.js?body=1" for 127.0.0.1 at 2021-05-25 20:48:08 +0200
+Started GET "/assets/template/bootstrap-datepicker.self-01cd3bf86245b38d0415b39e29f486b62189cc7b2c9de85511529341595db0bd.js?body=1" for 127.0.0.1 at 2021-05-25 20:48:08 +0200
+Started GET "/assets/template/jquery.timepicker.min.self-b6a9954fd4c1b0fb2f8f79c8799eb77680887bde2bb1fd2194c3967a9abee193.js?body=1" for 127.0.0.1 at 2021-05-25 20:48:08 +0200
+Started GET "/assets/template/owl.carousel.min.self-be96b95779071f6267e5c71861eb2df1a29fbcbb28ce25c3317ff988e903e3ba.js?body=1" for 127.0.0.1 at 2021-05-25 20:48:09 +0200
+Started GET "/assets/template/jquery.magnific-popup.min.self-b29d983d739362882b1c8a48784521362dc73c717bf1f1f74371113fb8e443fa.js?body=1" for 127.0.0.1 at 2021-05-25 20:48:09 +0200
+Started GET "/assets/template/scrollax.min.self-f573b608977adf5406084b65fb29096f7049d124cbc4b6f44e9866015f20409f.js?body=1" for 127.0.0.1 at 2021-05-25 20:48:09 +0200
+Started GET "/assets/activestorage.self-1ed4604ac2170045f1ffca4edb81a75246661555e4f9cf682bb8a21825e32e1c.js?body=1" for 127.0.0.1 at 2021-05-25 20:48:09 +0200
+Started GET "/assets/template/bootstrap-datepicker.self-844a5f469d1c1f815af18dcdfb745561d8d7a58f11d36e3e7853d4f58d81d99a.css?body=1" for 127.0.0.1 at 2021-05-25 20:48:09 +0200
+Started GET "/assets/template/style.self-82b0d00a7ab6fe326d2da91063983c79ae85f630fe6c1ef7610cad9bf2b04a02.css?body=1" for 127.0.0.1 at 2021-05-25 20:48:09 +0200
+Started GET "/assets/template/jquery.min.self-06c43429d1047ce3f355da574d8a9750209971b8b1b8f264f91f5518c5fcc060.js?body=1" for 127.0.0.1 at 2021-05-25 20:48:09 +0200
+Started GET "/assets/template/jquery-3.2.1.min.self-5f42f1f821506103c64bf1f191d7f2bfc0d6ab2e0c17e8ff3cf313317f2c1783.js?body=1" for 127.0.0.1 at 2021-05-25 20:48:09 +0200
+Started GET "/" for 127.0.0.1 at 2021-05-25 20:52:13 +0200
+Processing by EventsController#list_picto as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-05-25 20:52:13 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/login
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/login (5.2ms)
+Completed 200 OK in 61ms (Views: 59.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-05-25 20:52:52 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PoiIGBWi+ochcDaYZPmTpDe6H+tYLgWc3BEvWEp6QOr9+DJUwsSCqBvPrtT0fSlUYlbVun7quYGwgHwC3skJoA==", "user"=>{"email"=>"gr.projets@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Déjà membre ?  'Connectez-vous'"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "gr.projets@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 251ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-05-25 20:52:52 +0200
+Processing by EventsController#list_picto as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT DISTINCT "races"."race_type" FROM "races"[0m
+  [1m[36mPhoto Load (1.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  Rendering events/list_picto.html.erb within layouts/application
+  Rendered layouts/_banner.html.erb (2.4ms)
+  Rendered layouts/_searchbar.html.erb (3.3ms)
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1 ORDER BY "events"."created_at" DESC[0m  [["user_id", 1]]
+  [1m[36mEdition Load (1.5ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 20], ["LIMIT", 1]]
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[36mEdition Load (0.5ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 20]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", "e646a12e-cc58-439f-851e-f508c3f93a4d"], ["record_type", "Photo"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 335], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", "f2e45949-6cb4-4b5d-933a-570fd788aef1"], ["record_type", "Photo"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 336], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", "7ba9c4fb-5f6a-4145-9cff-91553378b189"], ["record_type", "Photo"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 337], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", "29cce477-1baa-4937-986b-55cb6026d778"], ["record_type", "Photo"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 333], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 40]]
+  Rendered events/_event_card.html.erb (209.5ms)
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 19], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 37]]
+  [1m[36mEdition Load (0.5ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 19]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 38]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 37]]
+  Rendered events/_event_card.html.erb (15.5ms)
+  [1m[36mEdition Load (0.7ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 18], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 35]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 18]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 35]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 36]]
+  Rendered events/_event_card.html.erb (12.7ms)
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 17], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 33]]
+  [1m[36mEdition Load (0.6ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 17]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 33]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 34]]
+  Rendered events/_event_card.html.erb (13.4ms)
+  [1m[36mEdition Load (0.5ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 16], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 31]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 16]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 31]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 32]]
+  Rendered events/_event_card.html.erb (13.0ms)
+  [1m[36mEdition Load (0.5ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 15], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 29]]
+  [1m[36mEdition Load (1.5ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 15]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 29]]
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 30]]
+  Rendered events/_event_card.html.erb (18.2ms)
+  [1m[36mEdition Load (0.8ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 14], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 27]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 14]]
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 27]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 28]]
+  Rendered events/_event_card.html.erb (21.0ms)
+  [1m[36mEdition Load (5.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 13], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 25]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 13]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 25]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 26]]
+  Rendered events/_event_card.html.erb (18.8ms)
+  [1m[36mEdition Load (0.5ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 12], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 23]]
+  [1m[36mEdition Load (6.1ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 12]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 23]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 24]]
+  Rendered events/_event_card.html.erb (19.8ms)
+  [1m[36mEdition Load (0.6ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 11], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 21]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 11]]
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 21]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 22]]
+  Rendered events/_event_card.html.erb (14.9ms)
+  [1m[36mEdition Load (1.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 10], ["LIMIT", 1]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 19]]
+  [1m[36mEdition Load (2.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 10]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 19]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 20]]
+  Rendered events/_event_card.html.erb (16.5ms)
+  [1m[36mEdition Load (0.6ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 9], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 17]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 9]]
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 17]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 18]]
+  Rendered events/_event_card.html.erb (17.4ms)
+  [1m[36mEdition Load (0.5ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 8], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 15]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 8]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 15]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 16]]
+  Rendered events/_event_card.html.erb (12.5ms)
+  [1m[36mEdition Load (5.9ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 7], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 13]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 7]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 13]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 14]]
+  Rendered events/_event_card.html.erb (24.3ms)
+  [1m[36mEdition Load (0.6ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 6], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 11]]
+  [1m[36mEdition Load (2.8ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 11]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 12]]
+  Rendered events/_event_card.html.erb (15.0ms)
+  [1m[36mEdition Load (0.6ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 5], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 9]]
+  [1m[36mEdition Load (1.6ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 9]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 10]]
+  Rendered events/_event_card.html.erb (14.4ms)
+  [1m[36mEdition Load (2.7ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 4], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 7]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 4]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 7]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 8]]
+  Rendered events/_event_card.html.erb (14.1ms)
+  [1m[36mEdition Load (0.7ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 5]]
+  [1m[36mEdition Load (3.4ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 3]]
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 6]]
+  Rendered events/_event_card.html.erb (18.1ms)
+  [1m[36mEdition Load (0.5ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 3]]
+  [1m[36mEdition Load (2.1ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 4]]
+  Rendered events/_event_card.html.erb (20.2ms)
+  [1m[36mEdition Load (0.6ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 1]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 2]]
+  Rendered events/_event_card.html.erb (16.3ms)
+  Rendered events/list_picto.html.erb within layouts/application (592.4ms)
+  Rendered layouts/_navbar.html.erb (3.1ms)
+Completed 200 OK in 787ms (Views: 548.3ms | ActiveRecord: 143.6ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbEFCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--16468c13bb2026b90a4f3e99cc8fb6133c196899/images%20(1).jpeg" for 127.0.0.1 at 2021-05-25 20:52:53 +0200
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbEFCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--16468c13bb2026b90a4f3e99cc8fb6133c196899", "filename"=>"images (1)"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 336], ["LIMIT", 1]]
+[36m  S3 Storage (1.8ms) [0m[34mGenerated URL for file at key: QycV1LLyF7CUYj6oGpZQWEvz (https://kapp10.s3.eu-west-1.amazonaws.com/QycV1LLyF7CUYj6oGpZQWEvz?response-content-disposition=inline%3B%20filename%3D%22images%20%25281%2529.jpeg%22%3B%20filename%2A%3DUTF-8%27%27images%2520%25281%2529.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4GHA7UMZQKY5XTEA%2F20210525%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210525T185253Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=52c322d2ecb2254a9de7a8621271a3723270cc3d0ebd1460f79e52e4832e63fb)[0m
+Redirected to https://kapp10.s3.eu-west-1.amazonaws.com/QycV1LLyF7CUYj6oGpZQWEvz?response-content-disposition=inline%3B%20filename%3D%22images%20%25281%2529.jpeg%22%3B%20filename%2A%3DUTF-8%27%27images%2520%25281%2529.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4GHA7UMZQKY5XTEA%2F20210525%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210525T185253Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=52c322d2ecb2254a9de7a8621271a3723270cc3d0ebd1460f79e52e4832e63fb
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBazBCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--69c26df267309f6631c59b1aeaa2a7a7ee196fd3/t%C3%A9l%C3%A9chargement%20(1).png" for 127.0.0.1 at 2021-05-25 20:52:53 +0200
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBazBCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--69c26df267309f6631c59b1aeaa2a7a7ee196fd3", "filename"=>"téléchargement (1)"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 333], ["LIMIT", 1]]
+[36m  S3 Storage (2.2ms) [0m[34mGenerated URL for file at key: 3ZrkEZketw2wUUjwwPGCvL5g (https://kapp10.s3.eu-west-1.amazonaws.com/3ZrkEZketw2wUUjwwPGCvL5g?response-content-disposition=inline%3B%20filename%3D%22telechargement%20%25281%2529.png%22%3B%20filename%2A%3DUTF-8%27%27t%25C3%25A9l%25C3%25A9chargement%2520%25281%2529.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4GHA7UMZQKY5XTEA%2F20210525%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210525T185253Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=3526ad41211ac85621caedb1896e42e4d4277bf2daf073b8647afbf0cede0c36)[0m
+Redirected to https://kapp10.s3.eu-west-1.amazonaws.com/3ZrkEZketw2wUUjwwPGCvL5g?response-content-disposition=inline%3B%20filename%3D%22telechargement%20%25281%2529.png%22%3B%20filename%2A%3DUTF-8%27%27t%25C3%25A9l%25C3%25A9chargement%2520%25281%2529.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4GHA7UMZQKY5XTEA%2F20210525%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210525T185253Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=3526ad41211ac85621caedb1896e42e4d4277bf2daf073b8647afbf0cede0c36
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/banner4.jpg" for 127.0.0.1 at 2021-05-25 20:52:54 +0200
+Started GET "/assets/template/FuturaLT-Bold.ttf" for 127.0.0.1 at 2021-05-25 20:52:54 +0200
+Started GET "/assets/template/FuturaLT.ttf" for 127.0.0.1 at 2021-05-25 20:52:54 +0200
+Started GET "/assets/template/FuturaLT-Condensed.ttf" for 127.0.0.1 at 2021-05-25 20:52:54 +0200
+Started GET "/" for 127.0.0.1 at 2021-05-25 20:53:01 +0200
+Processing by EventsController#list_picto as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT DISTINCT "races"."race_type" FROM "races"[0m
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  Rendering events/list_picto.html.erb within layouts/application
+  Rendered layouts/_banner.html.erb (2.3ms)
+  Rendered layouts/_searchbar.html.erb (2.3ms)
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1 ORDER BY "events"."created_at" DESC[0m  [["user_id", 1]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 20]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", "e646a12e-cc58-439f-851e-f508c3f93a4d"], ["record_type", "Photo"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 335], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", "f2e45949-6cb4-4b5d-933a-570fd788aef1"], ["record_type", "Photo"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 336], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", "7ba9c4fb-5f6a-4145-9cff-91553378b189"], ["record_type", "Photo"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 337], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", "29cce477-1baa-4937-986b-55cb6026d778"], ["record_type", "Photo"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 333], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 40]]
+  Rendered events/_event_card.html.erb (32.4ms)
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 19], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 37]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 19]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 38]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 37]]
+  Rendered events/_event_card.html.erb (9.0ms)
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 18], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 35]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 18]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 35]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 36]]
+  Rendered events/_event_card.html.erb (10.0ms)
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 17], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 33]]
+  [1m[36mEdition Load (0.2ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 17]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 33]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 34]]
+  Rendered events/_event_card.html.erb (6.8ms)
+  [1m[36mEdition Load (0.5ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 16], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 31]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 16]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 31]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 32]]
+  Rendered events/_event_card.html.erb (9.0ms)
+  [1m[36mEdition Load (0.5ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 15], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 29]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 15]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 29]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 30]]
+  Rendered events/_event_card.html.erb (9.3ms)
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 14], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 27]]
+  [1m[36mEdition Load (0.2ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 14]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 27]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 28]]
+  Rendered events/_event_card.html.erb (9.7ms)
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 13], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 25]]
+  [1m[36mEdition Load (0.2ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 13]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 25]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 26]]
+  Rendered events/_event_card.html.erb (8.2ms)
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 12], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 23]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 12]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 23]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 24]]
+  Rendered events/_event_card.html.erb (7.9ms)
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 11], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 21]]
+  [1m[36mEdition Load (0.2ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 21]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 22]]
+  Rendered events/_event_card.html.erb (6.7ms)
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 10], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 19]]
+  [1m[36mEdition Load (0.2ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 10]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 19]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 20]]
+  Rendered events/_event_card.html.erb (6.1ms)
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 9], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 17]]
+  [1m[36mEdition Load (0.2ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 9]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 17]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 18]]
+  Rendered events/_event_card.html.erb (8.1ms)
+  [1m[36mEdition Load (0.6ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 8], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 15]]
+  [1m[36mEdition Load (0.2ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 15]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 16]]
+  Rendered events/_event_card.html.erb (8.1ms)
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 13]]
+  [1m[36mEdition Load (0.5ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 7]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 13]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 14]]
+  Rendered events/_event_card.html.erb (9.4ms)
+  [1m[36mEdition Load (0.5ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 6], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 11]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 11]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 12]]
+  Rendered events/_event_card.html.erb (10.9ms)
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 9]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 10]]
+  Rendered events/_event_card.html.erb (9.7ms)
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 4], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 7]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 8]]
+  Rendered events/_event_card.html.erb (9.5ms)
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 5]]
+  [1m[36mEdition Load (0.2ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 6]]
+  Rendered events/_event_card.html.erb (7.8ms)
+  [1m[36mEdition Load (1.9ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 3]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 4]]
+  Rendered events/_event_card.html.erb (11.1ms)
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 1]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 2]]
+  Rendered events/_event_card.html.erb (9.3ms)
+  Rendered events/list_picto.html.erb within layouts/application (226.1ms)
+  Rendered layouts/_navbar.html.erb (2.4ms)
+Completed 200 OK in 297ms (Views: 252.2ms | ActiveRecord: 38.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbEVCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bd589ce60c8aff0e783b4c013d75606aab93d9f6/images%20(2).jpeg" for 127.0.0.1 at 2021-05-25 20:53:01 +0200
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbEVCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bd589ce60c8aff0e783b4c013d75606aab93d9f6", "filename"=>"images (2)"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 337], ["LIMIT", 1]]
+[36m  S3 Storage (1.3ms) [0m[34mGenerated URL for file at key: Cj1FFh4hvgPsqd2XSajEXv4K (https://kapp10.s3.eu-west-1.amazonaws.com/Cj1FFh4hvgPsqd2XSajEXv4K?response-content-disposition=inline%3B%20filename%3D%22images%20%25282%2529.jpeg%22%3B%20filename%2A%3DUTF-8%27%27images%2520%25282%2529.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4GHA7UMZQKY5XTEA%2F20210525%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210525T185301Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c4f5c445148fa49a19d4fec224333d232c8aa8cc0ee28ddc10346e7897e83c71)[0m
+Redirected to https://kapp10.s3.eu-west-1.amazonaws.com/Cj1FFh4hvgPsqd2XSajEXv4K?response-content-disposition=inline%3B%20filename%3D%22images%20%25282%2529.jpeg%22%3B%20filename%2A%3DUTF-8%27%27images%2520%25282%2529.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4GHA7UMZQKY5XTEA%2F20210525%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210525T185301Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c4f5c445148fa49a19d4fec224333d232c8aa8cc0ee28ddc10346e7897e83c71
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/banner4.jpg" for 127.0.0.1 at 2021-05-25 20:53:01 +0200
+Started GET "/assets/template/FuturaLT-Bold.ttf" for 127.0.0.1 at 2021-05-25 20:53:01 +0200
+Started GET "/assets/template/FuturaLT.ttf" for 127.0.0.1 at 2021-05-25 20:53:01 +0200
+Started GET "/assets/template/FuturaLT-Condensed.ttf" for 127.0.0.1 at 2021-05-25 20:53:02 +0200
+Started GET "/events/20/editions/39/home_picto_edition?edition_id=39" for 127.0.0.1 at 2021-05-25 20:53:04 +0200
+Processing by EditionsController#home_picto_edition as HTML
+  Parameters: {"edition_id"=>"39", "event_id"=>"20", "id"=>"39"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.5ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts" WHERE "contacts"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts" WHERE ((edition_id = 39) AND (email IS NOT NULL))[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts" WHERE ((edition_id = 39) AND (telephone IS NOT NULL))[0m
+  Rendering editions/home_picto_edition.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered layouts/_sidebar.html.erb (7.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."name" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures" WHERE "pictures"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts" WHERE "contacts"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE "campaigns"."edition_id" = $1[0m  [["edition_id", 39]]
+  Rendered editions/home_picto_edition.html.erb within layouts/application (59.7ms)
+  Rendered layouts/_navbar.html.erb (3.1ms)
+Completed 200 OK in 139ms (Views: 106.4ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/assets/template/FuturaLT.ttf" for 127.0.0.1 at 2021-05-25 20:53:04 +0200
+Started GET "/assets/template/FuturaLT-Condensed.ttf" for 127.0.0.1 at 2021-05-25 20:53:04 +0200
+Started GET "/assets/template/FuturaLT-Bold.ttf" for 127.0.0.1 at 2021-05-25 20:53:04 +0200
+Started GET "/assets/template/FuturaLT-Book.ttf" for 127.0.0.1 at 2021-05-25 20:53:05 +0200
+Started GET "/assets/template/FuturaLT-Light.ttf" for 127.0.0.1 at 2021-05-25 20:53:05 +0200
+  [1m[36mEvent Load (3.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEdition Load (0.5ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mEdition Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 1], ["LIMIT", 1]]
+Started GET "/events/20/editions/39/home_picto_edition?edition_id=39" for 127.0.0.1 at 2021-05-25 21:30:06 +0200
+Processing by EditionsController#home_picto_edition as HTML
+  Parameters: {"edition_id"=>"39", "event_id"=>"20", "id"=>"39"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.5ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts" WHERE "contacts"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts" WHERE ((edition_id = 39) AND (email IS NOT NULL))[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts" WHERE ((edition_id = 39) AND (telephone IS NOT NULL))[0m
+  Rendering editions/home_picto_edition.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered layouts/_sidebar.html.erb (6.7ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."name" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures" WHERE "pictures"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts" WHERE "contacts"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE "campaigns"."edition_id" = $1[0m  [["edition_id", 39]]
+  Rendered editions/home_picto_edition.html.erb within layouts/application (31.0ms)
+  Rendered layouts/_navbar.html.erb (4.4ms)
+Completed 200 OK in 121ms (Views: 84.1ms | ActiveRecord: 15.5ms)
+
+
+Started GET "/assets/template/FuturaLT.ttf" for 127.0.0.1 at 2021-05-25 21:30:07 +0200
+Started GET "/assets/template/FuturaLT-Condensed.ttf" for 127.0.0.1 at 2021-05-25 21:30:07 +0200
+Started GET "/assets/template/FuturaLT-Bold.ttf" for 127.0.0.1 at 2021-05-25 21:30:07 +0200
+Started GET "/assets/template/FuturaLT-Book.ttf" for 127.0.0.1 at 2021-05-25 21:30:07 +0200
+Started GET "/assets/template/FuturaLT-Light.ttf" for 127.0.0.1 at 2021-05-25 21:30:07 +0200
+Started GET "/" for 127.0.0.1 at 2021-05-25 21:30:08 +0200
+Processing by EventsController#list_picto as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT DISTINCT "races"."race_type" FROM "races"[0m
+  [1m[36mPhoto Load (1.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  Rendering events/list_picto.html.erb within layouts/application
+  Rendered events/list_picto.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 4.0ms)
+
+
+[Rollbar] Scheduling item
+[Rollbar] Sending item
+[Rollbar] Sending json
+[Rollbar] Success
+[Rollbar] Details: https://rollbar.com/instance/uuid?uuid=1b5ba160-5b81-40f4-a3d8-197d3a9c40c5 (only available if report was successful)
+  
+SyntaxError (/home/flip/Documents/DEV/SPORTPXL/SportPxl/app/views/events/list_picto.html.erb:30: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/events/list_picto.html.erb:30: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2021-05-25 21:30:23 +0200
+Processing by EventsController#list_picto as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DISTINCT "races"."race_type" FROM "races"[0m
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  Rendering events/list_picto.html.erb within layouts/application
+  Rendered layouts/_banner.html.erb (2.1ms)
+  Rendered layouts/_searchbar.html.erb (2.3ms)
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1 ORDER BY "events"."created_at" DESC[0m  [["user_id", 1]]
+  [1m[36mEdition Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 20], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 20]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", "e646a12e-cc58-439f-851e-f508c3f93a4d"], ["record_type", "Photo"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 335], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", "f2e45949-6cb4-4b5d-933a-570fd788aef1"], ["record_type", "Photo"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 336], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", "7ba9c4fb-5f6a-4145-9cff-91553378b189"], ["record_type", "Photo"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 337], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", "29cce477-1baa-4937-986b-55cb6026d778"], ["record_type", "Photo"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 333], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 39]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 40]]
+  Rendered events/_event_card.html.erb (29.2ms)
+  [1m[36mEdition Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 19], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 19], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 37]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 19]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 38]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 37]]
+  Rendered events/_event_card.html.erb (12.3ms)
+  [1m[36mEdition Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 18], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 18], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 35]]
+  [1m[36mEdition Load (0.2ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 18]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 35]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 36]]
+  Rendered events/_event_card.html.erb (7.8ms)
+  [1m[36mEdition Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 17], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.7ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 17], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 33]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 17]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 33]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 34]]
+  Rendered events/_event_card.html.erb (14.2ms)
+  [1m[36mEdition Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 16], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 16], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 31]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 16]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 31]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 32]]
+  Rendered events/_event_card.html.erb (7.2ms)
+  [1m[36mEdition Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 15], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 15], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 29]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 15]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 29]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 30]]
+  Rendered events/_event_card.html.erb (6.8ms)
+  [1m[36mEdition Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 14], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 14], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 27]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 14]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 27]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 28]]
+  Rendered events/_event_card.html.erb (10.3ms)
+  [1m[36mEdition Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 13], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 13], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 25]]
+  [1m[36mEdition Load (0.2ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 13]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 25]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 26]]
+  Rendered events/_event_card.html.erb (7.5ms)
+  [1m[36mEdition Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 12], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.6ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 12], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 23]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 12]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 23]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 24]]
+  Rendered events/_event_card.html.erb (10.4ms)
+  [1m[36mEdition Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 11], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.5ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 11], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 21]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 21]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 22]]
+  Rendered events/_event_card.html.erb (9.7ms)
+  [1m[36mEdition Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 10], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 10], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 19]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 10]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 19]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 20]]
+  Rendered events/_event_card.html.erb (13.5ms)
+  [1m[36mEdition Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 9], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 9], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 17]]
+  [1m[36mEdition Load (0.2ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 17]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 18]]
+  Rendered events/_event_card.html.erb (7.3ms)
+  [1m[36mEdition Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 8], ["LIMIT", 1]]
+  [1m[36mEdition Load (1.0ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 8], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 15]]
+  [1m[36mEdition Load (3.9ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 8]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 15]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 16]]
+  Rendered events/_event_card.html.erb (19.5ms)
+  [1m[36mEdition Exists (2.6ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 7], ["LIMIT", 1]]
+  [1m[36mEdition Load (3.1ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 13]]
+  [1m[36mEdition Load (0.7ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 7]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 13]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 14]]
+  Rendered events/_event_card.html.erb (14.9ms)
+  [1m[36mEdition Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 6], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 6], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 11]]
+  [1m[36mEdition Load (0.2ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 12]]
+  Rendered events/_event_card.html.erb (7.1ms)
+  [1m[36mEdition Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 5], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.5ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 9]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 5]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 9]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 10]]
+  Rendered events/_event_card.html.erb (11.0ms)
+  [1m[36mEdition Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 4], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 4], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 7]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 7]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 8]]
+  Rendered events/_event_card.html.erb (10.5ms)
+  [1m[36mEdition Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 3], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.3ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 5]]
+  [1m[36mEdition Load (0.2ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 5]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 6]]
+  Rendered events/_event_card.html.erb (10.3ms)
+  [1m[36mEdition Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 2], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.4ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 3]]
+  [1m[36mEdition Load (0.2ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 4]]
+  Rendered events/_event_card.html.erb (20.8ms)
+  [1m[36mEdition Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "editions" WHERE "editions"."event_id" = $1 LIMIT $2[0m  [["event_id", 1], ["LIMIT", 1]]
+  [1m[36mEdition Load (0.5ms)[0m  [1m[34mSELECT  "editions".* FROM "editions" WHERE "editions"."event_id" = $1 ORDER BY "editions"."id" ASC LIMIT $2[0m  [["event_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."edition_id" = $1[0m  [["edition_id", 1]]
+  [1m[36mEdition Load (0.2ms)[0m  [1m[34mSELECT "editions".* FROM "editions" WHERE "editions"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "races"."race_type" FROM "races" WHERE "races"."edition_id" = $1[0m  [["edition_id", 2]]
+  Rendered events/_event_card.html.erb (8.1ms)
+  Rendered events/list_picto.html.erb within layouts/application (306.3ms)
+  Rendered layouts/_navbar.html.erb (3.6ms)
+Completed 200 OK in 369ms (Views: 304.7ms | ActiveRecord: 60.0ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBazBCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--69c26df267309f6631c59b1aeaa2a7a7ee196fd3/t%C3%A9l%C3%A9chargement%20(1).png" for 127.0.0.1 at 2021-05-25 21:30:24 +0200
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBazBCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--69c26df267309f6631c59b1aeaa2a7a7ee196fd3", "filename"=>"téléchargement (1)"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 333], ["LIMIT", 1]]
+[36m  S3 Storage (1.4ms) [0m[34mGenerated URL for file at key: 3ZrkEZketw2wUUjwwPGCvL5g (https://kapp10.s3.eu-west-1.amazonaws.com/3ZrkEZketw2wUUjwwPGCvL5g?response-content-disposition=inline%3B%20filename%3D%22telechargement%20%25281%2529.png%22%3B%20filename%2A%3DUTF-8%27%27t%25C3%25A9l%25C3%25A9chargement%2520%25281%2529.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4GHA7UMZQKY5XTEA%2F20210525%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210525T193024Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0a54804de906580000c1ffec5ebdfd8df6c0336662f6b60501fe083d991dc9f1)[0m
+Redirected to https://kapp10.s3.eu-west-1.amazonaws.com/3ZrkEZketw2wUUjwwPGCvL5g?response-content-disposition=inline%3B%20filename%3D%22telechargement%20%25281%2529.png%22%3B%20filename%2A%3DUTF-8%27%27t%25C3%25A9l%25C3%25A9chargement%2520%25281%2529.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4GHA7UMZQKY5XTEA%2F20210525%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210525T193024Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0a54804de906580000c1ffec5ebdfd8df6c0336662f6b60501fe083d991dc9f1
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBazhCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fe7fe8de902e365f92827997cc45da3b7ff44cdd/images.jpeg" for 127.0.0.1 at 2021-05-25 21:30:24 +0200
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBazhCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fe7fe8de902e365f92827997cc45da3b7ff44cdd", "filename"=>"images"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 335], ["LIMIT", 1]]
+[36m  S3 Storage (2.0ms) [0m[34mGenerated URL for file at key: fZHhg9qLzA3TWBU3VwfsnDzF (https://kapp10.s3.eu-west-1.amazonaws.com/fZHhg9qLzA3TWBU3VwfsnDzF?response-content-disposition=inline%3B%20filename%3D%22images.jpeg%22%3B%20filename%2A%3DUTF-8%27%27images.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4GHA7UMZQKY5XTEA%2F20210525%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210525T193024Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=71d55ac2859659c663cdc146cb809d965fbdc2194dee46d3056f4f060e7fc94f)[0m
+Redirected to https://kapp10.s3.eu-west-1.amazonaws.com/fZHhg9qLzA3TWBU3VwfsnDzF?response-content-disposition=inline%3B%20filename%3D%22images.jpeg%22%3B%20filename%2A%3DUTF-8%27%27images.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4GHA7UMZQKY5XTEA%2F20210525%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210525T193024Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=71d55ac2859659c663cdc146cb809d965fbdc2194dee46d3056f4f060e7fc94f
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/banner4.jpg" for 127.0.0.1 at 2021-05-25 21:30:24 +0200
+Started GET "/assets/template/FuturaLT-Bold.ttf" for 127.0.0.1 at 2021-05-25 21:30:24 +0200
+Started GET "/assets/template/FuturaLT.ttf" for 127.0.0.1 at 2021-05-25 21:30:24 +0200
+Started GET "/assets/template/FuturaLT-Condensed.ttf" for 127.0.0.1 at 2021-05-25 21:30:24 +0200
