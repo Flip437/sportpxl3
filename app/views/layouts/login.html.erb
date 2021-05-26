@@ -27,15 +27,7 @@
       </nav>
     </div>
   </div>
-  <!-- cadre du contenu sous le média -->
-  <div>
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
 
-      <!-- <p class="notice"><%#= notice %></p>-->
-      <!-- <p class="alert"><%#= alert %></p>-->
-    <% end %>
-  </div>
 
   <div class="content_frame">
     <%= yield %>

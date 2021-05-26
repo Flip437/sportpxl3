@@ -49,43 +49,6 @@
         </div>
       </div>
 
-      <%= form_tag event_edition_path(@edition.id, event_id: @event.id), method: :get do %>
-        <div class="row">
-          <div class="col-sm-3">
-            <div class="form-group">
-              <%= label_tag 'Photos non reconnues ?' %>
-              <%= check_box_tag :without_bib, true, params[:without_bib], class: 'bootstrap-switch' %>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="form-group">
-              <%= label_tag 'Courses' %>
-              <%= select_tag :race_ids, options_from_collection_for_select(@edition.races, :id, :name, params[:race_ids]), multiple: true, class: 'form-control' %>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="form-group">
-              <%= label_tag 'Sexe' %>
-              <%= select_tag :sex, options_for_select([['Masculin', 'M'], ['Féminin', 'F']], params[:sex]), multiple: true, class: 'form-control' %>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="form-group">
-              <%= label_tag 'Catégorie' %>
-              <%= select_tag :categ, options_for_select(@edition.results.order(:categ).pluck(:categ).uniq, params[:categ]), multiple: true, class: 'form-control' %>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="form-group">
-              <%= submit_tag 'Filtrer', class: 'btn-primary btn-group-justified' %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-
       <% if @photos.any? %>
         <div class="row">
           <div class="col-sm-12">

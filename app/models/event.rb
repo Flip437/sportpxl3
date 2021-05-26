@@ -117,8 +117,6 @@ class Event < ApplicationRecord
   def homepage_photos
     home_photos=[]
     self.editions.each do |edition|
-      puts "ARRAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"
-      puts home_photos
       return home_photos if home_photos.size >=3
       if edition.photos.size > 0
         edition.photos.each do |photo|
