@@ -3,7 +3,6 @@
   
     <div class="row">
     <% if event.homepage_photos.size >= 3 %>
-
       <div class="col-8" style="padding-right: 0px;">
         <div class="container_first_card_img">
           <%= image_tag(event.homepage_photos[rand(event.homepage_photos.size)], class:"first_card_img", data: {id: event.id }) %>

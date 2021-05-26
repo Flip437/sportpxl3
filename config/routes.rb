@@ -83,8 +83,15 @@ Rails.application.routes.draw do
         post 'add_edition_photos'
       end
 
+      get 'edit', to: 'editions#edit'
+      post 'update', to: 'editions#update'
+
     end
-  end
+
+  get 'edit', to: 'events#edit'
+  post 'update', to: 'events#update'
+  
+end
 
 
   #############################
