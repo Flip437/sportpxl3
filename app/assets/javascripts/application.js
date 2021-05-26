@@ -15,7 +15,7 @@
 //= require template/jquery.min
 //= require template/jquery-3.2.1.min
 //= require template/jquery-migrate-3.0.1.min
-//= require template/popper.min
+// require template/popper.min
 //= require template/bootstrap.min
 //= require template/jquery.easing.1.3
 //= require template/jquery.waypoints.min

@@ -84,5 +84,9 @@ Rails.application.configure do
 
   Rails.application.config.active_job.queue_adapter = :sidekiq
   # Do not dump schema after migrations.
-   config.active_record.dump_schema_after_migration = false
+  config.active_record.dump_schema_after_migration = false
+  
+  
+  config.active_storage.service = :amazon
+
 end

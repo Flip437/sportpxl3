@@ -51,12 +51,12 @@
 						<div class="row h-100 py-2 pl-3">
 
 								<%= link_to(new_event_campaign_path( params[:event_id], params[:edition_id] ), class: 'btn bg-blue text-white font-light font-10px mx-1',  id: 'newCamp') do %>
-									<%= image_tag 'svg/opened_letter_white' %>
+									<%= image_tag('svg/opened_letter_white.svg') %>
 									Nouvelle Campagne
 								<% end %>
 
 								<%= link_to(new_event_campaign_path( params[:event_id], params[:edition_id] ), class: 'btn bg-yellow text-white font-light font-10px mx-1',  id: 'newCamp') do %>
-									<%= image_tag('svg/contact', height: '19px') %>
+									<%= image_tag('svg/contact.svg', height: '19px') %>
 									Importer des contacts
 								<% end %>
 								

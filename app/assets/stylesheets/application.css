@@ -22,5 +22,6 @@
  *= require 'template/personnal'
  *= require 'template/left-navbar'
  *= require 'template/sidenav'
+ *= require 'template/path.css.erb'
 
  */
