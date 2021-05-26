@@ -13022,8 +13022,7 @@ h1, h2, h3, h4, h5,
     color: #fff; }
     .btn.btn-primary:hover {
       border: 1px solid #ffffff;
-      background-color: var(--blue);
-      color: #ffffff; }
+      background-color: var(--blue);}
     .btn.btn-primary.btn-outline-primary {
       border: 1px solid #207dff;
       background: transparent;
@@ -13038,8 +13037,7 @@ h1, h2, h3, h4, h5,
     color: #000000; }
     .btn.btn-secondary:hover {
       border: 1px solid #ffd31d;
-      background: transparent;
-      color: #ffd31d; }
+      background-color: var(--yellow);}
     .btn.btn-secondary.btn-outline-secondary {
       border: 1px solid #ffd31d;
       background: transparent;
