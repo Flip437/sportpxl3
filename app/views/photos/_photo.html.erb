@@ -1,6 +1,6 @@
 <div class="col-md-4 ftco-animate fadeInUp ftco-animated p-5">
   <div class="row">
-    <div class="work img d-flex align-items-end" style="background-image: url('<%= photo.direct_image_url %>');">
+    <div class="work img d-flex align-items-end rounded-0" style="background-image: url('<%= photo.direct_image_url %>');">
       <a href="<%= photo.direct_image_url %>" class="icon image-popup d-flex justify-content-center align-items-center">
         <span class="fa fa-expand"></span>
       </a>
@@ -12,11 +12,15 @@
 
         <% unless [:not_paired, :invalid_bib].include? photo.runner %>
         <h5 class="card-title">
-          <p class="font-condensed text-white"><%= photo.runner.prenom %></p>
-          <p class="font-condensed text-white"><%= photo.runner.nom %></p>
+          <% unless photo.runner.nil? %>
+            <p class="font-condensed text-white"><%= photo.runner.prenom %></p>
+            <p class="font-condensed text-white"><%= photo.runner.nom %></p>
+          <% else %>
+            <p class="font-condensed text-white">Dossard introuvable pour cette course</p>
+          <% end %>
         </h5>
         <% else %>
-          <p class="card-text">Dossard introuvable pour cette course</p>
+          <p class="font-condensed text-white">Dossard introuvable pour cette course</p>
         <% end %>
 
         <%= form_with(model: photo, url: event_edition_photo_path(@event, @edition, photo.id), method: "put") do |f| %>

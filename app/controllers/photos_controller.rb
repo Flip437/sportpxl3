@@ -80,7 +80,7 @@ class PhotosController < ApplicationController
     @photos = @edition.photos.where(id: params[:photo_ids])
     @photos.destroy_all
     redirect_to event_edition_photos_path(event_id: @event.id, edition_id: @edition.id), notice: "Les photos ont bien été supprimées."
-  end#Barkoxe$1As
+  end
 
   private
 

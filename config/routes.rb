@@ -74,12 +74,10 @@ Rails.application.routes.draw do
       get 'diffuser_photo'
       post 'generate_widget'
       get 'home_picto_edition'
+      get 'destroy_all', to: 'photos#destroy_all'
+      delete 'destroy_all', to: 'photos#destroy_all'
       resources :contacts, only: [:index]
-      resources :photos do
-        collection do
-          delete :destroy_all
-        end
-      end
+      resources :photos
 
       scope controller: 'photos', path: '/photos' do
         post 'add_edition_photos'
