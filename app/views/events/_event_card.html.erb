@@ -2,12 +2,11 @@
   <div class="blog-entry align-self-stretch bg-primary">
   
     <div class="row">
-        <%= event.id %>
-    <% if event.homepage_photos.size > 3 %>
+    <% if event.homepage_photos.size >= 3 %>
 
       <div class="col-8" style="padding-right: 0px;">
         <div class="container_first_card_img">
-          <%= image_tag(event.homepage_photos[rand(event.homepage_photos.size)], class:"first_card_img") %>
+          <%= image_tag(event.homepage_photos[rand(event.homepage_photos.size)], class:"first_card_img", data: {id: event.id }) %>
         </div>
       </div>
 
@@ -32,7 +31,7 @@
 
 
     <div class="media-body p-4">
-      <h3 class="heading"><%= link_to event.name, home_picto_event_path(event), class:"text-white" %></h3>
+      <h3 class="heading"><%= link_to event.name, home_picto_event_path(event), class:"text-white", data: {id: event.id } %></h3>
       <p class="text-secondary font-weight-light"><%= event.place %></p>
     </div>
     <div class="text p-4">
