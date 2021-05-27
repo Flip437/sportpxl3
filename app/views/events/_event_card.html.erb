@@ -30,8 +30,8 @@
 
 
     <div class="media-body p-4">
-      <h3 class="heading"><%= link_to event.name, home_picto_event_path(event), class:"text-white", data: {id: event.id } %></h3>
-      <p class="text-secondary font-weight-light"><%= event.place %></p>
+      <h3 class="heading border-left font-bold font-25px border-left-yellow pl-2"><%= link_to event.name, home_picto_event_path(event), class:"text-white", data: {id: event.id } %></h3>
+      <p class="font-book text-secondary"><%= event.place %></p>
     </div>
     <div class="text p-4">
 
@@ -44,9 +44,9 @@
       <div class="row">
         <% event.editions.each do |edition| %>
         <div class="col-6">
-          <a href="<%= home_picto_edition_event_edition_path(event_id: edition.event.id, edition_id: edition.id, id: edition.id) %>" class="btn btn-secondary text-white text-left">
+          <a href="<%= home_picto_edition_event_edition_path(event_id: edition.event.id, edition_id: edition.id, id: edition.id) %>" class="btn btn-secondary text-white text-left font-condensed font-15px py-1">
             <%= edition.date.strftime('%e %b %Y') %><br> <!-- To clear when routes will be cleaned" -->
-            <%= edition.races.pluck(:race_type).join(', ') %> <!-- edition.races.pluck(:name).join(', ') -->
+            <i><%= edition.races.pluck(:race_type).join(', ') %></i> <!-- edition.races.pluck(:name).join(', ') -->
             <span class="ion-ios-arrow-forward"></span>
           </a>
         </div>

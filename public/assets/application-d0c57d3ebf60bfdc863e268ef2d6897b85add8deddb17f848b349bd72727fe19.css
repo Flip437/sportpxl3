@@ -14173,6 +14173,7 @@ textarea.form-control {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  border: 2px solid white;
 }
 
 .container_second_card_img {
@@ -14184,6 +14185,7 @@ textarea.form-control {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  border: 2px solid white;
 }
 
 
@@ -14259,7 +14261,12 @@ textarea.form-control {
   padding-top: 13px;
 }
 
+.no-border {
+  border: 0px;
+}
 
+.border-left {
+  border-left: 5px solid var(--secondary) !important; }
 
 
 
@@ -14332,6 +14339,7 @@ textarea.form-control {
   height: 12vw;
   object-fit: cover;
 }
+
 
 .leftNavBar{
   min-height: 500px;

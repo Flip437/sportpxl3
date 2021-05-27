@@ -16,44 +16,39 @@
       <div class="col-md-7 h-100">
         <form action="#" class="appointment">
           <div class="row h-100">
+
             <div class="col-md-5 my-auto">
-              <div class="form-group mb-0 mb-0">
-                <div class="input-wrap">
-                  <div class="icon"><%= image_tag('svg/search.svg') %></div>
+              <div class="form-group mb-0">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text rounded-0 bg-white no-border"><%= image_tag('svg/search.svg') %></span>
+                  </div>
                   <input type="text" class="text-right form-control rounded-0" placeholder="Rechercher un événement">
                 </div>
               </div>
             </div>
-            <div class="col-md-2 my-auto">
+
+            <div class="col-md-3 my-auto">
               <div class="form-group mb-0">
-                <div class="form-field">
-                  <div class="select-wrap">
-                    <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                    <select name="" id="" class="rounded-0 form-control bg-primary text-white text-right">
-                      <option value="">Ordre A-Z</option>
-                      <option value="">House Washing</option>
-                      <option value="">Roof Cleaning</option>
-                    </select>
-                  </div>
-                </div>
+                <select class="form-control rounded-0 bg-primary text-white">
+                  <option selected>Ordre A-Z</option>
+                  <option value="1">Ordre Z-A</option>
+                </select>
               </div>
             </div>
-            <div class="col-md-5 my-auto">
+
+            <div class="col-md-4 my-auto">
               <div class="form-group mb-0">
-                <div class="form-field">
-                  <div class="select-wrap">
-                    <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                    <select name="" id="" class="form-control rounded-0 text-white bg-primary text-right">
-                      <option value="">Du plus récent au plus ancien</option>
-                      <option value="">House Washing</option>
-                      <option value="">Roof Cleaning</option>
-                      <option value="">Driveway Cleaning</option>
-                      <option value="">Gutter Cleaning</option>
-                    </select>
-                  </div>
-                </div>
+                <select class="form-control rounded-0 bg-primary text-white">
+                  <option value="">Du plus récent au plus ancien</option>
+                  <option value="">House Washing</option>
+                  <option value="">Roof Cleaning</option>
+                  <option value="">Driveway Cleaning</option>
+                  <option value="">Gutter Cleaning</option>
+                </select>
               </div>
             </div>
+
           </div>
         </form>
       </div>
