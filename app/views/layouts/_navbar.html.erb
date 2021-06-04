@@ -9,15 +9,23 @@
 
 		<div class="collapse navbar-collapse" id="ftco-nav">
 			<ul class="navbar-nav ml-auto">
+
+        <li class="btn-group dropleft">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle"> <img src="<%= asset_path('user.png') %>" width="30" height="30"> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li class="divider"></li>
+            <li> <%= link_to "Déconnexion", destroy_user_session_path , method: :get %>  </li>
+          </ul>
+        </li>
+				<p class="text-white mx-2">|</p>
 				<li class="mx-3">
 					<%= link_to(root_path) do %>
 						<%= image_tag('svg/bell.svg') %>
 					<% end %>
 				</li>
-				<p class="text-white mx-2">|</p>
-				<li class="mx-3">
-					<%= link_to "Déconnexion", destroy_user_session_path, method: :delete %> 
-				</li>
+
 			</ul>
 		</div>
 	
