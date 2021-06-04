@@ -14,52 +14,26 @@
       </div>
 
       <div class="col-md-7 h-100">
-        <%= form_tag("/events/search_events",  :remote => true, :method => :post, :class => 'navbar-form appointment navbar-left searchEvent', autocomplete: 'off') do %>
-          <div class="row h-100">
-
-            <div class="col-md-5 my-auto">
-              <div class="form-group mb-0">
-                <div class="input-group">
-
-                  <div class="input-group-prepend">
-                    <span class="input-group-text rounded-0 bg-white no-border"><%= image_tag('svg/search.svg') %></span>
-                  </div>
-                    <%= text_field_tag 'q', nil , class: 'text-right form-control searchEvent rounded-0', placeholder: 'Ajouter un événement' %>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        <% end %>
 
 
+<!-- form events freshstart -->
+<div class="container"  style="margin-bottom:25px;">
+  <div class="searchEventContainer">
+    <% if has_filter_pict_home? %>
+      <%= form_with(url: "/events/search_events", method: :post, remote: true, class:'navbar-form navbar-left searchEvent', autocomplete: 'off') do |form| %>
+        <div class="form-group inner-addon left-addon">
+        <i class="glyphicon glyphicon-search"></i>
+        <%= form.text_field 'q', class: 'form-control searchEvent', placeholder: 'Ajouter un événement' %>
+        </div>
+      <% end %>
+
+    <% end %>
+  </div>
+</div>
+<!-- END form events freshstart -->
 
 
 
-
-
-
-
-            <div class="col-md-3 my-auto">
-              <div class="form-group mb-0">
-                <select class="form-control rounded-0 bg-primary text-white">
-                  <option selected>Ordre A-Z</option>
-                  <option value="1">Ordre Z-A</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="col-md-4 my-auto">
-              <div class="form-group mb-0">
-                <select class="form-control rounded-0 bg-primary text-white">
-                  <option value="">Du plus récent au plus ancien</option>
-                  <option value="">House Washing</option>
-                  <option value="">Roof Cleaning</option>
-                  <option value="">Driveway Cleaning</option>
-                  <option value="">Gutter Cleaning</option>
-                </select>
-              </div>
-            </div>
 
       </div>
 
