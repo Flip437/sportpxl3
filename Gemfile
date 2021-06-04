@@ -82,7 +82,6 @@ group :development, :test do
   gem 'byebug'
   gem 'minitest-rails'
   gem 'dotenv-rails', '~> 2.1.1' # parsing du fichier ENV en dev important
-  #gem 'dotenv-rails', require: 'dotenv/rails-now'
   gem 'minitest-rails-capybara'
   gem 'guard'
   gem 'guard-bundler'

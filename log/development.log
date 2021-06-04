@@ -1,0 +1,271 @@
+Started GET "/users/sign_out" for 127.0.0.1 at 2021-06-04 10:27:06 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+rollbar (3.2.0) lib/rollbar/middleware/rails/show_exceptions.rb:22:in `call_with_rollbar'
+newrelic_rpm (7.1.0) lib/new_relic/agent/instrumentation/middleware_tracing.rb:101:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+newrelic_rpm (7.1.0) lib/new_relic/agent/instrumentation/middleware_tracing.rb:101:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+newrelic_rpm (7.1.0) lib/new_relic/agent/instrumentation/middleware_tracing.rb:101:in `call'
+request_store (1.5.0) lib/request_store/middleware.rb:19:in `call'
+newrelic_rpm (7.1.0) lib/new_relic/agent/instrumentation/middleware_tracing.rb:101:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+newrelic_rpm (7.1.0) lib/new_relic/agent/instrumentation/middleware_tracing.rb:101:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+newrelic_rpm (7.1.0) lib/new_relic/agent/instrumentation/middleware_tracing.rb:101:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+newrelic_rpm (7.1.0) lib/new_relic/agent/instrumentation/middleware_tracing.rb:101:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+newrelic_rpm (7.1.0) lib/new_relic/agent/instrumentation/middleware_tracing.rb:101:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+newrelic_rpm (7.1.0) lib/new_relic/agent/instrumentation/middleware_tracing.rb:101:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+newrelic_rpm (7.1.0) lib/new_relic/agent/instrumentation/middleware_tracing.rb:101:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+newrelic_rpm (7.1.0) lib/new_relic/agent/instrumentation/middleware_tracing.rb:101:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+newrelic_rpm (7.1.0) lib/new_relic/agent/instrumentation/middleware_tracing.rb:101:in `call'
+rack (2.2.3) lib/rack/lock.rb:18:in `call'
+newrelic_rpm (7.1.0) lib/new_relic/agent/instrumentation/middleware_tracing.rb:101:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+newrelic_rpm (7.1.0) lib/new_relic/agent/instrumentation/middleware_tracing.rb:101:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/flip/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/flip/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/flip/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered collection of /home/flip/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [315 times] (146.8ms)
+  Rendered collection of /home/flip/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [5 times] (1.3ms)
+  Rendered /home/flip/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.2ms)
+  Rendering /home/flip/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/flip/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.4ms)
+  Rendered /home/flip/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (231.1ms)
+Started GET "/" for 127.0.0.1 at 2021-06-04 10:27:08 +0200
+Processing by EventsController#list_picto as HTML
+Completed 401 Unauthorized in 6ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-06-04 10:27:08 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/login
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/login (18.3ms)
+Completed 200 OK in 7304ms (Views: 7267.1ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/assets/application.self-2d8e233ccc1fd876fd150973d5cadf30c0d7429ec0719546758ed29afde5e5ce.css?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/jquery2.self-25ca496239ae8641a09627c8aace5863e7676e465fbb4ce81bc7eb78c4d15627.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/login.self-6158e74be30b4675e2aa204edb0f2355371b64ccce2c749335797f120623d0a1.css?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/retina.self-442ffc86a2ca1b375dd5d7185ea6b77ed5d6de1866df506c764765308cb71b70.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/angular.self-1a50a7ca7bb898a93bc5891900a2b02d34eba8739ff33be8a50cda2dfa03fcf4.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/app.self-f3bb3da129543c208f69b2a8db87effbe672114b70d9b716f99c6491174f9851.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/underscore.self-1445bbc252e10d7a7aab5d679a29b398b4a446ad9cc9712d63bb6eadee7c989d.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/jquery-fileupload/jquery.iframe-transport.self-e461f7ff2a60ee89459106a6f3e349cf79b7f56066b3c8cbc73389b30e1eb592.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/jquery-fileupload/vendor/jquery.ui.widget.self-92c37a41e67e528eecf100716907331b4b9aa4f546bf75ef2e0529c8c03a562d.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/jquery-fileupload/jquery.fileupload.self-79c952fc273d5a8955a6093f4f489dcd509c5a2cefb2b9a049d3cdb2710ec8d3.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/simplegallery.min.self-909b17f0dac1752df255e65a602af15f0d75dc3043b5a17db0402ab11a4dbca8.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/percentageChart.self-4d8a0ceea8d623edf6784be084c1122ff4b22b20b6446d641b37b0bf85c72e4c.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/ui-bootstrap-tpls-2.5.0.min.self-2bcbc316af978e8d7eb30396f826936f43ac37951e0916348dca05061abff27a.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/bootstrap/affix.self-b2bd74404ab3c627c5129dcdd3bdc2fc0a9d4bff4e1b6f1bae96412f9a1e9723.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/bootstrap/alert.self-7c7aa23778284da0e4aa395a0a6d858c7efd891c9312fe71908b28292654ac0c.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/bootstrap/button.self-b7a8ce9f47662b97ab74ef3dd416e93d3a4f644b252307a28231976a0149feef.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/bootstrap/carousel.self-c2c0ad2347d3fdd8447abd9d5792efed40ad5afadc5e0de3001e34904a6f68ce.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/bootstrap/collapse.self-4db094cc14a1aafa93e51e6f298115323037bb9e24c060dd0de52f27446f6227.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/bootstrap/dropdown.self-7efa4aa654357ae664a98ec52151c25cd4927eacd1fabe038d068d9344b62cbd.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/bootstrap/modal.self-4ca048907279f4bb9187ba2541ae5d03296917d5c42e8fef0b58ec31c8902f0f.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/bootstrap/scrollspy.self-e62629e47ba5fe8b7faaa745f2fef2ccdb1bfd56ffb4f95615684ef40c74bcc4.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/bootstrap/tab.self-7fbfa844201ceeb4b896e4d185a33df19a284fe461281b7c0f78dbea2ef6da5a.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/bootstrap/transition.self-3c74f1999fcbf39cfb240b67c9a9e900863859f82f53fb27e5a388fe5e1a1c5c.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/bootstrap/tooltip.self-82858d5843f55bfed321ea59fc5b180f3d2a8afc498ebc4d665561110b807875.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/bootstrap/popover.self-a1e6d4555fb912f0405099135eaddbe8273ba8f08323477a471d34419d57b446.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/bootstrap-switch.self-7094881291d5662bf6fbb008325795dcc2320c64df16bc411f851fb764b1470c.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/diplomas_widget.self-6a2a07c566dad16acd71c4939f80e1d9e24681ec5689b94b4c4b23a804bb420b.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/editions.self-d2fa40e498ed1f8e51dd30235d4ae021611e1a9be6483cb8744fecd0d5d694c3.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/application.self-601f0a04764702bf2c2d01948df3d00e0901b3ba6363a113229e344ff3ec42e1.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/moment.min.self-8f9694fabf5874416d99ba1d727e5b3bc300098027c6c922480513859a6c00e8.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:16 +0200
+Started GET "/assets/jquery.iframe-transport.self-47b47a5056845bb9a9ecda6e674461b47cffccd28cc5818d8327f0ae0946cb88.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:17 +0200
+Started GET "/assets/jquery.remotipart.self-1b90ddc34ebd75d3e598f3c46bfd3a0a8275ef41d25b898c806b16634b0a7efa.js?body=1" for 127.0.0.1 at 2021-06-04 10:27:17 +0200
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-06-04 10:27:42 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vHFYbUbSgbi+6NlAPKy8tDfj+EgWfG/3sjQKw+wyRLJs3Nn5cpwswjE5JYHBcLATWQLxCwsjf4uWA1ptfhnD6g==", "user"=>{"email"=>"gr.projets@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Déjà membre ?  'Connectez-vous'"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "gr.projets@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 222ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-04 10:27:43 +0200
+Processing by EventsController#list_picto as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT DISTINCT "races"."race_type" FROM "races"[0m
+  Rendering events/list_picto.html.erb within layouts/picto
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1 ORDER BY "events"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered events/list_picto.html.erb within layouts/picto (15.3ms)
+  Rendered layouts/_picto_navigation.html.erb (4.9ms)
+  Rendered layouts/_picto_filter.html.erb (3.0ms)
+Completed 200 OK in 232ms (Views: 142.0ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/assets/picto.self-5b7fd0e30e6b4272702b3057b87d5615bc7f411cd1fdbd478bf2d80ac97da781.css?body=1" for 127.0.0.1 at 2021-06-04 10:27:43 +0200
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 10:27:43 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>""}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 0]]
+  Rendered events/search_events.js.erb (2.6ms)
+Completed 200 OK in 38ms (Views: 11.2ms | ActiveRecord: 2.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2021-06-04 10:27:56 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"L5BMT8y9YqFh+8wZPt7XInaCfr/2MrMiITAR19KF3LCcN8alxviY7fXarD077ImSoxETE6kv+iQTSR9GgwRi1Q=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_created_at", nil], ["updated_at", 2021-06-04 08:27:56 UTC], ["id", 1]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-04 10:27:56 +0200
+Processing by EventsController#list_picto as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-06-04 10:27:56 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/login
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/login (5.5ms)
+Completed 200 OK in 100ms (Views: 98.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-06-04 10:28:14 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XOdF77C5IuqFaJujleAdL/gYN0GYujKtqMikyg3sDVlri/GGSt95DI7LvIN+WOvKewmtjiQcllGNXXRhOKkLog==", "user"=>{"email"=>"gr.projets@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Déjà membre ?  'Connectez-vous'"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "gr.projets@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_created_at", 2021-06-04 08:28:14 UTC], ["updated_at", 2021-06-04 08:28:14 UTC], ["id", 1]]
+  [1m[35m (14.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 180ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-04 10:28:14 +0200
+Processing by EventsController#list_picto as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT DISTINCT "races"."race_type" FROM "races"[0m
+  Rendering events/list_picto.html.erb within layouts/picto
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1 ORDER BY "events"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered events/list_picto.html.erb within layouts/picto (2.8ms)
+  Rendered layouts/_picto_navigation.html.erb (4.9ms)
+  Rendered layouts/_picto_filter.html.erb (1.5ms)
+Completed 200 OK in 133ms (Views: 123.7ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 10:28:14 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>""}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (2.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 0]]
+  Rendered events/search_events.js.erb (5.8ms)
+Completed 200 OK in 34ms (Views: 16.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/new_event_picto" for 127.0.0.1 at 2021-06-04 10:28:16 +0200
+Processing by EventsController#new_event_picto as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/new_event_picto.erb within layouts/picto
+  Rendered events/new_event_picto.erb within layouts/picto (14.5ms)
+  Rendered layouts/_picto_navigation.html.erb (3.2ms)
+Completed 200 OK in 136ms (Views: 102.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-04 10:28:26 +0200
+Processing by EventsController#list_picto as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT "races"."race_type" FROM "races"[0m
+  Rendering events/list_picto.html.erb within layouts/picto
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1 ORDER BY "events"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered events/list_picto.html.erb within layouts/picto (3.6ms)
+  Rendered layouts/_picto_navigation.html.erb (3.6ms)
+  Rendered layouts/_picto_filter.html.erb (1.5ms)
+Completed 200 OK in 132ms (Views: 125.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 10:28:27 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>""}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 0]]
+  Rendered events/search_events.js.erb (4.6ms)
+Completed 200 OK in 35ms (Views: 16.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/?utf8=%E2%9C%93&option=oldest" for 127.0.0.1 at 2021-06-04 10:28:35 +0200
+Processing by EventsController#list_picto as HTML
+  Parameters: {"utf8"=>"✓", "option"=>"oldest"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT DISTINCT "races"."race_type" FROM "races"[0m
+  Rendering events/list_picto.html.erb within layouts/picto
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1 ORDER BY "events"."created_at" ASC[0m  [["user_id", 1]]
+  Rendered events/list_picto.html.erb within layouts/picto (2.9ms)
+  Rendered layouts/_picto_navigation.html.erb (3.7ms)
+  Rendered layouts/_picto_filter.html.erb (2.5ms)
+Completed 200 OK in 146ms (Views: 136.5ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 10:28:35 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>""}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 0]]
+  Rendered events/search_events.js.erb (4.1ms)
+Completed 200 OK in 28ms (Views: 14.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/?utf8=%E2%9C%93&option=desc" for 127.0.0.1 at 2021-06-04 10:28:36 +0200
+Processing by EventsController#list_picto as HTML
+  Parameters: {"utf8"=>"✓", "option"=>"desc"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT "races"."race_type" FROM "races"[0m
+  Rendering events/list_picto.html.erb within layouts/picto
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1 ORDER BY "events"."name" DESC[0m  [["user_id", 1]]
+  Rendered events/list_picto.html.erb within layouts/picto (3.5ms)
+  Rendered layouts/_picto_navigation.html.erb (4.2ms)
+  Rendered layouts/_picto_filter.html.erb (1.6ms)
+Completed 200 OK in 138ms (Views: 129.4ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 10:28:37 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>""}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 0]]
+  Rendered events/search_events.js.erb (2.7ms)
+Completed 200 OK in 23ms (Views: 12.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/underscore.js.map" for 127.0.0.1 at 2021-06-04 10:28:44 +0200
