@@ -269,3 +269,342 @@ Completed 200 OK in 23ms (Views: 12.2ms | ActiveRecord: 1.6ms)
 
 
 Started GET "/assets/underscore.js.map" for 127.0.0.1 at 2021-06-04 10:28:44 +0200
+Started GET "/" for 127.0.0.1 at 2021-06-04 11:23:09 +0200
+Processing by EventsController#list_picto as HTML
+Completed 401 Unauthorized in 14ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-06-04 11:23:10 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/login
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/login (19.3ms)
+Completed 200 OK in 815ms (Views: 770.0ms | ActiveRecord: 13.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-06-04 11:23:23 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BWohcx52TMzRP/dmPiivzikXz2y8IZ4/7JAo+7Y4nPE8TNDxWO7hlFWK77SmL6H3DXMv8i4CgeLzu/0d9UMPsQ==", "user"=>{"email"=>"gr.projets@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Déjà membre ?  'Connectez-vous'"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "gr.projets@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 201ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-04 11:23:23 +0200
+Processing by EventsController#list_picto as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT DISTINCT "races"."race_type" FROM "races"[0m
+  Rendering events/list_picto.html.erb within layouts/picto
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1 ORDER BY "events"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered events/list_picto.html.erb within layouts/picto (13.9ms)
+  Rendered layouts/_picto_navigation.html.erb (4.4ms)
+  Rendered layouts/_picto_filter.html.erb (1.4ms)
+Completed 200 OK in 173ms (Views: 94.2ms | ActiveRecord: 9.2ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:23:23 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>""}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 0]]
+  Rendered events/search_events.js.erb (3.9ms)
+Completed 200 OK in 26ms (Views: 12.1ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:23:31 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>"A"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (10.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND ( lower(name) LIKE lower('%A%') ) AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 10]]
+  Rendered events/search_events.js.erb (33.9ms)
+Completed 200 OK in 53ms (Views: 31.9ms | ActiveRecord: 11.6ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:23:31 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>"Ajo"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND ( lower(name) LIKE lower('%Ajo%') ) AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 10]]
+  Rendered events/search_events.js.erb (2.6ms)
+Completed 200 OK in 24ms (Views: 11.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:23:31 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>"Ajout"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND ( lower(name) LIKE lower('%Ajout%') ) AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 10]]
+  Rendered events/search_events.js.erb (2.7ms)
+Completed 200 OK in 21ms (Views: 11.3ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:23:31 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>"Ajout"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND ( lower(name) LIKE lower('%Ajout%') ) AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 10]]
+  Rendered events/search_events.js.erb (4.9ms)
+Completed 200 OK in 23ms (Views: 14.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:23:31 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>"Ajout"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND ( lower(name) LIKE lower('%Ajout%') ) AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 10]]
+  Rendered events/search_events.js.erb (2.3ms)
+Completed 200 OK in 19ms (Views: 8.9ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:23:32 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>"Ajou"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND ( lower(name) LIKE lower('%Ajou%') ) AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 10]]
+  Rendered events/search_events.js.erb (2.4ms)
+Completed 200 OK in 18ms (Views: 9.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:23:32 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>"Ajo"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND ( lower(name) LIKE lower('%Ajo%') ) AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 10]]
+  Rendered events/search_events.js.erb (2.7ms)
+Completed 200 OK in 19ms (Views: 9.8ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:23:32 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>"Aj"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND ( lower(name) LIKE lower('%Aj%') ) AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 10]]
+  Rendered events/search_events.js.erb (2.6ms)
+Completed 200 OK in 21ms (Views: 9.9ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:23:33 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>"A"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND ( lower(name) LIKE lower('%A%') ) AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 10]]
+  Rendered events/search_events.js.erb (5.8ms)
+Completed 200 OK in 23ms (Views: 12.6ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:23:34 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>"a"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND ( lower(name) LIKE lower('%a%') ) AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 10]]
+  Rendered events/search_events.js.erb (7.4ms)
+Completed 200 OK in 30ms (Views: 16.6ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:23:47 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>"b"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND ( lower(name) LIKE lower('%b%') ) AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 10]]
+  Rendered events/search_events.js.erb (12.4ms)
+Completed 200 OK in 33ms (Views: 21.8ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:23:50 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>"e"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND ( lower(name) LIKE lower('%e%') ) AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 10]]
+  Rendered events/search_events.js.erb (15.3ms)
+Completed 200 OK in 33ms (Views: 22.3ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:23:54 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>"e"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND ( lower(name) LIKE lower('%e%') ) AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 10]]
+  Rendered events/search_events.js.erb (14.1ms)
+Completed 200 OK in 33ms (Views: 22.0ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:24:00 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>"e"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND ( lower(name) LIKE lower('%e%') ) AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 10]]
+  Rendered events/search_events.js.erb (15.0ms)
+Completed 200 OK in 35ms (Views: 22.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/underscore.js.map" for 127.0.0.1 at 2021-06-04 11:24:09 +0200
+Started GET "/" for 127.0.0.1 at 2021-06-04 11:24:25 +0200
+Processing by EventsController#list_picto as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT DISTINCT "races"."race_type" FROM "races"[0m
+  Rendering events/list_picto.html.erb within layouts/picto
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1 ORDER BY "events"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered events/list_picto.html.erb within layouts/picto (2.6ms)
+  Rendered layouts/_picto_navigation.html.erb (3.1ms)
+  Rendered layouts/_picto_filter.html.erb (1.2ms)
+Completed 200 OK in 101ms (Views: 94.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/underscore.js.map" for 127.0.0.1 at 2021-06-04 11:24:25 +0200
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:24:25 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>""}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 0]]
+  Rendered events/search_events.js.erb (2.9ms)
+Completed 200 OK in 25ms (Views: 11.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-04 11:28:06 +0200
+Processing by EventsController#list_picto as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT DISTINCT "races"."race_type" FROM "races"[0m
+  Rendering events/list_picto.html.erb within layouts/picto
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1 ORDER BY "events"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered events/list_picto.html.erb within layouts/picto (2.4ms)
+  Rendered layouts/_picto_navigation.html.erb (2.5ms)
+  Rendered layouts/_picto_filter.html.erb (1.6ms)
+Completed 200 OK in 87ms (Views: 80.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/underscore.js.map" for 127.0.0.1 at 2021-06-04 11:28:07 +0200
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:28:07 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>""}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 0]]
+  Rendered events/search_events.js.erb (4.7ms)
+Completed 200 OK in 40ms (Views: 21.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-04 11:28:12 +0200
+Processing by EventsController#list_picto as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT "races"."race_type" FROM "races"[0m
+  Rendering events/list_picto.html.erb within layouts/picto
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1 ORDER BY "events"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered events/list_picto.html.erb within layouts/picto (3.3ms)
+  Rendered layouts/_picto_navigation.html.erb (3.5ms)
+  Rendered layouts/_picto_filter.html.erb (1.9ms)
+Completed 200 OK in 94ms (Views: 87.9ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:28:12 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>""}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 0]]
+  Rendered events/search_events.js.erb (2.5ms)
+Completed 200 OK in 22ms (Views: 11.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-04 11:29:28 +0200
+Processing by EventsController#list_picto as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT DISTINCT "races"."race_type" FROM "races"[0m
+  Rendering events/list_picto.html.erb within layouts/picto
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1 ORDER BY "events"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered events/list_picto.html.erb within layouts/picto (2.4ms)
+  Rendered layouts/_picto_navigation.html.erb (2.9ms)
+  Rendered layouts/_picto_filter.html.erb (1.6ms)
+Completed 200 OK in 96ms (Views: 88.8ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:29:28 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>""}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 0]]
+  Rendered events/search_events.js.erb (4.1ms)
+Completed 200 OK in 24ms (Views: 13.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-04 11:31:17 +0200
+Processing by EventsController#list_picto as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT "races"."race_type" FROM "races"[0m
+  Rendering events/list_picto.html.erb within layouts/picto
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1 ORDER BY "events"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered events/list_picto.html.erb within layouts/picto (2.0ms)
+  Rendered layouts/_picto_navigation.html.erb (2.6ms)
+  Rendered layouts/_picto_filter.html.erb (1.5ms)
+Completed 200 OK in 83ms (Views: 78.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:31:17 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>""}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 0]]
+  Rendered events/search_events.js.erb (3.0ms)
+Completed 200 OK in 22ms (Views: 11.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-04 11:32:51 +0200
+Processing by EventsController#list_picto as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT DISTINCT "races"."race_type" FROM "races"[0m
+  Rendering events/list_picto.html.erb within layouts/picto
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1 ORDER BY "events"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered events/list_picto.html.erb within layouts/picto (2.6ms)
+  Rendered layouts/_picto_navigation.html.erb (3.5ms)
+  Rendered layouts/_picto_filter.html.erb (1.4ms)
+Completed 200 OK in 86ms (Views: 79.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/events/search_events" for 127.0.0.1 at 2021-06-04 11:32:51 +0200
+Processing by EventsController#search_events as JS
+  Parameters: {"utf8"=>"✓", "q"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT DISTINCT "events"."id" FROM "events" INNER JOIN "sportpics" ON "events"."id" = "sportpics"."event_id" WHERE "sportpics"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering events/search_events.js.erb
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."pictme" = $1 AND "events"."pictme" = $2 LIMIT $3[0m  [["pictme", "false"], ["pictme", "false"], ["LIMIT", 0]]
+  Rendered events/search_events.js.erb (5.8ms)
+Completed 200 OK in 31ms (Views: 18.0ms | ActiveRecord: 2.5ms)
+
+
