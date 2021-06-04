@@ -16,9 +16,7 @@
 				</li>
 				<p class="text-white mx-2">|</p>
 				<li class="mx-3">
-					<%= link_to(root_path) do %>
-						<%= image_tag('svg/bell.svg') %>
-					<% end %>
+					<%= link_to "Déconnexion", destroy_user_session_path, method: :delete %> 
 				</li>
 			</ul>
 		</div>
