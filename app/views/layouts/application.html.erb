@@ -17,26 +17,7 @@
 
 
   <body class="d-flex flex-column h-100">
-
-
-<!-- form events freshstart -->
-<div class="container"  style="margin-bottom:25px;">
-  <div class="searchEventContainer">
-    <% if has_filter_pict_home? %>
-      <%= form_with(url: "/events/search_events", method: :post, remote: true, class:'navbar-form navbar-left searchEvent', autocomplete: 'off') do |form| %>
-        <div class="form-group inner-addon left-addon">
-        <i class="glyphicon glyphicon-search"></i>
-        <%= form.text_field 'q', class: 'form-control searchEvent', placeholder: 'Ajouter un événement' %>
-        </div>
-      <% end %>
-
-    <% end %>
-  </div>
-</div>
-<!-- END form events freshstart -->
-
-
-
+  
     <%= render 'layouts/navbar' %>
 
       <div class="container-fluid px-0">

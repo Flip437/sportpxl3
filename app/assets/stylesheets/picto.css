@@ -831,7 +831,7 @@ sendEmailModal + importCsvModal + secondStepCampaign
 /*===================
 modal delete event
 =================== */
-.eventDeleteModal .modal-body{
+/* .eventDeleteModal .modal-body{
     text-align: center;
 }
 .eventDeleteModal .modal-footer {
@@ -926,7 +926,7 @@ Search events freshstart
 .blocked{
     background:url('/assets/btn-sms-email-fail.png') right 60px center no-repeat;
     background-size: 26px 22px; 
-}
+} */
 
 /*====================================================
 ====Circular upload percentage

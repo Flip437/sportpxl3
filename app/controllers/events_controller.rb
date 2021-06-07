@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :authenticate_user!
   layout "picto", only: [:new_event_picto, :filter_events]#:home_picto, 
   require 'csv'
-  before_action :set_event, only: [:show, :edit, :update, :destroy, :home_picto, :update_event_picto]
+  #before_action :set_event, only: [:show, :edit, :update, :destroy, :home_picto, :update_event_picto]
 
   # disable the filter for for all actions in this controller
   before_action :disable_filter_pict_home!
@@ -158,10 +158,6 @@ class EventsController < ApplicationController
   end
 
   def search_events
-    puts "HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
-    puts "HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
-    puts "HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
-    puts "HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
     #all events in pictme => user.events (replace freshAdded)
     #all events in freshstart => Event.fresh.all
 

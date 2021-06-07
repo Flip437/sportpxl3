@@ -23,3 +23,14 @@
     </div>
   </div>
 </section>
+
+<%= javascript_include_tag 'template/jquery-3.5.1.js', 'data-turbolinks-track' => true %>
+
+<script>
+
+  $("#searchform").keyup(function(e) {
+    e.preventDefault();
+    $("#searchform").submit();
+  });
+
+</script>

@@ -1,4 +1,4 @@
-<section class="searchbar bg-blue" id="section-counter">
+<section class="searchbar bg-blue">
   <div class="container-fluid">
     <div class="row h-100">
 
@@ -15,25 +15,21 @@
 
       <div class="col-md-7 h-100">
 
-
-<!-- form events freshstart -->
-<div class="container"  style="margin-bottom:25px;">
-  <div class="searchEventContainer">
-    <% if has_filter_pict_home? %>
-      <%= form_with(url: "/events/search_events", method: :post, remote: true, class:'navbar-form navbar-left searchEvent', autocomplete: 'off') do |form| %>
-        <div class="form-group inner-addon left-addon">
-        <i class="glyphicon glyphicon-search"></i>
-        <%= form.text_field 'q', class: 'form-control searchEvent', placeholder: 'Ajouter un événement' %>
+        <!-- form events freshstart -->
+        <div class="container"  style="margin-bottom:25px;">
+          <div class="searchEventContainer">
+            <% if has_filter_pict_home? %>
+              
+              <%= form_with(url: searchEvents_events_path, local: false, class: "searchEvent", id: "searchform") do |form| %>
+                <div class="form-group inner-addon left-addon">
+                <i class="glyphicon glyphicon-search"></i>
+                <%= form.text_field 'q', class: 'form-control searchEvent', placeholder: 'Ajouter un événement' %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
         </div>
-      <% end %>
-
-    <% end %>
-  </div>
-</div>
-<!-- END form events freshstart -->
-
-
-
+        <!-- END form events freshstart -->
 
       </div>
 

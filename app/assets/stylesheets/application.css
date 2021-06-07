@@ -23,5 +23,6 @@
  *= require 'template/left-navbar'
  *= require 'template/sidenav'
  *= require 'template/path.css.erb'
+ *= require 'search_events'
 
  */

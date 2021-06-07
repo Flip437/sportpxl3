@@ -130,7 +130,7 @@ gem 'jquery-fileupload-rails'
 gem 'hirb'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'rollbar' # reporting des erreurs
-#gem "bootstrap-switch-rails", '3.3.3'
+gem "bootstrap-switch-rails", '3.3.3'
 gem 'htmlentities' # permet de transformer les accents en entités HTML ex: &eacute;
 gem 'htmlcompressor' # permet de compresser le HTML  des widgets
 gem 'will_paginate-bootstrap' # pagination
@@ -149,3 +149,5 @@ gem 'doorkeeper', '~> 4.2.6'
 gem 'active_model_serializers', '~> 0.10.7'
 gem 'blueprinter'
 gem 'oj'
+
+gem 'jquery-rails'
