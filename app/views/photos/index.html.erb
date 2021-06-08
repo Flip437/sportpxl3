@@ -1,3 +1,5 @@
+
+
 <div>
   <% flash.to_hash.except!("photo_errors").each do |key, value| %>
     <div class="alert alert-<%= key %>">
@@ -86,7 +88,21 @@
   </div>
 </div>
 
-<%= javascript_include_tag 'template/jquery-3.5.1.js', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'template/jquery.min.js', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'template/jquery-migrate-3.0.1.min.js', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'template/popper.min.js', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'template/bootstrap.min.js', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'template/jquery.easing.1.3.js', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'template/jquery.waypoints.min.js', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'template/jquery.stellar.min.js', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'template/jquery.animateNumber.min.js', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'template/bootstrap-datepicker.js', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'template/jquery.timepicker.min.js', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'template/owl.carousel.min.js', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'template/jquery.magnific-popup.min.js', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'template/scrollax.min.js', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'template/main.js', 'data-turbolinks-track' => true %>
+
 
 <script>
   function showMenuItems() {

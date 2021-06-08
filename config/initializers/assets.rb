@@ -31,6 +31,23 @@ Rails.application.config.assets.precompile += %w( template/dataTables.bootstrap4
 Rails.application.config.assets.precompile += %w( template/datatables.css )
 Rails.application.config.assets.precompile += %w( template/datatables.js )
 
+Rails.application.config.assets.precompile += %w( template/jquery.min.js )
+Rails.application.config.assets.precompile += %w( template/jquery-3.2.1.min.js )
+Rails.application.config.assets.precompile += %w( template/jquery-migrate-3.0.1.min.js )
+
+Rails.application.config.assets.precompile += %w( template/popper.min.js )
+Rails.application.config.assets.precompile += %w( template/bootstrap.min.js )
+Rails.application.config.assets.precompile += %w( template/jquery.easing.1.3.js )
+Rails.application.config.assets.precompile += %w( template/jquery.waypoints.min.js )
+Rails.application.config.assets.precompile += %w( template/jquery.stellar.min.js )
+Rails.application.config.assets.precompile += %w( template/jquery.animateNumber.min.js )
+Rails.application.config.assets.precompile += %w( template/bootstrap-datepicker.js )
+Rails.application.config.assets.precompile += %w( template/jquery.timepicker.min.js )
+Rails.application.config.assets.precompile += %w( template/owl.carousel.min.js )
+Rails.application.config.assets.precompile += %w( template/jquery.magnific-popup.min.js )
+Rails.application.config.assets.precompile += %w( template/scrollax.min.js )
+Rails.application.config.assets.precompile += %w( template/main.js )
+
 
 
 
