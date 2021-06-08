@@ -1,5 +1,5 @@
 <section class="searchbar bg-blue">
-  <div class="container-fluid">
+  <div class="container mw-100">
     <div class="row h-100">
 
       <div class="col-md-5 text-center text-md-left h-100">
@@ -14,23 +14,44 @@
       </div>
 
       <div class="col-md-7 h-100">
+        <div class="row">
+          <!-- form events freshstart -->
+          <div class="col-md-5 py-2">
+            <div class="searchEventContainer">
+              <% if has_filter_pict_home? %>
+                <%= form_with(url: searchEvents_events_path, local: false, class: "searchEvent mb-0", id: "searchform") do |form| %>
 
-        <!-- form events freshstart -->
-        <div class="container"  style="margin-bottom:25px;">
-          <div class="searchEventContainer">
-            <% if has_filter_pict_home? %>
-              
-              <%= form_with(url: searchEvents_events_path, local: false, class: "searchEvent", id: "searchform") do |form| %>
-                <div class="form-group inner-addon left-addon">
-                <i class="glyphicon glyphicon-search"></i>
-                <%= form.text_field 'q', class: 'form-control searchEvent', placeholder: 'Ajouter un événement' %>
+                <div class="form-group mb-0">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text rounded-0 bg-white no-border"><%= image_tag('svg/search.svg') %></span>
+                    </div>
+                    <%= form.text_field 'q', class: 'searchEvent form-control rounded-0 bg-white no-border', placeholder: 'Ajouter un événement' %>
+                  </div>
                 </div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-        <!-- END form events freshstart -->
 
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="col-md-3 py-2">
+            <div class="form-group mb-0">
+              <%= form_with(url: root_path, method: :get, local: true, class:'filtreForm') do |form| %>
+                <%= form.select :option, options_for_select([["Ordre A-Z","asc"],["Ordre Z-A","desc"]], params[:option]), {:include_blank => false}, class:"form-control rounded-0 bg-primary text-white no-border", id:'filter_alphabetic' %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="col-md-4 py-2">
+            <div class="form-group mb-0">
+              <%= form_with(url: root_path, method: :get, local: true, class:'filtreForm') do |form| %>
+                <%= form.select :option, options_for_select([["Nouveaux en premier","newest"],["Anciens en premier","oldest"]], params[:option] ), {:include_blank => false}, class:"form-control rounded-0 bg-primary text-white no-border", id: "filter_chronologic"%>
+              <% end %>
+            </div>
+          </div>
+          <!-- END form events freshstart -->
+        </div>
       </div>
 
     </div>

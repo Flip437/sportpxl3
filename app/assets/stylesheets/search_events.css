@@ -2,9 +2,9 @@
 Search events freshstart
 ========================*/
 .searchEventContainer{
-  position: relative;
+  /* position: relative;
   width: 500px;
-  margin: 0 auto;
+  margin: 0 auto; */
 }
 .btnCreateNewEventSearch{
   background: #ef8e0c;
@@ -24,7 +24,6 @@ Search events freshstart
 #eventsList{
   position: absolute;
   background: white;
-  left: 16px;
   top: 61px;
   color: black;
   z-index: 9999;

@@ -1,26 +1,27 @@
 var timer = 0;
-$('input.searchEvent').keyup(function () {
-  clearTimeout( timer );
-  if ($(this).val().length > 0) {
+clearTimeout( timer );
 
-      timer = setTimeout(function () {
+function displayEvents() {
+  if ($('input.searchEvent').val().length > 0) {
+    timer = setTimeout(function () {
 
-      $('#eventsList').remove();
-      $('.searchEventContainer').append("<ul id='eventsList' class='list-unstyled'></ul>");
-      <% @events.each do |event| %>
-        if( (jQuery.inArray( <%= event.id %>, <%= @freshAddedIndex %> )) > -1 ) {
-          $('#eventsList').append("<li class='eventItemSearch'><img src='<%= asset_path('icon-time.png') %>' width='15' height='15' > <%= event.name %>  <%= j image_tag('add-event-tick.png' , size: "30x30" , class: 'pull-right' )  %>  </li>");
-        }else{
-          $('#eventsList').append("<li class='eventItemSearch'><img src='<%= asset_path('icon-time.png') %>' width='15' height='15' > <%= event.name %>  <%= j link_to( image_tag('add-event-search.png' , size: "30x30" ), add_fresh_event_path(pickedEventID: event.id), method: :post , :class => 'pull-right' , :remote => true )  %>  </li>");
-        }
-      <% end %>
-      $('#eventsList').append("<li> <%= j link_to 'Créer un nouvel événement', new_event_picto_path, class: 'btnCreateNewEventSearch' %> </li>");
+    $('#eventsList').remove();
+    $('.searchEventContainer').append("<ul id='eventsList' class='list-unstyled'></ul>");
 
+    <% @events.each do |event| %>
+      if( (jQuery.inArray( <%= event.id %>, <%= @freshAddedIndex %> )) > -1 ) {
+        $('#eventsList').append("<li class='eventItemSearch'><img src='<%= asset_path('icon-time.png') %>' width='15' height='15' > <%= event.name %>  <%= j image_tag('add-event-tick.png' , size: "30x30" , class: 'pull-right' )  %>  </li>");
+      }else{
+        $('#eventsList').append("<li class='eventItemSearch'><img src='<%= asset_path('icon-time.png') %>' width='15' height='15' > <%= event.name %>  <%= j link_to( image_tag('add-event-search.png' , size: "30x30" ), add_fresh_event_path(pickedEventID: event.id), method: :post , :class => 'pull-right' , :remote => true )  %>  </li>");
+      }
+    <% end %>
+    $('#eventsList').append("<li> <%= j link_to 'Créer un nouvel événement', new_event_picto_path, class: 'btnCreateNewEventSearch' %> </li>");
 
-      $('form.searchEvent').submit();
-
-      }, 30);
+    }, 30);
   } else {
     $('#eventsList').remove();
   }
-});
+}
+
+displayEvents();
+

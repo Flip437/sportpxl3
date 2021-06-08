@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
-  layout "picto", only: [:new_event_picto, :filter_events]#:home_picto, 
+  layout "picto", only: [:filter_events]#:home_picto, :new_event_picto 
   require 'csv'
-  #before_action :set_event, only: [:show, :edit, :update, :destroy, :home_picto, :update_event_picto]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :home_picto, :update_event_picto]
 
   # disable the filter for for all actions in this controller
   before_action :disable_filter_pict_home!
@@ -78,7 +78,9 @@ class EventsController < ApplicationController
     #@events = current_user.events.pictme.order( created_at: :desc )
     #@eventsfreshAdded = current_user.events.fresh
     #@events = current_user.events.order( created_at: :desc )
-    @events = Event.where(user_id: current_user.id).order( created_at: :desc )
+
+    #@events = Event.where(user_id: current_user.id).order( created_at: :desc )
+    @events = current_user.events.order( created_at: :desc )
     
     @photos_array = []
     
@@ -206,12 +208,12 @@ class EventsController < ApplicationController
     @event = Event.find( params[:pickedEventID] )
     #many to many through
     current_user.events << @event
-    #@event.users << current_user
+    @event.users << current_user
 
     #@event.user = current_user#belongs_to
     #@event.name = eventFresh.name + " Cloned "
     #@event.pictme = eventFresh.id
-    #@event.save
+    @event.save
     #binding.pry
   end
 
