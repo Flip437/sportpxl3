@@ -1,219 +1,230 @@
 <div class="breadcrumb"> <span> <a href="<%= root_path%>"> Accueil </a> > </span> <%= @event.name %> </div>
 
-<h3> <%= @event.name %> </h3>
+<div class="row h-100 mx-0">
+  <div class="col-md-8 px-5 mx-auto">
 
-<h4> EDITIONS </h4>
-
-<div class="row eventRow eventRowHome">
-
-  <% if @event.editions.blank? %>
-    <p>Il n'y pas encore d'édition créée pour cet évènement</p>
-  <% else %>
-    <% @event.editions.order(date: :desc).each do |edition| %>
-      <div class="col-md-4 editionBox">
-        <h2 class="courseDate">
-          <%= link_to edition.date.strftime('%e %b %Y'), home_picto_edition_event_edition_path(edition.event.id, edition.id) %>
-          <!--<a href="#">
-            <%#= link_to(image_tag("editIcon.png", width: 15, height: 15), edit_event_edition_path(edition.event.id, edition.id) ) %>
-          </a>-->
-        </h2>
-        <br>
-        <span class="courseType"><%= edition.races.pluck(:race_type).join(', ') %> </span> <br>
-        <span class="courseName"> <%= edition.races.pluck(:name).join(', ') %> </span>
-
-
-        <%# if edition.date >= Date.current %>
-          <!--<div class="courseStatus inProgress">EN COURS DE TRAITEMENT</div>-->
-        <%# else %>
-          <!--<div class="courseStatus finishProgress">TRAITER</div>-->
-        <%# end %>
-        
-        <ul class="list-inline statisticsCourse">
-          <li>
-            <span class="coursePhotos"> <%= edition.pictures.all.count %> </span> <br>
-            PHOTOS
-          </li>
-          <li>
-            <span class="courseContacts"> <%= edition.contacts.all.count %> </span> <br>
-            CONTACTS
-          </li>
-          <li>
-            <span class="courseCampagnes"> <%= edition.campaigns.all.count %> </span> <br>
-            CAMPAGNES
-          </li>
-        </ul>
-
-        <div class="editionControl">
-          <%#= link_to "Visualiser", event_edition_path(edition.event, edition), class: 'btn btn-default' %>
-          <%#= link_to "Visualiser", home_picto_edition_event_edition_path(edition.event.id, edition.id), class: 'btn btn-default' %>
-          <%#= link_to "Editer", edit_event_edition_path(edition.event.id, edition.id), class: 'btn btn-default' %>
-          <%#= link_to 'Dupliquer', new_event_edition_path(edition.event, edition: edition.attributes), class: 'btn btn-default' %>
-          <%= link_to 'Dupliquer', duplicate_picto_event_edition_path(edition.event.id, edition.id), class: 'btn btn-default', method: 'post' %>
-          <%= link_to 'Supprimer', supprimer_picto_event_edition_path(edition.event.id, edition.id), class: 'btn btn-default', method: 'delete' %>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
-
-<!-- nouveau edition -->
-<div class="row">
-  <div class="NewEdition">
-    <h2> Ajouter une nouvelle édition </h2>
-    <p>Rentrer la date</p>
-    <%= form_for(@event.editions.new, url: {controller: "editions" , action: "add_edition_picto", id: @event.id}, method: :post , :html => { role: "form", method: "post" }) do |f| %>
-
-      <select name="day" id="day" class="form-control">
-        <%= (1..31).each do |i| %>
-          <option value="<%= i %>"> <%= i %> </option>
-        <% end %>
-      </select>
-
-      <select name="month" id="month" class="form-control">
-        <%= @months.each_with_index do |month , index| %>
-          <option value="<%= (index+1) %>"> <%= month %> </option>
-        <% end %>
-      </select>
-
-      <select name="year" id="year" class="form-control">
-        <%= (1900..2030).each do |i| %>
-          <option value="<%= i %>"> <%= i %> </option>
-        <% end %>
-      </select>
-
-      
-
-      <div class="NewEditionAction">
-        <%= f.submit "Ajouter", class: "btn-orange-small" %>
-        <a href="#" class="btn-grey-small">Annuler</a>
-      </div>
-
-    <% end %>
-
-  </div>
-</div>
-
-<br><br>
-
-<!-- edit event -->
-<div class="editEventTabs" style="margin:20px;">
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#sectionA">INFORMATIONS GENERALES</a></li>
-    <li><a data-toggle="tab" href="#sectionB">SUPPORTS WEB</a></li>
-    <li><a data-toggle="tab" href="#sectionC">CONTACT</a></li>
-  </ul>
-  <div class="tab-content">
-    <div id="sectionA" class="tab-pane fade in active">
-
-      <%= form_for(@event, url: {action: "update_event_picto"}, method: :post , :html => { role: "form", method: "post" }) do |f| %>
-        <div class="row">
-          <div class="col-xs-12">
-            <%= f.text_field :name , placeholder: "Nom de l'événement", class: "form-control input-lg" %>
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-xs-6">
-            <%= f.text_field :place , placeholder: "Ville", class: "form-control input-lg" %>
-          </div>
-          <div class="col-xs-6">
-            <%= f.select(:country, options_for_select(Event::COUNTRIES.collect{|dep| ["#{dep}", dep] },
-                                                         selected: @event.country || nil), { include_blank: "Pays" },
-                         { class: 'form-control input-lg'}) %>
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-xs-12">
-            <%= f.text_field :adress , placeholder: "Adresse", class: "form-control input-lg" %>
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-xs-6">
-            <%= f.select(:department, options_for_select(Event::DEPARTMENTS.collect{|dep| ["#{dep}", dep] },
-                                                         selected: @event.department || nil), { include_blank: "Département" },
-                         { class: 'form-control input-lg'}) %>
-          </div>
-        </div>
-
-
-    </div>
-    <div id="sectionB" class="tab-pane fade">
-      <div class="row">
-        <div class="col-xs-12">
-          <%= f.text_field :website , placeholder: "Site internet", class: "form-control input-lg" %>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-xs-12">
-          <%= f.text_field :facebook , placeholder: "facebook", class: "form-control input-lg" %>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-xs-12">
-          <%= f.text_field :instagram , placeholder: "instagram", class: "form-control input-lg" %>
-        </div>
-      </div>
-    </div>
-    <div id="sectionC" class="tab-pane fade">
-      <div class="row">
-        <div class="col-xs-6">
-          <%= f.text_field :f_name , placeholder: "Nom", class: "form-control input-lg" %>
-        </div>
-        <div class="col-xs-6">
-          <%= f.text_field :l_name , placeholder: "Prénom", class: "form-control input-lg" %>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-xs-12">
-          <%= f.text_field :email , placeholder: "Email", type: "email", class: "form-control input-lg" %>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-xs-12">
-          <%= f.text_field :phone , placeholder: "Télephone", type: "tel", class: "form-control input-lg" %>
-        </div>
+    <div class="row justify-content-center mt-5 mb-5">
+      <div class="col-md-7 text-center">
+        <h2 class="text-primary font-bold"><%= @event.name %></h2>
+        <h3>ÉDITIONS</h3>
+        <%= image_tag("svg/3colors.svg") %>
       </div>
     </div>
 
-        <br>
-        <p class="eventTabsActions">
-          <% if @is_freshstart == "false" %>
-            <%= f.submit "Enregistrer", class: "btn btn-default btn-lg pull-right btn-orange" %>
-            <a href="#eventDeleteModal" role="button" class="btn btn-default btn-lg pull-right btn-grey" data-toggle="modal">Supprimer l'événement</a>
-          <% end %>
-          <%#= f.submit "Supprimer l'événement", class: "btn btn-default btn-lg pull-right btn-grey" %>
-          <!--  modal delete event  -->
-          <div id="eventDeleteModal" class="modal fade eventDeleteModal">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                  <h2>Vous souhaitez supprimer <br> définitivement cet événement ?</h2>
-                  <p>Pour confirmer la suppression de l'événement, <br> merci d'ecrire "SUPPRIMER" dans la zone ci-dessous</p>
-                  <%#= f.text_field :xxx , placeholder: "xxx", class: "form-control" %>
-                  <input type="text" id="theWordSupp" name="xxx" placeholder="xxx" class="form-control">
-                  <p><span id='alertSupp'>Evènement n'est pas supprimer , merci d'ecrire 'supprimer'</span></p>
-                </div>
-                <div class="modal-footer">
-                  <!-- <button type="button" class="btn btn-default" > Supprimer l'événement </button>-->
-                  <%= f.submit "Supprimer l'événement", class: "btn btn-default", id: "btnSuppEvent" %>
-                  <a class="btn" data-dismiss="modal"> Annuler </a>
-                </div>
+
+    <div class="row eventRow eventRowHome mb-5">
+
+      <% if @event.editions.blank? %>
+        <p>Il n'y pas encore d'édition créée pour cet évènement</p>
+      <% else %>
+        <% @event.editions.order(date: :desc).each do |edition| %>
+          <div class="col-md-4 editionBox">
+            <h2 class="courseDate">
+              <%= link_to edition.date.strftime('%e %b %Y'), home_picto_edition_event_edition_path(edition.event.id, edition.id) %>
+              <!--<a href="#">
+                <%#= link_to(image_tag("editIcon.png", width: 15, height: 15), edit_event_edition_path(edition.event.id, edition.id) ) %>
+              </a>-->
+            </h2>
+            <br>
+            <span class="courseType"><%= edition.races.pluck(:race_type).join(', ') %> </span> <br>
+            <span class="courseName"> <%= edition.races.pluck(:name).join(', ') %> </span>
+
+
+            <%# if edition.date >= Date.current %>
+              <!--<div class="courseStatus inProgress">EN COURS DE TRAITEMENT</div>-->
+            <%# else %>
+              <!--<div class="courseStatus finishProgress">TRAITER</div>-->
+            <%# end %>
+            
+            <ul class="list-inline statisticsCourse">
+              <li>
+                <span class="coursePhotos"> <%= edition.pictures.all.count %> </span> <br>
+                PHOTOS
+              </li>
+              <li>
+                <span class="courseContacts"> <%= edition.contacts.all.count %> </span> <br>
+                CONTACTS
+              </li>
+              <li>
+                <span class="courseCampagnes"> <%= edition.campaigns.all.count %> </span> <br>
+                CAMPAGNES
+              </li>
+            </ul>
+
+            <div class="editionControl">
+              <%#= link_to "Visualiser", event_edition_path(edition.event, edition), class: 'btn btn-default' %>
+              <%#= link_to "Visualiser", home_picto_edition_event_edition_path(edition.event.id, edition.id), class: 'btn btn-default' %>
+              <%#= link_to "Editer", edit_event_edition_path(edition.event.id, edition.id), class: 'btn btn-default' %>
+              <%#= link_to 'Dupliquer', new_event_edition_path(edition.event, edition: edition.attributes), class: 'btn btn-default' %>
+              <%= link_to 'Dupliquer', duplicate_picto_event_edition_path(edition.event.id, edition.id), class: 'btn btn-primary font-15px', method: 'post' %>
+              <%= link_to 'Supprimer', supprimer_picto_event_edition_path(edition.event.id, edition.id), class: 'btn btn-danger font-15px', method: 'delete' %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <!-- nouveau edition -->
+    <div class="row">
+      <div class="NewEdition">
+        <h2> Ajouter une nouvelle édition </h2>
+        <p>Rentrer la date</p>
+        <%= form_for(@event.editions.new, url: {controller: "editions" , action: "add_edition_picto", id: @event.id}, method: :post , :html => { role: "form", method: "post" }) do |f| %>
+
+          <select name="day" id="day" class="form-control">
+            <%= (1..31).each do |i| %>
+              <option value="<%= i %>"> <%= i %> </option>
+            <% end %>
+          </select>
+
+          <select name="month" id="month" class="form-control">
+            <%= @months.each_with_index do |month , index| %>
+              <option value="<%= (index+1) %>"> <%= month %> </option>
+            <% end %>
+          </select>
+
+          <select name="year" id="year" class="form-control">
+            <%= (1900..2030).each do |i| %>
+              <option value="<%= i %>"> <%= i %> </option>
+            <% end %>
+          </select>
+
+          
+
+          <div class="NewEditionAction">
+            <%= f.submit "Ajouter", class: "btn-orange-small" %>
+            <a href="#" class="btn-grey-small">Annuler</a>
+          </div>
+
+        <% end %>
+
+      </div>
+    </div>
+
+    <br><br>
+
+    <!-- edit event -->
+    <div class="editEventTabs" style="margin:20px;">
+      <ul class="nav nav-tabs">
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#sectionA">INFORMATIONS GENERALES</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sectionB">SUPPORTS WEB</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sectionC">CONTACT</a></li>
+      </ul>
+      <div class="tab-content">
+        <div id="sectionA" class="tab-pane active mt-3">
+
+          <%= form_for(@event, url: {action: "update_event_picto"}, method: :post , :html => { role: "form", method: "post" }) do |f| %>
+            <div class="row">
+              <div class="col-xs-12">
+                <%= f.text_field :name , placeholder: "Nom de l'événement", class: "form-control input-lg" %>
               </div>
             </div>
-        </div>
-        <!--  END modal delete event  -->
+            <br>
+            <div class="row">
+              <div class="col-xs-6">
+                <%= f.text_field :place , placeholder: "Ville", class: "form-control input-lg" %>
+              </div>
+              <div class="col-xs-6">
+                <%= f.select(:country, options_for_select(Event::COUNTRIES.collect{|dep| ["#{dep}", dep] },
+                                                            selected: @event.country || nil), { include_blank: "Pays" },
+                            { class: 'form-control input-lg'}) %>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-xs-12">
+                <%= f.text_field :adress , placeholder: "Adresse", class: "form-control input-lg" %>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-xs-6">
+                <%= f.select(:department, options_for_select(Event::DEPARTMENTS.collect{|dep| ["#{dep}", dep] },
+                                                            selected: @event.department || nil), { include_blank: "Département" },
+                            { class: 'form-control input-lg'}) %>
+              </div>
+            </div>
 
-        </p>
-      <% end %>
+
+        </div>
+        <div id="sectionB" class="tab-pane fade">
+          <div class="row">
+            <div class="col-xs-12">
+              <%= f.text_field :website , placeholder: "Site internet", class: "form-control input-lg" %>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= f.text_field :facebook , placeholder: "facebook", class: "form-control input-lg" %>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= f.text_field :instagram , placeholder: "instagram", class: "form-control input-lg" %>
+            </div>
+          </div>
+        </div>
+        <div id="sectionC" class="tab-pane fade">
+          <div class="row">
+            <div class="col-xs-6">
+              <%= f.text_field :f_name , placeholder: "Nom", class: "form-control input-lg" %>
+            </div>
+            <div class="col-xs-6">
+              <%= f.text_field :l_name , placeholder: "Prénom", class: "form-control input-lg" %>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= f.text_field :email , placeholder: "Email", type: "email", class: "form-control input-lg" %>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= f.text_field :phone , placeholder: "Télephone", type: "tel", class: "form-control input-lg" %>
+            </div>
+          </div>
+        </div>
+
+            <br>
+            <p class="eventTabsActions">
+              <% if @is_freshstart == "false" %>
+                <%= f.submit "Enregistrer", class: "btn btn-default btn-lg pull-right btn-orange" %>
+                <a href="#eventDeleteModal" role="button" class="btn btn-default btn-lg pull-right btn-grey" data-toggle="modal">Supprimer l'événement</a>
+              <% end %>
+              <%#= f.submit "Supprimer l'événement", class: "btn btn-default btn-lg pull-right btn-grey" %>
+              <!--  modal delete event  -->
+              <div id="eventDeleteModal" class="modal fade eventDeleteModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                      <h2>Vous souhaitez supprimer <br> définitivement cet événement ?</h2>
+                      <p>Pour confirmer la suppression de l'événement, <br> merci d'ecrire "SUPPRIMER" dans la zone ci-dessous</p>
+                      <%#= f.text_field :xxx , placeholder: "xxx", class: "form-control" %>
+                      <input type="text" id="theWordSupp" name="xxx" placeholder="xxx" class="form-control">
+                      <p><span id='alertSupp'>Evènement n'est pas supprimer , merci d'ecrire 'supprimer'</span></p>
+                    </div>
+                    <div class="modal-footer">
+                      <!-- <button type="button" class="btn btn-default" > Supprimer l'événement </button>-->
+                      <%= f.submit "Supprimer l'événement", class: "btn btn-default", id: "btnSuppEvent" %>
+                      <a class="btn" data-dismiss="modal"> Annuler </a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!--  END modal delete event  -->
+
+            </p>
+          <% end %>
+
+      </div>
+    </div>
 
   </div>
 </div>
