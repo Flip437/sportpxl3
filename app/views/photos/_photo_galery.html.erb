@@ -1,0 +1,42 @@
+<div id="" class="col-md-6 ftco-animate fadeInUp ftco-animated p-5 mx-auto">
+  <div class="row">
+    <div class="img work d-flex align-items-end rounded-0" style="background-image: url('<%= photo.direct_image_url %>');"></div>
+  </div>
+
+  <div class="row bg-white pt-3">
+    <%= form_with(model: photo, url: event_edition_photo_path(@event, @edition, photo.id), method: "put", class:"form-inline") do |f| %>
+      <div class="form-group pl-5">
+        <%= f.label "Numéro de dossard:", class:"font-condensed text-dark font-25px my-auto" %>
+        <%= f.text_field :bib, class:'rounded-0 border-dark mx-3 w-25', placeholder: "Indiquez le n° de dossard" %>
+      </div>
+
+      <div class="form-group">
+        <%= image_submit_tag 'svg/submit.svg' %>
+      </div>
+    <% end %>
+
+    <%= link_to event_edition_photo_path(@event, @edition, photo), method: :delete, data: { confirm: 'Êtes-vous sûr(e)' }, class:"form-group ml-5" do %>
+      <%= image_tag 'svg/trash.svg' %>
+    <% end %>
+  </div>
+  
+  <div class="row bg-white pl-5">
+    <div class="desc w-100">
+      <div class="text w-100 mb-3">
+        <% unless [:not_paired, :invalid_bib].include? photo.runner %>
+        <h5 class="card-title">
+          <% unless photo.runner.nil? %>
+            <p class="font-condensed text-dark"><%= photo.runner.prenom %></p>
+            <p class="font-condensed text-dark"><%= photo.runner.nom %></p>
+          <% else %>
+            <p class="font-condensed text-dark">Dossard introuvable pour cette course</p>
+          <% end %>
+        </h5>
+        <% else %>
+          <p class="font-condensed text-dark">Dossard introuvable pour cette course</p>
+        <% end %>     
+      </div>
+    </div>
+  </div>
+  
+</div>

@@ -55,53 +55,28 @@
             <%= link_to 'Supprimer toutes les photos', event_edition_destroy_all_path(event_id: @event.id, edition_id: @edition.id, photo_ids: @photos.pluck(:id)), method: :delete, class: 'btn btn-danger', data: { confirm: 'Êtes vous SÛR(E) de vouloir supprimer TOUTES les photos de cette recherche ?' } %>
           </div>
         </div>
-
         <hr>
-
         <section class="ftco-section">
           <div class=""><!-- <div class="container-fluid"> -->
             <div class="row">
-
               <% @photos.each_slice(4) do |photos| %>
-                <% photos.each do |photo| %>  
+                <% photos.each do |photo| %>
                   <%= render 'photo', photo: photo %>
                 <% end %>
               <% end %>
 
+              <div id="gallery1" class="mfp-hide">
+                <% @photos.each_slice(4) do |photos| %>
+                  <% photos.each do |photo| %>
+                  <div class="slide">
+                    <%= render 'photo_galery', photo: photo %>
+                  </div>
+                  <% end %>
+                <% end %>
+              </div>
             </div>
           </div>
         </section>
-
-        <p>Blah blah <a href="#gallery1" class="open-gallery-link">view gallery one</a> blah blah ...</p>
-
-
-
-          <div id="gallery1" class="mfp-hide">
-            <div class="slide">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12 bg-primary">
-                  <%= image_tag Photo.first.direct_image_url %>
-                <div>
-              </div>
-              <div class="row bg-white">
-                <div class="col-md-6">
-                  <p class="font-25px font-condensed">Numéro de dossard</p>
-                  <p>Nom</p>
-                  <p>Prénom</p>
-                </div>
-              </div>
-            </div>
-            </div>
-            <div class="slide">
-              ... some content for slide 2 ...
-            </div>
-          </div>
-
-
-
-
-
 
       <% else %>
         <div class="row">
